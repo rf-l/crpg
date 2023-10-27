@@ -2991,7 +2991,7 @@
         <equipment slot="Cape" id="Item.crpg_khuzait_leather_pauldron_v2_h0" />
         <equipment slot="Body" id="Item.crpg_khuzait_belt_leather_v2_h0" />
         <equipment slot="Leg" id="Item.crpg_khuzait_curved_boots_v2_h0" />
-        <equipment slot="Item0" id="Item.crpg_steppe_light_mace_h0" />
+        <equipment slot="Item0" id="Item.crpg_steppe_spiked_mace_h0" />
         <equipment slot="Item1" id="Item.crpg_decorated_steppe_shield_v2_h0" />
       </EquipmentRoster>
     </Equipments>
@@ -3033,7 +3033,7 @@
         <equipment slot="Gloves" id="Item.crpg_eastern_plated_leather_vambraces_v2_h0" />
         <equipment slot="Leg" id="Item.crpg_reinforced_suede_boots_v2_h0" />
         <equipment slot="Horse" id="Item.crpg_mount1_courser_14_v1_h0" />
-        <equipment slot="HorseHarness" id="Item.crpg_studded_steppe_barding_h0" />
+        <equipment slot="HorseHarness" id="Item.crpg_studded_steppe_barding_v1_h0" />
         <equipment slot="Item0" id="Item.crpg_heavy_cavalry_lance_h0" />
         <equipment slot="Item1" id="Item.crpg_decorated_steppe_shield_v2_h0" />
         <equipment slot="Item2" id="Item.crpg_iron_saber_h0" />
@@ -3045,7 +3045,7 @@
         <equipment slot="Gloves" id="Item.crpg_eastern_plated_leather_vambraces_v2_h0" />
         <equipment slot="Leg" id="Item.crpg_reinforced_suede_boots_v2_h0" />
         <equipment slot="Horse" id="Item.crpg_mount1_courser_14_v1_h0" />
-        <equipment slot="HorseHarness" id="Item.crpg_steppe_fur_harness_h0" />
+        <equipment slot="HorseHarness" id="Item.crpg_steppe_fur_harness_v1_h0" />
         <equipment slot="Item0" id="Item.crpg_noble_steppe_bow_h0" />
         <equipment slot="Item1" id="Item.crpg_stacked_steppe_arrows_h0" />
         <equipment slot="Item2" id="Item.crpg_stacked_steppe_arrows_h0" />
@@ -3058,7 +3058,7 @@
         <equipment slot="Gloves" id="Item.crpg_eastern_plated_leather_vambraces_v2_h0" />
         <equipment slot="Leg" id="Item.crpg_reinforced_suede_boots_v2_h0" />
         <equipment slot="Horse" id="Item.crpg_mount1_courser_14_v1_h0" />
-        <equipment slot="HorseHarness" id="Item.crpg_steppe_fur_harness_h0" />
+        <equipment slot="HorseHarness" id="Item.crpg_steppe_fur_harness_v1_h0" />
         <equipment slot="Item0" id="Item.crpg_noble_steppe_bow_h0" />
         <equipment slot="Item1" id="Item.crpg_stacked_steppe_arrows_h0" />
         <equipment slot="Item2" id="Item.crpg_stacked_steppe_arrows_h0" />
@@ -3103,7 +3103,7 @@
         <equipment slot="Gloves" id="Item.crpg_sa_1ChurburghGauntlet_v2_h0" />
         <equipment slot="Leg" id="Item.crpg_lamellar_plate_boots_v3_h0" />
         <equipment slot="Horse" id="Item.crpg_mount1_courser_14_v1_h0" />
-        <equipment slot="HorseHarness" id="Item.crpg_studded_steppe_barding_h0" />
+        <equipment slot="HorseHarness" id="Item.crpg_studded_steppe_barding_v1_h0" />
         <equipment slot="Item0" id="Item.crpg_glaive_v1_h0" />
         <equipment slot="Item1" id="Item.crpg_heavy_hunting_bow_h0" />
         <equipment slot="Item2" id="Item.crpg_stacked_steppe_arrows_h0" />
