@@ -1484,7 +1484,7 @@
         <equipment slot="Cape" id="Item.crpg_rhkt_cape_sec_v1_h0" />
         <equipment slot="Body" id="Item.crpg_khuzait_civil_coat_v2_h0" />
         <equipment slot="Leg" id="Item.crpg_steppe_leather_boots_v2_h0" />
-        <equipment slot="Item0" id="Item.crpg_pugio_v1_h0" />
+        <equipment slot="Item0" id="Item.crpg_rondel_reverse_h0" />
         <equipment slot="Item1" id="Item.crpg_highland_throwing_dagger_v3_h0" />
       </EquipmentRoster>
     </Equipments>
@@ -1535,7 +1535,7 @@
         <equipment slot="Horse" id="Item.crpg_mount1_saddlehorse_9_v1_h0" />
         <equipment slot="HorseHarness" id="Item.crpg_steppe_fur_harness_v1_h0" />
         <equipment slot="Item0" id="Item.crpg_decorated_demilance_h0" />
-        <equipment slot="Item1" id="Item.crpg_pugio_v1_h0" />
+        <equipment slot="Item1" id="Item.crpg_decorated_cavalry_saber_h0" />
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
@@ -1909,9 +1909,8 @@
         <equipment slot="Body" id="Item.crpg_battania_brass_plate_armor_v1_h0" />
         <equipment slot="Gloves" id="Item.crpg_northern_brass_bracers_v2_h0" />
         <equipment slot="Leg" id="Item.crpg_steppe_leather_boots_v2_h0" />
-        <equipment slot="Item0" id="Item.crpg_pilum_v4_h0" />
-        <equipment slot="Item1" id="Item.crpg_iron_spatha_h0" />
-        <equipment slot="Item2" id="Item.crpg_steel_round_shield_v2_h0" />
+        <equipment slot="Item0" id="Item.crpg_broad_blade_javelin_v2_h0" />
+        <equipment slot="Item1" id="Item.crpg_thamaskene_steel_spatha_h0" />
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
@@ -3047,9 +3046,8 @@
         <equipment slot="Horse" id="Item.crpg_mount1_courser_14_v1_h0" />
         <equipment slot="HorseHarness" id="Item.crpg_steppe_fur_harness_v1_h0" />
         <equipment slot="Item0" id="Item.crpg_noble_steppe_bow_h0" />
-        <equipment slot="Item1" id="Item.crpg_stacked_steppe_arrows_h0" />
-        <equipment slot="Item2" id="Item.crpg_stacked_steppe_arrows_h0" />
-        <equipment slot="Item3" id="Item.crpg_fine_steel_scimitar_h0" />
+        <equipment slot="Item1" id="Item.crpg_broad_head_arrows_h0" />
+        <equipment slot="Item2" id="Item.crpg_fine_steel_scimitar_h0" />
       </EquipmentRoster>
       <EquipmentRoster>
         <equipment slot="Head" id="Item.crpg_jackolantern_h0" />
@@ -3060,9 +3058,8 @@
         <equipment slot="Horse" id="Item.crpg_mount1_courser_14_v1_h0" />
         <equipment slot="HorseHarness" id="Item.crpg_steppe_fur_harness_v1_h0" />
         <equipment slot="Item0" id="Item.crpg_noble_steppe_bow_h0" />
-        <equipment slot="Item1" id="Item.crpg_stacked_steppe_arrows_h0" />
-        <equipment slot="Item2" id="Item.crpg_stacked_steppe_arrows_h0" />
-        <equipment slot="Item3" id="Item.crpg_fine_steel_scimitar_h0" />
+        <equipment slot="Item1" id="Item.crpg_broad_head_arrows_h0" />
+        <equipment slot="Item2" id="Item.crpg_fine_steel_scimitar_h0" />
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
@@ -3106,8 +3103,8 @@
         <equipment slot="HorseHarness" id="Item.crpg_studded_steppe_barding_v1_h0" />
         <equipment slot="Item0" id="Item.crpg_glaive_v1_h0" />
         <equipment slot="Item1" id="Item.crpg_heavy_hunting_bow_h0" />
-        <equipment slot="Item2" id="Item.crpg_stacked_steppe_arrows_h0" />
-        <equipment slot="Item3" id="Item.crpg_stacked_steppe_arrows_h0" />
+        <equipment slot="Item2" id="Item.crpg_bodkin_arrows_h0" />
+        <equipment slot="Item3" id="Item.crpg_bodkin_arrows_h0" />
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
