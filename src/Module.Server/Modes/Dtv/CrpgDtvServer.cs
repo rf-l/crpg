@@ -1,6 +1,7 @@
 ﻿using System.Xml.Serialization;
 using Crpg.Module.Rewards;
 using TaleWorlds.Core;
+using TaleWorlds.Library;
 using TaleWorlds.ModuleManager;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.Network.Messages;
@@ -165,6 +166,7 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
 
         if (affectedAgent.IsAIControlled && affectedAgent.Team == Mission.DefenderTeam) // Viscount under attack
         {
+            affectedAgent.Health = Math.Min(blow.InflictedDamage + affectedAgent.Health, affectedAgent.BaseHealthLimit);
             SendDataToPeers(new CrpgDtvViscountUnderAttackMessage { Attacker = affectorAgent });
         }
     }
