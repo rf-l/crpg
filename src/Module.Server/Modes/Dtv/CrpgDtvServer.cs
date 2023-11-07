@@ -166,8 +166,11 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
 
         if (affectedAgent.IsAIControlled && affectedAgent.Team == Mission.DefenderTeam) // Viscount under attack
         {
-            affectedAgent.Health = Math.Min(blow.InflictedDamage + affectedAgent.Health, affectedAgent.BaseHealthLimit);
             SendDataToPeers(new CrpgDtvViscountUnderAttackMessage { Attacker = affectorAgent });
+            if (affectorAgent.Team == Mission.DefenderTeam)
+            {
+                affectedAgent.Health = Math.Min(blow.InflictedDamage + affectedAgent.Health, affectedAgent.BaseHealthLimit);
+            }
         }
     }
 
