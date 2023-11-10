@@ -15,11 +15,15 @@ internal sealed class UpdateCrpgUser : GameNetworkMessage
 {
     public VirtualPlayer? Peer { get; set; }
     public CrpgUser User { get; set; } = default!;
+    public string ClanName { get; set; } = default!;
+    public string ClanTag { get; set; } = default!;
 
     protected override void OnWrite()
     {
         WriteVirtualPlayerReferenceToPacket(Peer);
         WriteUserToPacket(User);
+        WriteStringToPacket(ClanName);
+        WriteStringToPacket(ClanTag);
     }
 
     protected override bool OnRead()
@@ -27,6 +31,8 @@ internal sealed class UpdateCrpgUser : GameNetworkMessage
         bool bufferReadValid = true;
         Peer = ReadVirtualPlayerReferenceToPacket(ref bufferReadValid);
         User = ReadUserFromPacket(ref bufferReadValid);
+        ClanName = ReadStringFromPacket(ref bufferReadValid);
+        ClanTag = ReadStringFromPacket(ref bufferReadValid);
         return bufferReadValid;
     }
 
