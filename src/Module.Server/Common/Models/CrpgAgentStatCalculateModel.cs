@@ -419,7 +419,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
 
                 if (equippedItem.WeaponClass is WeaponClass.Mace or WeaponClass.OneHandedAxe or WeaponClass.OneHandedSword or WeaponClass.Dagger)
                 {
-                    props.ThrustOrRangedReadySpeedMultiplier *= 0.82f;
+                    props.ThrustOrRangedReadySpeedMultiplier *= 0.75f;
                 }
 
                 props.CombatMaxSpeedMultiplier *= ImpactofStrAndWeaponLengthOnCombatMaxSpeedMultiplier(equippedItem.WeaponLength, strengthSkill);
