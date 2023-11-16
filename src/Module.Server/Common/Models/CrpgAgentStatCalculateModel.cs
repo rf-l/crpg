@@ -421,6 +421,10 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
                 {
                     props.ThrustOrRangedReadySpeedMultiplier *= 0.75f;
                 }
+                if (equippedItem.WeaponClass is WeaponClass.TwoHandedPolearm)
+                {
+                    props.HandlingMultiplier *= 1.1f;
+                }
 
                 props.CombatMaxSpeedMultiplier *= ImpactofStrAndWeaponLengthOnCombatMaxSpeedMultiplier(equippedItem.WeaponLength, strengthSkill);
             }
