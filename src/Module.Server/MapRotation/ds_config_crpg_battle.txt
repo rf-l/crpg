@@ -2,7 +2,7 @@ ServerName cRPG - Test Battle - c-rpg.eu 53
 GameType cRPGBattle
 GamePassword yoyo
 WelcomeMessage yoyoyooooo
-add_map_to_automated_battle_pool mp_battle_map_001
+add_map_to_automated_battle_pool crpg_battle_skolderby
 add_map_to_automated_battle_pool mp_battle_map_002
 AllowPollsToKickPlayers True
 AllowPollsToChangeMaps True
