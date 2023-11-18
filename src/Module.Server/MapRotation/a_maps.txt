@@ -3,7 +3,6 @@ crpg_battle_drakenburg
 crpg_battle_waterwaytojelkala
 crpg_battle_thearena
 crpg_battle_snowytown
-mp_battle_map_002
 crpg_battle_hadiiqa
 crpg_battle_killington
 mp_skirmish_map_003_skinc
