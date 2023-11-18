@@ -1,21 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Items>
-  <Item id="crpg_camel_saddle_b_v1_h0" name="{=OflbQCw6}Camel Saddle with Light Load" is_merchandise="false" mesh="camel_saddle_b" culture="Culture.aserai" weight="6" appearance="1" Type="HorseHarness">
+  <Item id="camel_saddle_b_v1_h0" name="{=Meow}Camel Saddle with Light Load" is_merchandise="false" mesh="camel_saddle_b" culture="Culture.aserai" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="6" mane_cover_type="none" family_type="2" material_type="Leather" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_camel_saddle_b_v1_h1" name="{=OflbQCw6}Camel Saddle with Light Load +1" is_merchandise="false" mesh="camel_saddle_b" culture="Culture.aserai" weight="6" appearance="1" Type="HorseHarness">
+  <Item id="camel_saddle_b_v1_h1" name="{=Meow}Camel Saddle with Light Load +1" is_merchandise="false" mesh="camel_saddle_b" culture="Culture.aserai" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="9" mane_cover_type="none" family_type="2" material_type="Leather" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_camel_saddle_b_v1_h2" name="{=OflbQCw6}Camel Saddle with Light Load +2" is_merchandise="false" mesh="camel_saddle_b" culture="Culture.aserai" weight="6" appearance="1" Type="HorseHarness">
+  <Item id="camel_saddle_b_v1_h2" name="{=Meow}Camel Saddle with Light Load +2" is_merchandise="false" mesh="camel_saddle_b" culture="Culture.aserai" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="12" mane_cover_type="none" family_type="2" material_type="Leather" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_camel_saddle_b_v1_h3" name="{=OflbQCw6}Camel Saddle with Light Load +3" is_merchandise="false" mesh="camel_saddle_b" culture="Culture.aserai" weight="6" appearance="1" Type="HorseHarness">
+  <Item id="camel_saddle_b_v1_h3" name="{=Meow}Camel Saddle with Light Load +3" is_merchandise="false" mesh="camel_saddle_b" culture="Culture.aserai" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="15" mane_cover_type="none" family_type="2" material_type="Leather" />
     </ItemComponent>
@@ -40,62 +40,62 @@
       <Armor body_armor="15" mane_cover_type="none" family_type="2" material_type="Leather" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_mule_load_c_v1_h0" name="{=JHef9oad}Mule Harness with Bags" mesh="mule_load_c" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
+  <Item id="mule_load_c_v1_h0" name="{=Meow}Mule Harness with Bags" mesh="mule_load_c" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="6" mane_cover_type="all" family_type="1" material_type="Cloth" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_mule_load_c_v1_h1" name="{=JHef9oad}Mule Harness with Bags +1" mesh="mule_load_c" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
+  <Item id="mule_load_c_v1_h1" name="{=Meow}Mule Harness with Bags +1" mesh="mule_load_c" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="9" mane_cover_type="all" family_type="1" material_type="Cloth" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_mule_load_c_v1_h2" name="{=JHef9oad}Mule Harness with Bags +2" mesh="mule_load_c" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
+  <Item id="mule_load_c_v1_h2" name="{=Meow}Mule Harness with Bags +2" mesh="mule_load_c" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="12" mane_cover_type="all" family_type="1" material_type="Cloth" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_mule_load_c_v1_h3" name="{=JHef9oad}Mule Harness with Bags +3" mesh="mule_load_c" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
+  <Item id="mule_load_c_v1_h3" name="{=Meow}Mule Harness with Bags +3" mesh="mule_load_c" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="15" mane_cover_type="all" family_type="1" material_type="Cloth" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_mule_load_b_v1_h0" name="{=2SUb8jNP}Mule Harness with Baskets" mesh="mule_load_b" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
+  <Item id="mule_load_b_v1_h0" name="{=Meow}Mule Harness with Baskets" mesh="mule_load_b" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="6" mane_cover_type="all" family_type="1" material_type="Cloth" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_mule_load_b_v1_h1" name="{=2SUb8jNP}Mule Harness with Baskets +1" mesh="mule_load_b" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
+  <Item id="mule_load_b_v1_h1" name="{=Meow}Mule Harness with Baskets +1" mesh="mule_load_b" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="9" mane_cover_type="all" family_type="1" material_type="Cloth" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_mule_load_b_v1_h2" name="{=2SUb8jNP}Mule Harness with Baskets +2" mesh="mule_load_b" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
+  <Item id="mule_load_b_v1_h2" name="{=Meow}Mule Harness with Baskets +2" mesh="mule_load_b" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="12" mane_cover_type="all" family_type="1" material_type="Cloth" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_mule_load_b_v1_h3" name="{=2SUb8jNP}Mule Harness with Baskets +3" mesh="mule_load_b" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
+  <Item id="mule_load_b_v1_h3" name="{=Meow}Mule Harness with Baskets +3" mesh="mule_load_b" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="15" mane_cover_type="all" family_type="1" material_type="Cloth" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_mule_load_a_v1_h0" name="{=7S6BjECG}Mule Harness with Pack" mesh="mule_load_a" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
+  <Item id="mule_load_a_v1_h0" name="{=Meow}Mule Harness with Pack" mesh="mule_load_a" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="6" mane_cover_type="all" family_type="1" material_type="Cloth" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_mule_load_a_v1_h1" name="{=7S6BjECG}Mule Harness with Pack +1" mesh="mule_load_a" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
+  <Item id="mule_load_a_v1_h1" name="{=Meow}Mule Harness with Pack +1" mesh="mule_load_a" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="9" mane_cover_type="all" family_type="1" material_type="Cloth" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_mule_load_a_v1_h2" name="{=7S6BjECG}Mule Harness with Pack +2" mesh="mule_load_a" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
+  <Item id="mule_load_a_v1_h2" name="{=Meow}Mule Harness with Pack +2" mesh="mule_load_a" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="12" mane_cover_type="all" family_type="1" material_type="Cloth" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_mule_load_a_v1_h3" name="{=7S6BjECG}Mule Harness with Pack +3" mesh="mule_load_a" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
+  <Item id="mule_load_a_v1_h3" name="{=Meow}Mule Harness with Pack +3" mesh="mule_load_a" is_merchandise="false" weight="6" appearance="1" Type="HorseHarness">
     <ItemComponent>
       <Armor body_armor="15" mane_cover_type="all" family_type="1" material_type="Cloth" />
     </ItemComponent>
@@ -602,322 +602,362 @@
   </Item>
   <Item id="crpg_mount1_camel_2_v1_h0" name="Pack Camel" mesh="camel_mesh" item_category="sumpter_horse" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_105" maneuver="72" speed="31" charge_damage="2" body_length="105" extra_health="10" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_105" maneuver="72" speed="32" charge_damage="2" body_length="105" extra_health="10" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_2_v1_h1" name="Pack Camel +1" mesh="camel_mesh" item_category="sumpter_horse" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_110" maneuver="72" speed="32" charge_damage="2" body_length="110" extra_health="24" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_105" maneuver="72" speed="33" charge_damage="2" body_length="105" extra_health="24" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_2_v1_h2" name="Pack Camel +2" mesh="camel_mesh" item_category="sumpter_horse" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_110" maneuver="73" speed="32" charge_damage="2" body_length="110" extra_health="38" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_105" maneuver="73" speed="33" charge_damage="2" body_length="105" extra_health="38" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_2_v1_h3" name="Pack Camel +3" mesh="camel_mesh" item_category="sumpter_horse" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_110" maneuver="74" speed="32" charge_damage="2" body_length="110" extra_health="52" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_105" maneuver="74" speed="33" charge_damage="2" body_length="105" extra_health="52" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_3_v1_h0" name="Pratihara Camel" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.aserai" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_109" maneuver="76" speed="32" charge_damage="2" body_length="109" extra_health="16" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_109" maneuver="76" speed="33" charge_damage="3" body_length="109" extra_health="16" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_3_v1_h1" name="Pratihara Camel +1" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.aserai" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_110" maneuver="76" speed="33" charge_damage="2" body_length="110" extra_health="30" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_109" maneuver="76" speed="34" charge_damage="3" body_length="109" extra_health="30" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_3_v1_h2" name="Pratihara Camel +2" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.aserai" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_110" maneuver="77" speed="33" charge_damage="2" body_length="110" extra_health="45" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_109" maneuver="77" speed="34" charge_damage="3" body_length="109" extra_health="45" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_3_v1_h3" name="Pratihara Camel +3" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.aserai" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_110" maneuver="78" speed="33" charge_damage="2" body_length="110" extra_health="59" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_109" maneuver="78" speed="34" charge_damage="3" body_length="109" extra_health="59" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_4_v1_h0" name="Qedarite Camel" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.aserai" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_109" maneuver="77" speed="33" charge_damage="3" body_length="109" extra_health="22" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_109" maneuver="77" speed="34" charge_damage="4" body_length="109" extra_health="22" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_4_v1_h1" name="Qedarite Camel +1" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.aserai" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_110" maneuver="77" speed="34" charge_damage="3" body_length="110" extra_health="36" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_109" maneuver="77" speed="35" charge_damage="4" body_length="109" extra_health="36" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_4_v1_h2" name="Qedarite Camel +2" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.aserai" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_110" maneuver="78" speed="34" charge_damage="3" body_length="110" extra_health="51" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_109" maneuver="78" speed="35" charge_damage="4" body_length="109" extra_health="51" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_4_v1_h3" name="Qedarite Camel +3" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.aserai" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_110" maneuver="79" speed="34" charge_damage="3" body_length="110" extra_health="66" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_109" maneuver="79" speed="35" charge_damage="4" body_length="109" extra_health="66" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_5_v1_h0" name="Palmyrene Camel" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.aserai" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_109" maneuver="78" speed="34" charge_damage="4" body_length="109" extra_health="28" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_109" maneuver="78" speed="35" charge_damage="5" body_length="109" extra_health="28" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_5_v1_h1" name="Palmyrene Camel +1" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.aserai" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_110" maneuver="78" speed="35" charge_damage="4" body_length="110" extra_health="43" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_109" maneuver="78" speed="36" charge_damage="5" body_length="109" extra_health="43" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_5_v1_h2" name="Palmyrene Camel +2" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.aserai" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_110" maneuver="79" speed="35" charge_damage="4" body_length="110" extra_health="58" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_109" maneuver="79" speed="36" charge_damage="5" body_length="109" extra_health="58" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_5_v1_h3" name="Palmyrene Camel +3" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.aserai" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_110" maneuver="80" speed="35" charge_damage="4" body_length="110" extra_health="74" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_109" maneuver="80" speed="36" charge_damage="5" body_length="109" extra_health="74" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_6_v1_h0" name="Sargonid Light Camel" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.aserai" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_105" maneuver="80" speed="36" charge_damage="4" body_length="105" extra_health="16" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_105" maneuver="80" speed="37" charge_damage="4" body_length="105" extra_health="16" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_6_v1_h1" name="Sargonid Light Camel +1" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.aserai" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_105" maneuver="80" speed="37" charge_damage="4" body_length="105" extra_health="30" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_105" maneuver="80" speed="38" charge_damage="4" body_length="105" extra_health="30" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_6_v1_h2" name="Sargonid Light Camel +2" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.aserai" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_105" maneuver="81" speed="37" charge_damage="4" body_length="105" extra_health="45" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_105" maneuver="81" speed="38" charge_damage="4" body_length="105" extra_health="45" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_6_v1_h3" name="Sargonid Light Camel +3" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.aserai" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_105" maneuver="82" speed="37" charge_damage="4" body_length="105" extra_health="59" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_105" maneuver="82" speed="38" charge_damage="4" body_length="105" extra_health="59" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_7_v1_h0" name="Sargonid Heavy Camel" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.aserai" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_109" maneuver="79" speed="35" charge_damage="5" body_length="109" extra_health="34" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_109" maneuver="79" speed="36" charge_damage="6" body_length="109" extra_health="34" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_7_v1_h1" name="Sargonid Heavy Camel +1" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.aserai" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_110" maneuver="79" speed="36" charge_damage="5" body_length="110" extra_health="49" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_109" maneuver="79" speed="37" charge_damage="6" body_length="109" extra_health="49" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_7_v1_h2" name="Sargonid Heavy Camel +2" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.aserai" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_110" maneuver="80" speed="36" charge_damage="5" body_length="110" extra_health="65" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_109" maneuver="80" speed="37" charge_damage="6" body_length="109" extra_health="65" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_7_v1_h3" name="Sargonid Heavy Camel +3" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.aserai" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_110" maneuver="81" speed="36" charge_damage="5" body_length="110" extra_health="81" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_109" maneuver="81" speed="37" charge_damage="6" body_length="109" extra_health="81" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_8_v1_h0" name="Nabatean Light Camel" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.aserai" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_105" maneuver="81" speed="37" charge_damage="4" body_length="105" extra_health="16" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_105" maneuver="81" speed="38" charge_damage="4" body_length="105" extra_health="16" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_8_v1_h1" name="Nabatean Light Camel +1" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.aserai" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_105" maneuver="81" speed="38" charge_damage="4" body_length="105" extra_health="30" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_105" maneuver="81" speed="39" charge_damage="4" body_length="105" extra_health="30" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_8_v1_h2" name="Nabatean Light Camel +2" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.aserai" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_105" maneuver="82" speed="38" charge_damage="4" body_length="105" extra_health="45" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_105" maneuver="82" speed="39" charge_damage="4" body_length="105" extra_health="45" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_8_v1_h3" name="Nabatean Light Camel +3" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.aserai" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_105" maneuver="83" speed="38" charge_damage="4" body_length="105" extra_health="59" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_105" maneuver="83" speed="39" charge_damage="4" body_length="105" extra_health="59" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_9_v1_h0" name="Nabatean Heavy Camel" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.aserai" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_109" maneuver="80" speed="36" charge_damage="5" body_length="109" extra_health="34" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_109" maneuver="80" speed="37" charge_damage="6" body_length="109" extra_health="34" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_9_v1_h1" name="Nabatean Heavy Camel +1" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.aserai" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_110" maneuver="80" speed="37" charge_damage="5" body_length="110" extra_health="49" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_109" maneuver="80" speed="38" charge_damage="6" body_length="109" extra_health="49" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_9_v1_h2" name="Nabatean Heavy Camel +2" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.aserai" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_110" maneuver="81" speed="37" charge_damage="5" body_length="110" extra_health="65" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_109" maneuver="81" speed="38" charge_damage="6" body_length="109" extra_health="65" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_9_v1_h3" name="Nabatean Heavy Camel +3" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.aserai" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_110" maneuver="82" speed="37" charge_damage="5" body_length="110" extra_health="81" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_109" maneuver="82" speed="38" charge_damage="6" body_length="109" extra_health="81" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_10_v1_h0" name="Seleucid Light Camel" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.empire" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_105" maneuver="82" speed="38" charge_damage="4" body_length="105" extra_health="25" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_105" maneuver="82" speed="39" charge_damage="4" body_length="105" extra_health="25" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_10_v1_h1" name="Seleucid Light Camel +1" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.empire" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_105" maneuver="82" speed="39" charge_damage="4" body_length="105" extra_health="39" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_105" maneuver="82" speed="40" charge_damage="4" body_length="105" extra_health="39" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_10_v1_h2" name="Seleucid Light Camel +2" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.empire" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_105" maneuver="83" speed="39" charge_damage="4" body_length="105" extra_health="55" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_105" maneuver="83" speed="40" charge_damage="4" body_length="105" extra_health="55" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_10_v1_h3" name="Seleucid Light Camel +3" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.empire" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_105" maneuver="84" speed="39" charge_damage="4" body_length="105" extra_health="70" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_105" maneuver="84" speed="40" charge_damage="4" body_length="105" extra_health="70" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_11_v1_h0" name="Seleucid Heavy Camel" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.empire" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_109" maneuver="81" speed="37" charge_damage="5" body_length="109" extra_health="43" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_109" maneuver="81" speed="38" charge_damage="6" body_length="109" extra_health="43" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_11_v1_h1" name="Seleucid Heavy Camel +1" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.empire" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_110" maneuver="81" speed="38" charge_damage="5" body_length="110" extra_health="59" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_109" maneuver="81" speed="39" charge_damage="6" body_length="109" extra_health="59" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_11_v1_h2" name="Seleucid Heavy Camel +2" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.empire" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_110" maneuver="82" speed="38" charge_damage="5" body_length="110" extra_health="75" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_109" maneuver="82" speed="39" charge_damage="6" body_length="109" extra_health="75" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_11_v1_h3" name="Seleucid Heavy Camel +3" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.empire" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_110" maneuver="83" speed="38" charge_damage="5" body_length="110" extra_health="92" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_109" maneuver="83" speed="39" charge_damage="6" body_length="109" extra_health="92" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_12_v1_h0" name="Parthian Light Camel" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.aserai" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_105" maneuver="83" speed="39" charge_damage="4" body_length="105" extra_health="25" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_105" maneuver="83" speed="40" charge_damage="4" body_length="105" extra_health="25" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_12_v1_h1" name="Parthian Light Camel +1" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.aserai" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_105" maneuver="83" speed="40" charge_damage="4" body_length="105" extra_health="39" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_105" maneuver="83" speed="41" charge_damage="4" body_length="105" extra_health="39" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_12_v1_h2" name="Parthian Light Camel +2" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.aserai" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_105" maneuver="84" speed="40" charge_damage="4" body_length="105" extra_health="55" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_105" maneuver="84" speed="41" charge_damage="4" body_length="105" extra_health="55" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_12_v1_h3" name="Parthian Light Camel +3" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.aserai" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_105" maneuver="85" speed="40" charge_damage="4" body_length="105" extra_health="70" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_105" maneuver="85" speed="41" charge_damage="4" body_length="105" extra_health="70" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_13_v1_h0" name="Parthian Heavy Camel" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.aserai" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_109" maneuver="82" speed="38" charge_damage="5" body_length="109" extra_health="43" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_109" maneuver="82" speed="39" charge_damage="6" body_length="109" extra_health="43" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_13_v1_h1" name="Parthian Heavy Camel +1" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.aserai" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_110" maneuver="82" speed="39" charge_damage="5" body_length="110" extra_health="59" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_109" maneuver="82" speed="40" charge_damage="6" body_length="109" extra_health="59" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_13_v1_h2" name="Parthian Heavy Camel +2" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.aserai" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_110" maneuver="83" speed="39" charge_damage="5" body_length="110" extra_health="75" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_109" maneuver="83" speed="40" charge_damage="6" body_length="109" extra_health="75" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_13_v1_h3" name="Parthian Heavy Camel +3" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.aserai" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_110" maneuver="84" speed="39" charge_damage="5" body_length="110" extra_health="92" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_109" maneuver="84" speed="40" charge_damage="6" body_length="109" extra_health="92" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_14_v1_h0" name="Achaemenian Light Camel" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.aserai" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_105" maneuver="84" speed="40" charge_damage="5" body_length="105" extra_health="34" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_105" maneuver="84" speed="41" charge_damage="5" body_length="105" extra_health="34" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_14_v1_h1" name="Achaemenian Light Camel +1" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.aserai" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_105" maneuver="84" speed="41" charge_damage="5" body_length="105" extra_health="49" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_105" maneuver="84" speed="42" charge_damage="5" body_length="105" extra_health="49" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_14_v1_h2" name="Achaemenian Light Camel +2" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.aserai" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_105" maneuver="85" speed="41" charge_damage="5" body_length="105" extra_health="65" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_105" maneuver="85" speed="42" charge_damage="5" body_length="105" extra_health="65" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_14_v1_h3" name="Achaemenian Light Camel +3" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.aserai" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_105" maneuver="86" speed="41" charge_damage="5" body_length="105" extra_health="81" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_105" maneuver="86" speed="42" charge_damage="5" body_length="105" extra_health="81" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_15_v1_h0" name="Achaemenian Heavy Camel" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.aserai" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_110" maneuver="83" speed="39" charge_damage="6" body_length="110" extra_health="52" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_109" maneuver="83" speed="40" charge_damage="7" body_length="109" extra_health="52" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_15_v1_h1" name="Achaemenian Heavy Camel +1" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.aserai" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_109" maneuver="83" speed="40" charge_damage="6" body_length="109" extra_health="68" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_109" maneuver="83" speed="41" charge_damage="7" body_length="109" extra_health="68" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_15_v1_h2" name="Achaemenian Heavy Camel +2" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.aserai" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_110" maneuver="84" speed="40" charge_damage="6" body_length="110" extra_health="85" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_109" maneuver="84" speed="41" charge_damage="7" body_length="109" extra_health="85" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mount1_camel_15_v1_h3" name="Achaemenian Heavy Camel +3" mesh="camel_mesh" item_category="sumpter_horse" culture="Culture.aserai" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_110" maneuver="85" speed="40" charge_damage="6" body_length="110" extra_health="102" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_109" maneuver="85" speed="41" charge_damage="7" body_length="109" extra_health="102" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_mount1_camel_16_v1_h0" name="Safinat al-Barr" mesh="camel_mesh" item_category="sumpter_horse" weight="520" Type="Horse">
+  <Item id="crpg_mount1_camel_16_v2_h0" name="Safinat al-Barr" mesh="camel_mesh" item_category="sumpter_horse" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_109" maneuver="85" speed="39" charge_damage="7" body_length="109" extra_health="52" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_109" maneuver="84" speed="40" charge_damage="8" body_length="109" extra_health="52" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_mount1_camel_16_v1_h1" name="Safinat al-Barr +1" mesh="camel_mesh" item_category="sumpter_horse" weight="520" Type="Horse">
+  <Item id="crpg_mount1_camel_16_v2_h1" name="Safinat al-Barr +1" mesh="camel_mesh" item_category="sumpter_horse" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_110" maneuver="85" speed="40" charge_damage="7" body_length="110" extra_health="68" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_109" maneuver="84" speed="41" charge_damage="8" body_length="109" extra_health="68" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_mount1_camel_16_v1_h2" name="Safinat al-Barr +2" mesh="camel_mesh" item_category="sumpter_horse" weight="520" Type="Horse">
+  <Item id="crpg_mount1_camel_16_v2_h2" name="Safinat al-Barr +2" mesh="camel_mesh" item_category="sumpter_horse" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_110" maneuver="86" speed="40" charge_damage="7" body_length="110" extra_health="85" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_109" maneuver="85" speed="41" charge_damage="8" body_length="109" extra_health="85" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_mount1_camel_16_v1_h3" name="Safinat al-Barr +3" mesh="camel_mesh" item_category="sumpter_horse" weight="520" Type="Horse">
+  <Item id="crpg_mount1_camel_16_v2_h3" name="Safinat al-Barr +3" mesh="camel_mesh" item_category="sumpter_horse" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_110" maneuver="87" speed="40" charge_damage="7" body_length="110" extra_health="102" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_109" maneuver="86" speed="41" charge_damage="8" body_length="109" extra_health="102" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_mount1_camel_17_v1_h0" name="Padishah" mesh="camel_mesh" item_category="sumpter_horse" weight="520" Type="Horse">
+  <Item id="crpg_mount1_camel_17_v2_h0" name="Padishah" mesh="camel_mesh" item_category="sumpter_horse" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_109" maneuver="86" speed="40" charge_damage="7" body_length="109" extra_health="52" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_109" maneuver="85" speed="41" charge_damage="8" body_length="109" extra_health="52" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_mount1_camel_17_v1_h1" name="Padishah +1" mesh="camel_mesh" item_category="sumpter_horse" weight="520" Type="Horse">
+  <Item id="crpg_mount1_camel_17_v2_h1" name="Padishah +1" mesh="camel_mesh" item_category="sumpter_horse" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_110" maneuver="86" speed="41" charge_damage="7" body_length="110" extra_health="68" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_109" maneuver="85" speed="42" charge_damage="8" body_length="109" extra_health="68" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_mount1_camel_17_v1_h2" name="Padishah +2" mesh="camel_mesh" item_category="sumpter_horse" weight="520" Type="Horse">
+  <Item id="crpg_mount1_camel_17_v2_h2" name="Padishah +2" mesh="camel_mesh" item_category="sumpter_horse" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_110" maneuver="87" speed="41" charge_damage="7" body_length="110" extra_health="85" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_109" maneuver="86" speed="42" charge_damage="8" body_length="109" extra_health="85" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
-  <Item id="crpg_mount1_camel_17_v1_h3" name="Padishah +3" mesh="camel_mesh" item_category="sumpter_horse" weight="520" Type="Horse">
+  <Item id="crpg_mount1_camel_17_v2_h3" name="Padishah +3" mesh="camel_mesh" item_category="sumpter_horse" weight="520" Type="Horse">
     <ItemComponent>
-      <Horse monster="Monster.camel_110" maneuver="88" speed="41" charge_damage="7" body_length="110" extra_health="102" is_pack_animal="true" is_mountable="true" />
+      <Horse monster="Monster.camel_109" maneuver="87" speed="42" charge_damage="8" body_length="109" extra_health="102" is_pack_animal="true" is_mountable="true" />
+    </ItemComponent>
+  </Item>
+  <Item id="crpg_mount1_camel_18_v1_h0" name="Sayidat al-Sahra" mesh="camel_mesh" item_category="sumpter_horse" weight="520" Type="Horse">
+    <ItemComponent>
+      <Horse monster="Monster.camel_105" maneuver="84" speed="42" charge_damage="6" body_length="105" extra_health="34" is_pack_animal="true" is_mountable="true" />
+    </ItemComponent>
+  </Item>
+  <Item id="crpg_mount1_camel_18_v1_h1" name="Sayidat al-Sahra +1" mesh="camel_mesh" item_category="sumpter_horse" weight="520" Type="Horse">
+    <ItemComponent>
+      <Horse monster="Monster.camel_105" maneuver="84" speed="43" charge_damage="6" body_length="105" extra_health="49" is_pack_animal="true" is_mountable="true" />
+    </ItemComponent>
+  </Item>
+  <Item id="crpg_mount1_camel_18_v1_h2" name="Sayidat al-Sahra +2" mesh="camel_mesh" item_category="sumpter_horse" weight="520" Type="Horse">
+    <ItemComponent>
+      <Horse monster="Monster.camel_105" maneuver="85" speed="43" charge_damage="6" body_length="105" extra_health="65" is_pack_animal="true" is_mountable="true" />
+    </ItemComponent>
+  </Item>
+  <Item id="crpg_mount1_camel_18_v1_h3" name="Sayidat al-Sahra +3" mesh="camel_mesh" item_category="sumpter_horse" weight="520" Type="Horse">
+    <ItemComponent>
+      <Horse monster="Monster.camel_105" maneuver="86" speed="43" charge_damage="6" body_length="105" extra_health="81" is_pack_animal="true" is_mountable="true" />
+    </ItemComponent>
+  </Item>
+  <Item id="crpg_mount1_camel_19_v1_h0" name="Naqa al-Fahia" mesh="camel_mesh" item_category="sumpter_horse" weight="520" Type="Horse">
+    <ItemComponent>
+      <Horse monster="Monster.camel_105" maneuver="85" speed="43" charge_damage="6" body_length="105" extra_health="34" is_pack_animal="true" is_mountable="true" />
+    </ItemComponent>
+  </Item>
+  <Item id="crpg_mount1_camel_19_v1_h1" name="Naqa al-Fahia +1" mesh="camel_mesh" item_category="sumpter_horse" weight="520" Type="Horse">
+    <ItemComponent>
+      <Horse monster="Monster.camel_105" maneuver="85" speed="44" charge_damage="6" body_length="105" extra_health="49" is_pack_animal="true" is_mountable="true" />
+    </ItemComponent>
+  </Item>
+  <Item id="crpg_mount1_camel_19_v1_h2" name="Naqa al-Fahia +2" mesh="camel_mesh" item_category="sumpter_horse" weight="520" Type="Horse">
+    <ItemComponent>
+      <Horse monster="Monster.camel_105" maneuver="86" speed="44" charge_damage="6" body_length="105" extra_health="65" is_pack_animal="true" is_mountable="true" />
+    </ItemComponent>
+  </Item>
+  <Item id="crpg_mount1_camel_19_v1_h3" name="Naqa al-Fahia +3" mesh="camel_mesh" item_category="sumpter_horse" weight="520" Type="Horse">
+    <ItemComponent>
+      <Horse monster="Monster.camel_105" maneuver="87" speed="44" charge_damage="6" body_length="105" extra_health="81" is_pack_animal="true" is_mountable="true" />
     </ItemComponent>
   </Item>
   <Item id="crpg_mule1_2_v1_h0" name="Chadz" mesh="mule_mesh" item_category="sumpter_horse" weight="300" Type="Horse">
@@ -6227,5 +6267,245 @@
       <Armor body_armor="45" mane_cover_type="none" family_type="1" modifier_group="chain" reins_mesh="horse_harness_e_rein" material_type="Plate" />
     </ItemComponent>
     <Flags UseTeamColor="true" Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_a_h0" name="{=Telford}Southern Brass Half Scale Dromedary Barding" is_merchandise="true" mesh="tv_camel_scale_armor_a" culture="Culture.aserai" weight="32" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="32" mane_cover_type="all" family_type="2" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_a_h1" name="{=Telford}Southern Brass Half Scale Dromedary Barding +1" is_merchandise="true" mesh="tv_camel_scale_armor_a" culture="Culture.aserai" weight="32" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="35" mane_cover_type="all" family_type="2" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_a_h2" name="{=Telford}Southern Brass Half Scale Dromedary Barding +2" is_merchandise="true" mesh="tv_camel_scale_armor_a" culture="Culture.aserai" weight="32" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="38" mane_cover_type="all" family_type="2" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_a_h3" name="{=Telford}Southern Brass Half Scale Dromedary Barding +3" is_merchandise="true" mesh="tv_camel_scale_armor_a" culture="Culture.aserai" weight="32" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="41" mane_cover_type="all" family_type="2" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_b_h0" name="{=Telford}Southern Steel Half Scale Dromedary Barding" is_merchandise="true" mesh="tv_camel_scale_armor_b" culture="Culture.aserai" weight="32" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="32" mane_cover_type="all" family_type="2" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_b_h1" name="{=Telford}Southern Steel Half Scale Dromedary Barding +1" is_merchandise="true" mesh="tv_camel_scale_armor_b" culture="Culture.aserai" weight="32" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="35" mane_cover_type="all" family_type="2" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_b_h2" name="{=Telford}Southern Steel Half Scale Dromedary Barding +2" is_merchandise="true" mesh="tv_camel_scale_armor_b" culture="Culture.aserai" weight="32" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="38" mane_cover_type="all" family_type="2" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_b_h3" name="{=Telford}Southern Steel Half Scale Dromedary Barding +3" is_merchandise="true" mesh="tv_camel_scale_armor_b" culture="Culture.aserai" weight="32" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="41" mane_cover_type="all" family_type="2" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_c_h0" name="{=Telford}Southern Brass Scale Dromedary Barding" is_merchandise="true" mesh="tv_camel_scale_armor_c" culture="Culture.aserai" weight="36" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="36" mane_cover_type="all" family_type="2" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_c_h1" name="{=Telford}Southern Brass Scale Dromedary Barding +1" is_merchandise="true" mesh="tv_camel_scale_armor_c" culture="Culture.aserai" weight="36" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="39" mane_cover_type="all" family_type="2" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_c_h2" name="{=Telford}Southern Brass Scale Dromedary Barding +2" is_merchandise="true" mesh="tv_camel_scale_armor_c" culture="Culture.aserai" weight="36" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="42" mane_cover_type="all" family_type="2" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_c_h3" name="{=Telford}Southern Brass Scale Dromedary Barding +3" is_merchandise="true" mesh="tv_camel_scale_armor_c" culture="Culture.aserai" weight="36" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="45" mane_cover_type="all" family_type="2" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_d_h0" name="{=Telford}Southern Steel Scale Dromedary Barding" is_merchandise="true" mesh="tv_camel_scale_armor_d" culture="Culture.aserai" weight="40" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="40" mane_cover_type="all" family_type="2" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_d_h1" name="{=Telford}Southern Steel Scale Dromedary Barding +1" is_merchandise="true" mesh="tv_camel_scale_armor_d" culture="Culture.aserai" weight="40" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="43" mane_cover_type="all" family_type="2" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_d_h2" name="{=Telford}Southern Steel Scale Dromedary Barding +2" is_merchandise="true" mesh="tv_camel_scale_armor_d" culture="Culture.aserai" weight="40" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="46" mane_cover_type="all" family_type="2" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_d_h3" name="{=Telford}Southern Steel Scale Dromedary Barding +3" is_merchandise="true" mesh="tv_camel_scale_armor_d" culture="Culture.aserai" weight="40" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="49" mane_cover_type="all" family_type="2" modifier_group="plate" material_type="Plate" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_e_h0" name="{=Telford}Southern Half Studded Leather Dromedary Barding" is_merchandise="true" mesh="tv_camel_scale_armor_e" culture="Culture.aserai" weight="24" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="24" mane_cover_type="all" family_type="2" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_e_h1" name="{=Telford}Southern Half Studded Leather Dromedary Barding +1" is_merchandise="true" mesh="tv_camel_scale_armor_e" culture="Culture.aserai" weight="24" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="27" mane_cover_type="all" family_type="2" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_e_h2" name="{=Telford}Southern Half Studded Leather Dromedary Barding +2" is_merchandise="true" mesh="tv_camel_scale_armor_e" culture="Culture.aserai" weight="24" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="30" mane_cover_type="all" family_type="2" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_e_h3" name="{=Telford}Southern Half Studded Leather Dromedary Barding +3" is_merchandise="true" mesh="tv_camel_scale_armor_e" culture="Culture.aserai" weight="24" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="33" mane_cover_type="all" family_type="2" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_f_h0" name="{=Telford}Southern Studded Leather Dromedary Barding" is_merchandise="true" mesh="tv_camel_scale_armor_f" culture="Culture.aserai" weight="28" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="28" mane_cover_type="all" family_type="2" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_f_h1" name="{=Telford}Southern Studded Leather Dromedary Barding +1" is_merchandise="true" mesh="tv_camel_scale_armor_f" culture="Culture.aserai" weight="28" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="31" mane_cover_type="all" family_type="2" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_f_h2" name="{=Telford}Southern Studded Leather Dromedary Barding +2" is_merchandise="true" mesh="tv_camel_scale_armor_f" culture="Culture.aserai" weight="28" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="34" mane_cover_type="all" family_type="2" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_f_h3" name="{=Telford}Southern Studded Leather Dromedary Barding +3" is_merchandise="true" mesh="tv_camel_scale_armor_f" culture="Culture.aserai" weight="28" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="37" mane_cover_type="all" family_type="2" modifier_group="chain" material_type="Chainmail" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_g_h0" name="{=Telford}Southern Half Padded Leather Dromedary Barding" is_merchandise="true" mesh="tv_camel_scale_armor_g" culture="Culture.aserai" weight="16" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="16" mane_cover_type="all" family_type="2" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_g_h1" name="{=Telford}Southern Half Padded Leather Dromedary Barding +1" is_merchandise="true" mesh="tv_camel_scale_armor_g" culture="Culture.aserai" weight="16" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="19" mane_cover_type="all" family_type="2" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_g_h2" name="{=Telford}Southern Half Padded Leather Dromedary Barding +2" is_merchandise="true" mesh="tv_camel_scale_armor_g" culture="Culture.aserai" weight="16" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="22" mane_cover_type="all" family_type="2" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_g_h3" name="{=Telford}Southern Half Padded Leather Dromedary Barding +3" is_merchandise="true" mesh="tv_camel_scale_armor_g" culture="Culture.aserai" weight="16" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="25" mane_cover_type="all" family_type="2" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_h_h0" name="{=Telford}Southern Padded Leather Dromedary Barding" is_merchandise="true" mesh="tv_camel_scale_armor_h" culture="Culture.aserai" weight="20" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="20" mane_cover_type="all" family_type="2" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_h_h1" name="{=Telford}Southern Padded Leather Dromedary Barding +1" is_merchandise="true" mesh="tv_camel_scale_armor_h" culture="Culture.aserai" weight="20" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="23" mane_cover_type="all" family_type="2" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_h_h2" name="{=Telford}Southern Padded Leather Dromedary Barding +2" is_merchandise="true" mesh="tv_camel_scale_armor_h" culture="Culture.aserai" weight="20" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="26" mane_cover_type="all" family_type="2" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_h_h3" name="{=Telford}Southern Padded Leather Dromedary Barding +3" is_merchandise="true" mesh="tv_camel_scale_armor_h" culture="Culture.aserai" weight="20" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="29" mane_cover_type="all" family_type="2" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_i_h0" name="{=Telford}Southern Half Wicker Dromedary Barding" is_merchandise="true" mesh="tv_camel_scale_armor_i" culture="Culture.aserai" weight="6" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="6" mane_cover_type="all" family_type="2" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_i_h1" name="{=Telford}Southern Half Wicker Dromedary Barding +1" is_merchandise="true" mesh="tv_camel_scale_armor_i" culture="Culture.aserai" weight="6" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="9" mane_cover_type="all" family_type="2" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_i_h2" name="{=Telford}Southern Half Wicker Dromedary Barding +2" is_merchandise="true" mesh="tv_camel_scale_armor_i" culture="Culture.aserai" weight="6" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="12" mane_cover_type="all" family_type="2" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_i_h3" name="{=Telford}Southern Half Wicker Dromedary Barding +3" is_merchandise="true" mesh="tv_camel_scale_armor_i" culture="Culture.aserai" weight="6" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="15" mane_cover_type="all" family_type="2" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_j_h0" name="{=Telford}Southern Wicker Dromedary Barding" is_merchandise="true" mesh="tv_camel_Scale_armor_j" culture="Culture.aserai" weight="12" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="12" mane_cover_type="all" family_type="2" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_j_h1" name="{=Telford}Southern Wicker Dromedary Barding +1" is_merchandise="true" mesh="tv_camel_Scale_armor_j" culture="Culture.aserai" weight="12" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="15" mane_cover_type="all" family_type="2" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_j_h2" name="{=Telford}Southern Wicker Dromedary Barding +2" is_merchandise="true" mesh="tv_camel_Scale_armor_j" culture="Culture.aserai" weight="12" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="18" mane_cover_type="all" family_type="2" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags Civilian="true" />
+  </Item>
+  <Item id="crpg_tv_camelarmor_j_h3" name="{=Telford}Southern Wicker Dromedary Barding +3" is_merchandise="true" mesh="tv_camel_Scale_armor_j" culture="Culture.aserai" weight="12" appearance="1" Type="HorseHarness">
+    <ItemComponent>
+      <Armor body_armor="21" mane_cover_type="all" family_type="2" modifier_group="leather" material_type="Leather" />
+    </ItemComponent>
+    <Flags Civilian="true" />
   </Item>
 </Items>
