@@ -74,7 +74,7 @@ internal class CrpgPeer : PeerComponent
         }
 
         GameNetwork.BeginModuleEventAsServer(networkPeer);
-        GameNetwork.WriteMessage(new UpdateCrpgUserClanInfo { Clan = Clan });
+        GameNetwork.WriteMessage(new UpdateCrpgUserClanInfo { Peer = Peer, Clan = Clan });
         GameNetwork.EndModuleEventAsServer();
     }
 
@@ -98,7 +98,7 @@ internal class CrpgPeer : PeerComponent
         }
 
         GameNetwork.BeginBroadcastModuleEvent();
-        GameNetwork.WriteMessage(new UpdateCrpgUserClanInfo { Clan = _clan });
+        GameNetwork.WriteMessage(new UpdateCrpgUserClanInfo { Peer = Peer, Clan = _clan });
         GameNetwork.EndBroadcastModuleEvent(GameNetwork.EventBroadcastFlags.None);
     }
 }
