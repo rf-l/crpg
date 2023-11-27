@@ -294,8 +294,8 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         float totalEncumbrance = props.ArmorEncumbrance + props.WeaponsEncumbrance;
         float freeWeight = 2.5f * (1 + (strengthSkill - 3f) / 30f);
         float perceivedWeight = Math.Max(totalEncumbrance - freeWeight, 0f) * weightReductionFactor;
-        props.TopSpeedReachDuration = 0.8f * (1f + perceivedWeight / 15f) * (20f / (20f + (float)Math.Pow(athleticsSkill / 120f, 2f))) + (totalEncumbrance - freeWeight) / 100f + ImpactofStrAndWeaponLengthOnTimeToMaxSpeed(equippedItem != null ? equippedItem.WeaponLength : 75, strengthSkill);
-        float speed = 0.60f + 0.03f * athleticsSkill / 26f;
+        props.TopSpeedReachDuration = 0.8f * (1f + perceivedWeight / 15f) * (20f / (20f + (float)Math.Pow(athleticsSkill / 120f, 2f))) + ImpactofStrAndWeaponLengthOnTimeToMaxSpeed(equippedItem != null ? equippedItem.WeaponLength : 75, strengthSkill);
+        float speed = 0.60f + 0.034f * athleticsSkill / 26f;
         props.MaxSpeedMultiplier = MBMath.ClampFloat(
             speed * (float)Math.Pow(361f / (361f + (float)Math.Pow(perceivedWeight, 5f)), 0.055f),
             0.1f,
@@ -408,15 +408,15 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
                 if (!(equippedItem.WeaponClass is WeaponClass.Banner or WeaponClass.Boulder or WeaponClass.Undefined))
                 {
                     float adjustedWeaponLength = equippedItem.WeaponClass == WeaponClass.TwoHandedPolearm
-                        ? Math.Max(0, equippedItem.WeaponLength - 20f)
+                        ? Math.Max(0, equippedItem.WeaponLength - 30f)
                         : equippedItem.WeaponLength;
-                    adjustedWeaponLength *= equippedItem.ItemUsage.Contains("pike") ? 0.4f : 1.0f;
+
                     props.CombatMaxSpeedMultiplier =
                         MathF.Min(
                         MBMath.Lerp(
                         bipedalCombatSpeedMaxMultiplier,
                         bipedalCombatSpeedMinMultiplier,
-                        MathF.Min(adjustedWeaponLength / 200f, 1f)),
+                        MathF.Clamp((adjustedWeaponLength - 80) / 120f, 0, 1f)),
                         1f);
                 }
 
