@@ -671,7 +671,7 @@ internal class CrpgHudExtensionVm : ViewModel
                 ? isAlliedOrIsTeam1
                 : isEnemyOrTeam2;
 
-            if (missionPeer == null || crpgPeer?.User == null || !isSelected || crpgPeer?.Clan == null || missionPeer.Team.TeamIndex == 0)
+            if (missionPeer == null || crpgPeer?.User == null || !isSelected || crpgPeer?.Clan == null || (missionPeer?.Team?.TeamIndex ?? 0) == 0)
             {
                 continue;
             }
