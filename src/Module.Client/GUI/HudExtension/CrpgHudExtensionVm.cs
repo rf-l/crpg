@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using Crpg.Module.Api.Models.Clans;
 using Crpg.Module.Common;
 using Crpg.Module.Helpers;
@@ -10,6 +11,7 @@ using TaleWorlds.Localization;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer;
 using TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer.HUDExtensions;
+using TaleWorlds.ObjectSystem;
 
 namespace Crpg.Module.GUI.HudExtension;
 
@@ -47,8 +49,8 @@ internal class CrpgHudExtensionVm : ViewModel
     private bool _isInWarmup;
     private int _generalWarningCountdown;
     private bool _isGeneralWarningCountdownActive;
-    private ImageIdentifierVM? _defenderBanner;
-    private ImageIdentifierVM? _attackerBanner;
+    private ImageIdentifierVM? _allyBanner;
+    private ImageIdentifierVM? _enemyBanner;
 
     public CrpgHudExtensionVm(Mission mission)
     {
@@ -185,16 +187,16 @@ internal class CrpgHudExtensionVm : ViewModel
     {
         get
         {
-            return _defenderBanner;
+            return _allyBanner;
         }
         set
         {
-            if (value == _defenderBanner)
+            if (value == _allyBanner)
             {
                 return;
             }
 
-            _defenderBanner = value;
+            _allyBanner = value;
             OnPropertyChangedWithValue(value);
         }
     }
@@ -204,16 +206,16 @@ internal class CrpgHudExtensionVm : ViewModel
     {
         get
         {
-            return _attackerBanner;
+            return _enemyBanner;
         }
         set
         {
-            if (value == _attackerBanner)
+            if (value == _enemyBanner)
             {
                 return;
             }
 
-            _attackerBanner = value;
+            _enemyBanner = value;
             OnPropertyChangedWithValue(value);
         }
     }
@@ -625,6 +627,124 @@ internal class CrpgHudExtensionVm : ViewModel
         }
     }
 
+    public static void UpdateTeamBanners(out ImageIdentifierVM? allyBannerOrDefenderTeamBannerVM, out ImageIdentifierVM? enemyBannerOrAttackerTeamBannerVM, out string allyTeamOrAttackerTeamName, out string enemyTeamOrDefenderTeamName, bool byTeamSide = false)
+    {
+        var allyOrAttackerTeamBanner = ResolveTeamBannerKey(allyTeamOrAttackerTeam: true, out allyTeamOrAttackerTeamName, byTeamSide);
+        var enemyOrDefenderTeamBanner = ResolveTeamBannerKey(allyTeamOrAttackerTeam: false, out enemyTeamOrDefenderTeamName, byTeamSide);
+        var allyOrAttackerTeamBannerCode = BannerCode.CreateFrom(allyOrAttackerTeamBanner);
+        var enemyOrDefenderTeamBannerCode = BannerCode.CreateFrom(enemyOrDefenderTeamBanner);
+        ImageIdentifierVM allyOrDefenderImageId = new(allyOrAttackerTeamBannerCode, true);
+        ImageIdentifierVM enemyOrAttackerImageId = new(enemyOrDefenderTeamBannerCode, true);
+
+        allyBannerOrDefenderTeamBannerVM = allyOrDefenderImageId;
+        enemyBannerOrAttackerTeamBannerVM = enemyOrAttackerImageId;
+    }
+
+    public static Banner? ResolveTeamBannerKey(bool allyTeamOrAttackerTeam, out string teamName, bool byTeamSide = false)
+    {
+        if (Mission.Current.Teams.Count == 0)
+        {
+            teamName = string.Empty;
+            return null;
+        }
+
+        Dictionary<int, (int count, CrpgClan clan)> clanNumber = new();
+        var myMissionPeer = GameNetwork.MyPeer.GetComponent<MissionPeer>();
+        Team myTeam = (myMissionPeer?.Team?.TeamIndex ?? 0) == 0
+            ? Mission.Current.Teams.Attacker
+            : GameNetwork.MyPeer.GetComponent<MissionPeer>().Team;
+        Team enemyTeam = myTeam.TeamIndex == 0
+            ? Mission.Current.Teams.Defender
+            : Mission.Current.Teams.First(t => t.TeamIndex != myTeam.TeamIndex && t.TeamIndex != 0);
+
+        foreach (var networkPeer in GameNetwork.NetworkPeers)
+        {
+            var crpgPeer = networkPeer.GetComponent<CrpgPeer>();
+            var missionPeer = networkPeer.GetComponent<MissionPeer>();
+            bool isAlliedOrIsTeam1 = byTeamSide
+                ? missionPeer.Team == Mission.Current.Teams.Attacker
+                : missionPeer.Team == myTeam;
+            bool isEnemyOrTeam2 = byTeamSide
+                ? missionPeer.Team == Mission.Current.Teams.Defender
+                : missionPeer.Team != myTeam;
+            bool isSelected = allyTeamOrAttackerTeam
+                ? isAlliedOrIsTeam1
+                : isEnemyOrTeam2;
+
+            if (missionPeer == null || crpgPeer?.User == null || !isSelected || crpgPeer?.Clan == null || missionPeer.Team.TeamIndex == 0)
+            {
+                continue;
+            }
+
+            int peerClanId = crpgPeer.Clan.Id;
+
+            if (clanNumber.ContainsKey(peerClanId))
+            {
+                var clan = clanNumber[peerClanId];
+                clan.count++;
+                clanNumber[peerClanId] = clan;
+            }
+            else
+            {
+                clanNumber.Add(peerClanId, (1, crpgPeer.Clan));
+            }
+        }
+
+        // TODO: ordering the dictionary is unnecessary, we just want the Tuple with the max count. Eventually look for a better way.
+        var maxClan = clanNumber.OrderByDescending(c => c.Value.count).FirstOrDefault();
+
+        if (maxClan.Value.clan == null)
+        {
+            string team1Name = MBObjectManager.Instance.GetObject<BasicCultureObject>(MultiplayerOptions.OptionType.CultureTeam1.GetStrValue(MultiplayerOptions.MultiplayerOptionsAccessMode.CurrentMapOptions)).Name.ToString();
+            string team2Name = MBObjectManager.Instance.GetObject<BasicCultureObject>(MultiplayerOptions.OptionType.CultureTeam2.GetStrValue(MultiplayerOptions.MultiplayerOptionsAccessMode.CurrentMapOptions)).Name.ToString();
+            if (byTeamSide)
+            {
+                if (allyTeamOrAttackerTeam)
+                {
+                    teamName = team1Name;
+                    return Mission.Current.Teams.Attacker.Banner;
+                }
+                else
+                {
+                    teamName = team2Name;
+                    return Mission.Current.Teams.Defender.Banner;
+                }
+            }
+            else
+            {
+                if (allyTeamOrAttackerTeam)
+                {
+                    if (myTeam.IsAttacker)
+                    {
+                        teamName = team1Name;
+                    }
+                    else
+                    {
+                        teamName = team2Name;
+                    }
+
+                    return myTeam.Banner;
+                }
+                else
+                {
+                    if (myTeam.IsAttacker)
+                    {
+                        teamName = team2Name;
+                    }
+                    else
+                    {
+                        teamName = team1Name;
+                    }
+
+                    return enemyTeam.Banner;
+                }
+            }
+        }
+
+        teamName = maxClan.Value.clan.Name;
+        return new Banner(maxClan.Value.clan.BannerKey, maxClan.Value.clan.PrimaryColor, maxClan.Value.clan.SecondaryColor);
+    }
+
     private void OnMissionReset(object sender, PropertyChangedEventArgs e)
     {
         IsGeneralWarningCountdownActive = false;
@@ -675,7 +795,9 @@ internal class CrpgHudExtensionVm : ViewModel
     private void OnCurrentGameModeStateChanged()
     {
         CheckTimers(true);
-        UpdateTeamBanners();
+        UpdateTeamBanners(out ImageIdentifierVM? allyBanner, out ImageIdentifierVM? enemyBanner, out _ , out _);
+        AllyBanner = allyBanner;
+        EnemyBanner = enemyBanner;
     }
 
     private void UpdateTeamScores()
@@ -691,78 +813,22 @@ internal class CrpgHudExtensionVm : ViewModel
         EnemyTeamScore = _isAttackerTeamAlly ? defenderScore : attackScore;
     }
 
-    private void UpdateTeamBanners()
-    {
-        var allyTeam = _isAttackerTeamAlly ? _mission.AttackerTeam : _mission.DefenderTeam;
-        var enemyTeam = _isAttackerTeamAlly ? _mission.DefenderTeam : _mission.AttackerTeam;
-        var allyBanner = ResolveTeamBannerKey(allyTeam);
-        var enemyBanner = ResolveTeamBannerKey(enemyTeam);
-        var allyBannerCode = BannerCode.CreateFrom(allyBanner ?? allyTeam.Banner);
-        var enemyBannerCode = BannerCode.CreateFrom(enemyBanner ?? enemyTeam.Banner);
-        ImageIdentifierVM allyImageId = new(allyBannerCode, true);
-        ImageIdentifierVM enemyImageId = new(enemyBannerCode, true);
-
-        AllyBanner = allyImageId;
-        EnemyBanner = enemyImageId;
-    }
-
-    private Banner? ResolveTeamBannerKey(Team team)
-    {
-        Dictionary<int, (int count, CrpgClan clan)> clanNumber = new();
-
-        foreach (var networkPeer in GameNetwork.NetworkPeers)
-        {
-            var crpgPeer = networkPeer.GetComponent<CrpgPeer>();
-            var missionPeer = networkPeer.GetComponent<MissionPeer>();
-
-            if (missionPeer == null || crpgPeer?.User == null || missionPeer.Team != team || crpgPeer?.Clan == null)
-            {
-                continue;
-            }
-
-            if (crpgPeer.Clan == null)
-            {
-                continue;
-            }
-
-            int peerClanId = crpgPeer.Clan.Id;
-
-            if (clanNumber.ContainsKey(peerClanId))
-            {
-                var clan = clanNumber[peerClanId];
-                clan.count++;
-                clanNumber[peerClanId] = clan;
-            }
-            else
-            {
-                clanNumber.Add(peerClanId, (1, crpgPeer.Clan));
-            }
-        }
-
-        var maxClan = clanNumber.OrderByDescending(c => c.Value.count).FirstOrDefault();
-
-        if (maxClan.Value.clan == null)
-        {
-            return null;
-        }
-
-        return new Banner(maxClan.Value.clan.BannerKey, maxClan.Value.clan.PrimaryColor, maxClan.Value.clan.SecondaryColor);
-    }
-
     private void OnTeamChanged(NetworkCommunicator peer, Team previousTeam, Team newTeam)
     {
         if (peer.IsMine)
         {
             if (_isTeamScoresEnabled || _gameMode.GameType == MissionLobbyComponent.MultiplayerGameType.Battle)
             {
-                _isAttackerTeamAlly = newTeam.Side == BattleSideEnum.Attacker;
+                _isAttackerTeamAlly = newTeam.Side == BattleSideEnum.Attacker || newTeam.Side == BattleSideEnum.None;
                 UpdateTeamScores();
             }
 
             CommanderInfo?.OnTeamChanged();
         }
 
-        UpdateTeamBanners();
+        UpdateTeamBanners(out ImageIdentifierVM? allyBanner, out ImageIdentifierVM? enemyBanner, out _, out _);
+        AllyBanner = allyBanner;
+        EnemyBanner = enemyBanner;
 
         if (CommanderInfo == null)
         {
