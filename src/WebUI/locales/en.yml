@@ -745,15 +745,22 @@ user:
     gold: Gold
     heirloom: Heirlooms points
   settings:
-    title: Account settings
+    title: Account Settings
+    dangerZone: Danger zone
     delete:
-      title: You can {link}. You won't be able to restore it.
+      title: 'WARNING: You can {link}. This process will delete ALL of your cRPG characters and data and is NOT reversible.'
       link: delete your account
+      validation:
+        hasChar: You cannot delete your account as long as you have at least 1 character.
       dialog:
-        title: Deleting account
-        desc: Are you sure you want to delete your account? This action cannot be undone.
+        title: '
+          <h5>WARNING</h5>
+          <h4>You are about to delete your account</h4>
+          <h5>WARNING</h5>'
+        desc: 'FINAL WARNING: This process CANNOT BE UNDONE - Deleting your account means it is GONE PERMANENTLY. Any and all data relating to your time in cRPG, characters, items, levels and more WILL be PERMANENTLY erased. We CANNOT recover data once this is actioned.'
+        enterToConfirm: 'Delete my account {user}'
       notify:
-        success: Account deleted
+        success: Your account has now been deleted.
   restriction:
     notification: 'You are banned for: {duration}'
     guide:
@@ -1238,10 +1245,8 @@ strategus:
       gather armies on a real-time map. Strategus expands the world of cRPG to a browser-based map
       of Calradia, where players take their armies into battle against other players or serve as a
       mercenary in scheduled battles on the cRPG servers.'
-    join:
-      'You will join the campaign in region: {region}'
-    hint:
-      "If this doesn't seem right you can try re-login or contact an administrator"
+    join: 'You will join the campaign in region: {region}'
+    hint: "If this doesn't seem right you can try re-login or contact an administrator"
 
   movementType:
     Move: Move
@@ -1258,4 +1263,3 @@ strategus:
     searchBySettlements: Search settlement
     terrainLayerToggle: Terrain layer toggle
     terrainEditorToggle: Terrain editor toggle
-
