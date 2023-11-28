@@ -661,9 +661,15 @@ internal class CrpgHudExtensionVm : ViewModel
         {
             var crpgPeer = networkPeer.GetComponent<CrpgPeer>();
             var missionPeer = networkPeer.GetComponent<MissionPeer>();
+
+            if (missionPeer == null || crpgPeer?.User == null || crpgPeer?.Clan == null || (missionPeer?.Team?.TeamIndex ?? 0) == 0)
+            {
+                continue;
+            }
+
             bool isAlliedOrIsTeam1 = byTeamSide
-                ? missionPeer.Team == Mission.Current.Teams.Attacker
-                : missionPeer.Team == myTeam;
+                ? missionPeer!.Team == Mission.Current.Teams.Attacker
+                : missionPeer!.Team == myTeam;
             bool isEnemyOrTeam2 = byTeamSide
                 ? missionPeer.Team == Mission.Current.Teams.Defender
                 : missionPeer.Team != myTeam;
@@ -671,12 +677,12 @@ internal class CrpgHudExtensionVm : ViewModel
                 ? isAlliedOrIsTeam1
                 : isEnemyOrTeam2;
 
-            if (missionPeer == null || crpgPeer?.User == null || !isSelected || crpgPeer?.Clan == null || (missionPeer?.Team?.TeamIndex ?? 0) == 0)
+            if (!isSelected)
             {
                 continue;
             }
 
-            int peerClanId = crpgPeer.Clan.Id;
+            int peerClanId = crpgPeer!.Clan!.Id;
 
             if (clanNumber.ContainsKey(peerClanId))
             {
