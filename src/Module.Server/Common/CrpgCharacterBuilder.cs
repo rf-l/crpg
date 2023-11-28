@@ -71,6 +71,10 @@ internal static class CrpgCharacterBuilder
 
         foreach (var item in items)
         {
+            if (item == null)
+            {
+                continue;
+            }
             var itemObject = MBObjectManager.Instance.GetObject<ItemObject>(item.UserItem.ItemId);
             if (itemObject.ItemType is ItemObject.ItemTypeEnum.HeadArmor or ItemObject.ItemTypeEnum.HandArmor or ItemObject.ItemTypeEnum.Cape or ItemObject.ItemTypeEnum.BodyArmor or ItemObject.ItemTypeEnum.LegArmor)
             {
