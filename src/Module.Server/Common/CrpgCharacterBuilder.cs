@@ -77,6 +77,12 @@ internal static class CrpgCharacterBuilder
             }
 
             var itemObject = MBObjectManager.Instance.GetObject<ItemObject>(item.UserItem.ItemId);
+
+            if (itemObject == null)
+            {
+                continue;
+            }
+
             if (itemObject.ItemType is ItemObject.ItemTypeEnum.HeadArmor or ItemObject.ItemTypeEnum.HandArmor or ItemObject.ItemTypeEnum.Cape or ItemObject.ItemTypeEnum.BodyArmor or ItemObject.ItemTypeEnum.LegArmor)
             {
                 CrpgItemArmorComponent crpgItemArmorComponent = new()
