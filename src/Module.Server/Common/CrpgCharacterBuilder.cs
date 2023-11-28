@@ -64,6 +64,11 @@ internal static class CrpgCharacterBuilder
 
     public static void AssignArmorsToTroopOrigin(CrpgBattleAgentOrigin origin, List<CrpgEquippedItem> items)
     {
+        if (items == null)
+        {
+            return;
+        }
+
         foreach (var item in items)
         {
             var itemObject = MBObjectManager.Instance.GetObject<ItemObject>(item.UserItem.ItemId);
