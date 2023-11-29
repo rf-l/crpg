@@ -250,7 +250,7 @@ export const computeSpeedStats = (
     1 / (1 + applyPolynomialFunction(strength - 3, weightReductionPolynomialFactor));
   const freeWeight = 2.5 * (1 + (strength - 3) / 30);
   const perceivedWeight = Math.max(totalEncumbrance - freeWeight, 0) * weightReductionFactor;
-  const nakedSpeed = 0.60 + 0.03 * (20 * athletics + 2 * agility) / 26.0;
+  const nakedSpeed = 0.60 + 0.034 * (20 * athletics + 2 * agility) / 26.0;
   const currentSpeed = clamp(
     nakedSpeed * Math.pow(361 / (361 + Math.pow(perceivedWeight, 5)), 0.055),
     0.1,
@@ -268,7 +268,7 @@ export const computeSpeedStats = (
   const timeToMaxSpeed =
     0.8 *
       (1 + perceivedWeight / 15) *
-      (20 / (20 + Math.pow((20 * athletics + 3 * agility) / 120, 2))) + (totalEncumbrance - freeWeight) / 100.0 +
+      (20 / (20 + Math.pow((20 * athletics + 3 * agility) / 120, 2))) +
     timeToMaxSpeedWeaponLenghthTerm;
 
   const movementSpeedPenaltyWhenAttacking =
