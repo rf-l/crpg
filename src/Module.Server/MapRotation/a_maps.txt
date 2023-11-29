@@ -1,3 +1,5 @@
+crpg_battle_skolderby
+mp_battle_map_002
 crpg_battle_tolstabeach
 crpg_battle_drakenburg
 crpg_battle_waterwaytojelkala
