@@ -117,10 +117,11 @@ internal class CrpgSubModule : MBSubModuleBase
 #endif
     }
 #if CRPG_SERVER
-    public override void OnMultiplayerGameStart(Game game, object starterObject)
+    public override void OnGameInitializationFinished(Game game)
     {
-        base.OnMultiplayerGameStart(game, starterObject);
+        base.OnGameInitializationFinished(game);
         AddMaps();
+        Debug.Print($"Now Adding Maps", color: Debug.DebugColor.Cyan);
     }
 
     private static void AddMaps()
@@ -138,18 +139,15 @@ internal class CrpgSubModule : MBSubModuleBase
             {
                 string[] maps = File.ReadAllLines(mapconfigfilepath);
 
-                for (int i = 0; i < 10; i++)
+                foreach (string map in maps)
                 {
-                    foreach (string map in maps)
+                    if (map == string.Empty)
                     {
-                        if (map == string.Empty)
-                        {
-                            continue;
-                        }
-
-                        DedicatedCustomServerSubModule.Instance.AddMapToAutomatedBattlePool(map);
-                        Debug.Print($"added {map} to map pool");
+                        continue;
                     }
+
+                    DedicatedCustomServerSubModule.Instance.AddMapToAutomatedBattlePool(map);
+                    Debug.Print($"added {map} to map pool", color: Debug.DebugColor.Cyan);
                 }
             }
             catch (Exception e)
