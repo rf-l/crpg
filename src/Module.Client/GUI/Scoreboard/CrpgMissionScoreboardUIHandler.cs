@@ -107,10 +107,14 @@ public class CrpgMissionScoreboardUIHandler : MissionView
             bool flag = MissionScreen.SceneLayer.Input.IsGameKeyPressed(4) || (_gauntletLayer?.Input.IsGameKeyPressed(4) ?? false);
             if (_isMissionEnding)
             {
+                FinalizeLayer();
+                InitializeLayer();
                 ToggleScoreboard(true);
             }
             else if (flag && MissionScreen.IsRadialMenuActive && !Mission.IsOrderMenuOpen)
             {
+                FinalizeLayer();
+                InitializeLayer();
                 ToggleScoreboard(!_dataSource?.IsActive ?? false);
             }
         }
@@ -210,11 +214,8 @@ public class CrpgMissionScoreboardUIHandler : MissionView
 
     private void OnTeamChanged(NetworkCommunicator peer, Team previousTeam, Team newTeam)
     {
-        if (peer.IsMine)
-        {
-            FinalizeLayer();
-            InitializeLayer();
-        }
+        FinalizeLayer();
+        InitializeLayer();
     }
 
     private void FinalizeLayer()

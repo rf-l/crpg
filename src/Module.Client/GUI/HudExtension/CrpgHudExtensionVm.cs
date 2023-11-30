@@ -572,6 +572,9 @@ internal class CrpgHudExtensionVm : ViewModel
         TextObject textObject = new("{=XJTX8w8M}Warmup Phase - {GAME_MODE}\nWaiting for players to join");
         textObject.SetTextVariable("GAME_MODE", GameTexts.FindText("str_multiplayer_official_game_type_name", strValue));
         WarmupInfoText = textObject.ToString();
+        UpdateTeamBanners(out ImageIdentifierVM? allyBanner, out ImageIdentifierVM? enemyBanner, out _, out _);
+        AllyBanner = allyBanner;
+        EnemyBanner = enemyBanner;
         SpectatorControls!.RefreshValues();
     }
 
@@ -595,6 +598,9 @@ internal class CrpgHudExtensionVm : ViewModel
         SpectatorControls?.OnFinalize();
         SpectatorControls = null;
         base.OnFinalize();
+        UpdateTeamBanners(out ImageIdentifierVM? allyBanner, out ImageIdentifierVM? enemyBanner, out _, out _);
+        AllyBanner = allyBanner;
+        EnemyBanner = enemyBanner;
     }
 
     public void Tick(float dt)
@@ -754,6 +760,9 @@ internal class CrpgHudExtensionVm : ViewModel
     private void OnMissionReset(object sender, PropertyChangedEventArgs e)
     {
         IsGeneralWarningCountdownActive = false;
+        UpdateTeamBanners(out ImageIdentifierVM? allyBanner, out ImageIdentifierVM? enemyBanner, out _, out _);
+        AllyBanner = allyBanner;
+        EnemyBanner = enemyBanner;
     }
 
     private void OnPeerComponentAdded(PeerComponent component)
@@ -778,6 +787,9 @@ internal class CrpgHudExtensionVm : ViewModel
         }
 
         ShowPowerLevels = _gameMode.GameType == MissionLobbyComponent.MultiplayerGameType.Battle;
+        UpdateTeamBanners(out ImageIdentifierVM? allyBanner, out ImageIdentifierVM? enemyBanner, out _, out _);
+        AllyBanner = allyBanner;
+        EnemyBanner = enemyBanner;
     }
 
     private void CheckTimers(bool forceUpdate = false)
