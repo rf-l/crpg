@@ -571,9 +571,9 @@ internal class CrpgRewardServer : MissionLogic
             {
                 return;
             }
-
+            var isDuel = Mission.GetMissionBehavior<MissionMultiplayerGameModeBaseClient>().GameType == MissionLobbyComponent.MultiplayerGameType.Duel;
             crpgPeer.User = updateResult.User;
-            if (crpgPeer.User.Character.ForTournament && !CrpgFeatureFlags.IsEnabled(CrpgFeatureFlags.FeatureTournament))
+            if (crpgPeer.User.Character.ForTournament && !CrpgFeatureFlags.IsEnabled(CrpgFeatureFlags.FeatureTournament) && !isDuel)
             {
                 KickHelper.Kick(networkPeer, DisconnectType.KickedByHost, "tournament_only");
                 continue;
