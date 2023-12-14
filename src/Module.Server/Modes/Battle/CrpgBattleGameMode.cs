@@ -160,7 +160,6 @@ internal class CrpgBattleGameMode : MissionBasedMultiplayerGameMode
                     new CrpgActivityLogsBehavior(warmupComponent, chatBox, crpgClient),
                     new ServerMetricsBehavior(),
                     new NotAllPlayersReadyComponent(),
-                    new RemoveIpFromFirewallBehavior(),
                     new DrowningBehavior(),
                     new PopulationBasedEntityVisibilityBehavior(lobbyComponent),
                     new BreakableWeaponsBehaviorServer(),

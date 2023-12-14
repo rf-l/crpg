@@ -136,7 +136,6 @@ internal class CrpgConquestGameMode : MissionBasedMultiplayerGameMode
                 new CrpgActivityLogsBehavior(warmupComponent, chatBox, crpgClient),
                 new ServerMetricsBehavior(),
                 new NotAllPlayersReadyComponent(),
-                new RemoveIpFromFirewallBehavior(),
                 new DrowningBehavior(),
                 new PopulationBasedEntityVisibilityBehavior(lobbyComponent),
 #else
