@@ -90,6 +90,7 @@ internal class CrpgDuelGameMode : MissionBasedMultiplayerGameMode
                     lobbyComponent,
 #if CRPG_CLIENT
                     new CrpgUserManagerClient(), // Needs to be loaded before the Client mission part.
+                    new MultiplayerMissionAgentVisualSpawnComponent(), // expose method to spawn an agent
 #endif
                     duelClient,
                     new MultiplayerTimerComponent(), // round timer

@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -68,7 +68,6 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="TaleWorlds.MountAndBlade.Multiplayer">
-      <HintPath>..\..\..\bannerlord\bannerlordbetaserver\bin\Win64_Shipping_Server\TaleWorlds.MountAndBlade.Multiplayer.dll</HintPath>
     </Reference>
 
     <!-- Remove native library (not .NET). -->
