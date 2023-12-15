@@ -60,10 +60,18 @@ internal abstract class CrpgSpawningBehaviorBase : SpawningBehaviorBase
             var peerClass = MBObjectManager.Instance.GetObject<MultiplayerClassDivisions.MPHeroClass>("crpg_class_division");
             // var character = CreateCharacter(crpgPeer.User.Character, _constants);
             var characterSkills = CrpgCharacterBuilder.CreateCharacterSkills(crpgPeer.User!.Character.Characteristics);
-            var character = peerClass.HeroCharacter;
+            var characterXml = peerClass.HeroCharacter;
 
             var characterEquipment = CrpgCharacterBuilder.CreateCharacterEquipment(crpgPeer.User.Character.EquippedItems);
-            //CrpgCharacterObject character = CreateCharacter(crpgPeer.User.Character, _constants, characterSkills, characterEquipment);
+            /* CrpgCharacterObject character = CreateCharacter(crpgPeer.User.Character, _constants, characterSkills, characterEquipment);
+             * is still not possible. Characters are tightly coupled to xmls. The code does things like
+
+                *MBObjectManager.Instance.GetObjectTypeList<MultiplayerClassDivisions.MPHeroClass>().FirstOrDefau
+                  ((MultiplayerClassDivisions.MPHeroClass x) => x.HeroCharacter == character || x.TroopCharacter == character);
+            Expecting that a character always exist in xmls
+             */
+
+            //
 
             bool hasMount = characterEquipment[EquipmentIndex.Horse].Item != null;
 
@@ -72,9 +80,9 @@ internal abstract class CrpgSpawningBehaviorBase : SpawningBehaviorBase
             Vec2 initialDirection = spawnFrame.rotation.f.AsVec2.Normalized();
             // Randomize direction so players don't go all straight.
             initialDirection.RotateCCW(MBRandom.RandomFloatRanged(-MathF.PI / 3f, MathF.PI / 3f));
-            var troopOrigin = new CrpgBattleAgentOrigin(character, characterSkills);
+            var troopOrigin = new CrpgBattleAgentOrigin(characterXml, characterSkills);
             CrpgCharacterBuilder.AssignArmorsToTroopOrigin(troopOrigin, crpgPeer.User.Character.EquippedItems.ToList());
-            AgentBuildData agentBuildData = new AgentBuildData(character)
+            AgentBuildData agentBuildData = new AgentBuildData(characterXml)
                 .MissionPeer(missionPeer)
                 .Equipment(characterEquipment)
                 .TroopOrigin(troopOrigin)
@@ -84,7 +92,7 @@ internal abstract class CrpgSpawningBehaviorBase : SpawningBehaviorBase
                 // base.GetBodyProperties uses the player-defined body properties but some body properties may have been
                 // causing crashes. So here we send the body properties from the characters.xml which we know are safe.
                 // Note that what is sent here doesn't matter since it's ignored by the client.
-                .BodyProperties(character.GetBodyPropertiesMin())
+                .BodyProperties(characterXml.GetBodyPropertiesMin())
                 .InitialPosition(in spawnFrame.origin)
                 .InitialDirection(in initialDirection);
 

@@ -51,8 +51,13 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         Agent agent,
         SkillObject skill)
     {
-        // To test, is the hack still needed
-        return agent.Character.GetSkillValue(skill);
+
+        if (agent.Origin is CrpgBattleAgentOrigin crpgOrigin)
+        {
+            return crpgOrigin.Skills.GetPropertyValue(skill);
+        }
+
+        return base.GetEffectiveSkill(agent, skill);
     }
 
     public override float GetWeaponInaccuracy(
@@ -197,6 +202,18 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
 
     private void InitializeHumanAgentStats(Agent agent, Equipment equipment, AgentDrivenProperties props)
     {
+        // Dirty hack, part of the work-around to have skills without spawning custom characters. 
+        if (GameNetwork.IsClientOrReplay) // Server-side the hacky AgentOrigin is directly passed to the AgentBuildData.
+        {
+            var crpgUser = agent.MissionPeer?.GetComponent<CrpgPeer>()?.User;
+            if (crpgUser != null && agent.Origin is not CrpgBattleAgentOrigin)
+            {
+                var characteristics = crpgUser.Character.Characteristics;
+                var mbSkills = CrpgCharacterBuilder.CreateCharacterSkills(characteristics);
+                agent.Origin = new CrpgBattleAgentOrigin(agent.Origin?.Troop, mbSkills);
+            }
+        }
+
         props.SetStat(DrivenProperty.UseRealisticBlocking, MultiplayerOptions.OptionType.UseRealisticBlocking.GetBoolValue() ? 1f : 0.0f);
         props.ArmorHead = equipment.GetHeadArmorSum();
         props.ArmorTorso = equipment.GetHumanBodyArmorSum();
@@ -248,19 +265,6 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
 
     private void UpdateHumanAgentStats(Agent agent, AgentDrivenProperties props)
     {
-        // Dirty hack, part of the work-around to have skills without spawning custom characters. This hack should be
-        // be performed in InitializeHumanAgentStats but the MissionPeer is not available there.
-        if (GameNetwork.IsClientOrReplay) // Server-side the hacky AgentOrigin is directly passed to the AgentBuildData.
-        {
-            var crpgUser = agent.MissionPeer?.GetComponent<CrpgPeer>()?.User;
-            if (crpgUser != null && agent.Origin is not CrpgBattleAgentOrigin)
-            {
-                var characteristics = crpgUser.Character.Characteristics;
-                var mbSkills = CrpgCharacterBuilder.CreateCharacterSkills(characteristics);
-                agent.Origin = new CrpgBattleAgentOrigin(agent.Origin?.Troop, mbSkills);
-                InitializeAgentStats(agent, agent.SpawnEquipment, props, null!);
-            }
-        }
 
         MissionEquipment equipment = agent.Equipment;
         props.WeaponsEncumbrance = equipment.GetTotalWeightOfWeapons();

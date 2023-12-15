@@ -30,12 +30,12 @@ public class CrpgCharacterObject : BasicCharacterObject
     public override int HitPoints => base.HitPoints;
     public override MBReadOnlyList<Equipment> AllEquipments => base.AllEquipments;
     public override Equipment Equipment => _equipment;
-    public override TextObject GetName() => base.GetName();
+    public override TextObject GetName() => Name;
     public override int GetSkillValue(SkillObject skill)
     {
         return _skills.GetPropertyValue(skill);
     }
 
     public override int Level { get => base.Level; set => base.Level = value; }
-    public override TextObject Name => base.Name;
+    public override TextObject Name => new("Crpg Character");
 }
