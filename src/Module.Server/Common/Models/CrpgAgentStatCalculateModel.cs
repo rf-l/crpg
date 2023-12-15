@@ -469,8 +469,6 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         props.AttributeHorseArchery = Game.Current.BasicModels.StrikeMagnitudeModel.CalculateHorseArcheryFactor(character);*/
 
         SetAiRelatedProperties(agent, props, equippedItem, secondaryItem);
-        Debug.Print($"item skill {itemSkill}", color: Debug.DebugColor.Red);
-        InformationManager.DisplayMessage(new InformationMessage($"item skill {itemSkill}"));
     }
 
     private float ImpactofStrAndWeaponLengthOnCombatMaxSpeedMultiplier(int weaponLength, int strengthSkill)
