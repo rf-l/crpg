@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.Text;
 using Crpg.Module.Gui;
-using Crpg.Module.GUI.EndOfRound;
-using Crpg.Module.GUI.HudExtension;
 using TaleWorlds.CampaignSystem.ViewModelCollection.Input;
 using TaleWorlds.Core;
 using TaleWorlds.Core.ViewModelCollection.Generic;
@@ -14,8 +12,6 @@ using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.Diamond;
 using TaleWorlds.MountAndBlade.Multiplayer.ViewModelCollection;
 using TaleWorlds.MountAndBlade.Multiplayer.ViewModelCollection.Scoreboard;
-using TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer;
-using TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer.Scoreboard;
 using TaleWorlds.PlatformService;
 using TaleWorlds.PlayerServices;
 
@@ -127,6 +123,13 @@ internal class CrpgMissionScoreboardVM : ViewModel
         MissionName = "";
         IsBotsEnabled = missionBehavior.MissionType == MultiplayerGameType.Captain || missionBehavior.MissionType == MultiplayerGameType.Battle;
         RefreshValues();
+        Mission.Current.GetMissionBehavior<CrpgCustomTeamBannersAndNamesClient>().BannersChanged += HandleBannerChange;
+    }
+
+    private void HandleBannerChange(BannerCode attackerBanner, BannerCode defenderBanner, string attackerName, string defenderName)
+    {
+        AllyBanner = new(GameNetwork.MyPeer.GetComponent<MissionPeer>()?.Team?.Side == BattleSideEnum.Attacker ? attackerBanner : defenderBanner, true);
+        EnemyBanner = new(GameNetwork.MyPeer.GetComponent<MissionPeer>()?.Team?.Side == BattleSideEnum.Defender ? attackerBanner : defenderBanner, true);
     }
 
     public override void RefreshValues()
@@ -398,10 +401,6 @@ internal class CrpgMissionScoreboardVM : ViewModel
         {
             _missionSides[_missionScoreboardComponent.GetSideSafe(nextTeam.Side).Side].AddPlayer(client);
         }
-
-        CrpgHudExtensionVm.UpdateTeamBanners(out ImageIdentifierVM? allyBanner, out ImageIdentifierVM? enemyBanner, out _, out _);
-        AllyBanner = allyBanner;
-        EnemyBanner = enemyBanner;
     }
 
     private void OnRoundPropertiesChanged()
@@ -410,10 +409,6 @@ internal class CrpgMissionScoreboardVM : ViewModel
         {
             crpgScoreboardSideVM.UpdateRoundAttributes();
         }
-
-        CrpgHudExtensionVm.UpdateTeamBanners(out ImageIdentifierVM? allyBanner, out ImageIdentifierVM? enemyBanner, out _, out _);
-        AllyBanner = allyBanner;
-        EnemyBanner = enemyBanner;
     }
 
     private void OnPlayerPropertiesChanged(BattleSideEnum side, MissionPeer client)
@@ -422,10 +417,6 @@ internal class CrpgMissionScoreboardVM : ViewModel
         {
             _missionSides[_missionScoreboardComponent.GetSideSafe(side).Side].UpdatePlayerAttributes(client);
         }
-
-        CrpgHudExtensionVm.UpdateTeamBanners(out ImageIdentifierVM? allyBanner, out ImageIdentifierVM? enemyBanner, out _, out _);
-        AllyBanner = allyBanner;
-        EnemyBanner = enemyBanner;
     }
 
     private void OnBotPropertiesChanged(BattleSideEnum side)
@@ -440,9 +431,6 @@ internal class CrpgMissionScoreboardVM : ViewModel
     private void OnScoreboardInitialized()
     {
         InitSides();
-        CrpgHudExtensionVm.UpdateTeamBanners(out ImageIdentifierVM? allyBanner, out ImageIdentifierVM? enemyBanner, out _, out _);
-        AllyBanner = allyBanner;
-        EnemyBanner = enemyBanner;
     }
 
     private void OnMVPSelected(MissionPeer mvpPeer, int mvpCount)

@@ -6,7 +6,6 @@ using TaleWorlds.Library;
 using TaleWorlds.Localization;
 using TaleWorlds.MountAndBlade;
 using TaleWorlds.MountAndBlade.Multiplayer.ViewModelCollection.Scoreboard;
-using TaleWorlds.MountAndBlade.ViewModelCollection.Multiplayer.Scoreboard;
 using TaleWorlds.ObjectSystem;
 
 namespace Crpg.Module.Gui;
@@ -41,6 +40,13 @@ public class CrpgScoreboardEndOfBattleVM : ViewModel
         _lobbyComponent.OnPostMatchEnded += OnPostMatchEnded;
         _isSingleTeam = isSingleTeam;
         RefreshValues();
+        Mission.Current.GetMissionBehavior<CrpgCustomTeamBannersAndNamesClient>().BannersChanged += HandleBannerChange;
+    }
+
+    private void HandleBannerChange(BannerCode attackerBanner, BannerCode defenderBanner, string attackerName, string defenderName)
+    {
+        AllyBanner = new(GameNetwork.MyPeer.GetComponent<MissionPeer>()?.Team?.Side == BattleSideEnum.Attacker ? attackerBanner : defenderBanner, true);
+        EnemyBanner = new(GameNetwork.MyPeer.GetComponent<MissionPeer>()?.Team?.Side == BattleSideEnum.Attacker ? defenderBanner : attackerBanner, true);
     }
 
     public override void RefreshValues()
@@ -103,13 +109,9 @@ public class CrpgScoreboardEndOfBattleVM : ViewModel
 
         BattleResult = 2;
         ResultText = GameTexts.FindText("str_draw", null).ToString();
-
-        CrpgHudExtensionVm.UpdateTeamBanners(out ImageIdentifierVM? allyBanner, out ImageIdentifierVM? enemyBanner, out _, out _);
-        AllyBanner = allyBanner;
-        EnemyBanner = enemyBanner;
     }
 
-    private void InitSides()
+private void InitSides()
     {
         _allyBattleSide = BattleSideEnum.Attacker;
         _enemyBattleSide = BattleSideEnum.Defender;
