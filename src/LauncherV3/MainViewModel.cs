@@ -387,6 +387,7 @@ public partial class MainViewModel : ObservableObject
         bool updateSuccessful = true;
         using (var client = new HttpClient())
         {
+            client.Timeout = Timeout.InfiniteTimeSpan;
             foreach (var assetToDownload in assetsToDownload)
             {
                 try
@@ -673,11 +674,9 @@ public partial class MainViewModel : ObservableObject
         ApplySettings();
         Version = ReadTextFromResource("pack://application:,,,/launcherversion.txt");
         CheckNewVersion();
-
-        VerifyGameFilesActionCommand.NotifyCanExecuteChanged();
-        UpdateGameFilesCommand.NotifyCanExecuteChanged();
-
+        NotifyUI();
     }
+
     public void ApplySettings()
     {
         if (ReadConfig())
