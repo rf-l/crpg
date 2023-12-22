@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using System.Windows.Media;
 using static LauncherV3.MainViewModel;
 
 internal static class Config
@@ -71,6 +72,10 @@ internal static class Config
         return true;
     }
 
+    public static void ClearLocations()
+    {
+        GameLocations = new();
+    }
 
     public class ConfigData
     {

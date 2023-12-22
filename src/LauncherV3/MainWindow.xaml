@@ -38,6 +38,8 @@
 
             <Button x:Name="updateButton" Command="{Binding UpdateGameFilesCommand}" Background="{StaticResource ComboBox.Static.Background}"  Grid.Column="1" Content="Check For Update" HorizontalAlignment="Center" Margin="0,70,0,0" Grid.Row="3" VerticalAlignment="Top" Height="25" Width="195" Click="checkForUpdateButton_Click"/>
 
+            <Button x:Name="resetConfig" Command="{Binding ResetConfigCommand}" Background="{StaticResource ComboBox.Static.Background}"  Grid.Column="1" Content="Reset Config" HorizontalAlignment="Center" Margin="0,100,0,0" Grid.Row="3" VerticalAlignment="Top" Height="25" Width="195" Click="checkForUpdateButton_Click"/>
+            
             <Button x:Name="locationButton" Command="{Binding OpenFolderCommand}" Background="{StaticResource ComboBox.Static.Background}"  Grid.Column="1" Content="Change Location" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Height="24" Width="195" />
 
 

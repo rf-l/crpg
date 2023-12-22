@@ -112,7 +112,7 @@ public class GameInstallationFolderResolver
                 return new GameInstallationInfo(
                     bannerlordPath,
                     bannerlordExePath,
-                    "_MODULES_*Native*cRPG*_MODULES_ /multiplayer",
+                    "_MODULES_*Native*Multiplayer*cRPG*_MODULES_ /multiplayer",
                     Path.GetDirectoryName(bannerlordExePath),
                     Platform.Steam);
             }

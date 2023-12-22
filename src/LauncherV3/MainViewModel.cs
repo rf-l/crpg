@@ -72,7 +72,7 @@ public partial class MainViewModel : ObservableObject
 
     private bool CanOpenFolder()
     {
-        bool CantOpenFolder = (SelectedPlatform != Platform.Steam) || IsUpdating || IsVerifying;
+        bool CantOpenFolder = (SelectedPlatform == Platform.Epic) || IsUpdating || IsVerifying;
         return !CantOpenFolder;
     }
 
@@ -90,7 +90,7 @@ public partial class MainViewModel : ObservableObject
 
     private bool CanDetect()
     {
-        bool canDetect = !IsUpdating && !IsVerifying && GameLocation == null;
+        bool canDetect = !IsUpdating && !IsVerifying;
         return canDetect;
     }
 
@@ -118,6 +118,10 @@ public partial class MainViewModel : ObservableObject
         NotifyUI();
     }
 
+    partial void OnIsGameUpToDateChanged(bool oldValue, bool newValue)
+    {
+        NotifyUI();
+    }
 
     private bool CanUpdate()
     {
@@ -136,9 +140,9 @@ public partial class MainViewModel : ObservableObject
 
         Process.Start(new ProcessStartInfo
         {
-            WorkingDirectory = gameLocation.ProgramWorkingDirectory ?? string.Empty,
-            FileName = gameLocation.Program,
-            Arguments = gameLocation.ProgramArguments ?? string.Empty,
+            WorkingDirectory = GameLocation?.ProgramWorkingDirectory ?? string.Empty,
+            FileName = GameLocation!.Program,
+            Arguments = GameLocation.ProgramArguments ?? string.Empty,
             UseShellExecute = true,
         });
         Close();
@@ -176,7 +180,16 @@ public partial class MainViewModel : ObservableObject
     [RelayCommand(CanExecute = nameof(CanDetect))]
     public void Detect()
     {
-        UpdateGameLocation(SelectedPlatform);
+        UpdateGameLocation(SelectedPlatform, force: true);
+    }
+
+    [RelayCommand]
+    public void ResetConfig()
+    {
+        Config.ClearLocations();
+        WriteConfig();
+        ApplySettings();
+        WriteToConsole("Config Reset");
     }
 
     [RelayCommand(CanExecute = nameof(CanVerify))]
@@ -288,6 +301,9 @@ public partial class MainViewModel : ObservableObject
         if (assetsToDelete.Count == 0 && assetsToDownload.Count == 0 && mapsToDownload.Count == 0 && mapsToDelete.Count == 0 && !downloadRest)
         {
             WriteToConsole("Your game is Up To Date");
+            IsGameUpToDate = true;
+            Config.IsGameUpToDate = true;
+            WriteConfig();
             IsUpdating = false;
             return;
         }
@@ -452,6 +468,7 @@ public partial class MainViewModel : ObservableObject
             WriteToConsole("Update Finished");
             IsGameUpToDate = true;
             Config.IsGameUpToDate = true;
+            IsGameUpToDate = true;
             WriteConfig();
         }
         else
@@ -465,6 +482,7 @@ public partial class MainViewModel : ObservableObject
             WriteToConsole("If problem persist in an hour, please contact and moderator on discord");
             Config.IsGameUpToDate = false;
             IsGameUpToDate = false;
+            WriteConfig();
         }
 
         IsUpdating = false;
@@ -523,15 +541,15 @@ public partial class MainViewModel : ObservableObject
         UpdateGameLocation(value);
     }
 
-    public void UpdateGameLocation(Platform platform)
+    public void UpdateGameLocation(Platform platform,bool force = false)
     {
-        if (Config.GameLocations.ContainsKey(platform))
+        if (Config.GameLocations.ContainsKey(platform) && !force)
         {
             GameLocation = Config.GameLocations[platform];
             Config.LastPlatform = platform;
         }
 
-        if (GameLocation == null)
+        if (GameLocation == null || force)
         {
             WriteToConsole("Trying to Auto Resolve Bannerlord Location");
             if (platform == Platform.Epic)
@@ -548,7 +566,7 @@ public partial class MainViewModel : ObservableObject
 
             if (platform == Platform.Xbox)
             {
-                GameLocation = ResolveBannerlordEpicGamesInstallation();
+                GameLocation = ResolveBannerlordXboxInstallation();
                 HandleGameLocationChange(platform);
             }
         }
