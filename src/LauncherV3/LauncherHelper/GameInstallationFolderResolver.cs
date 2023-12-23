@@ -20,15 +20,22 @@ public class GameInstallationFolderResolver
         }
 
         string? xboxBannerlordExePath = Path.Combine(installationPath, "bin/Gaming.Desktop.x64_Shipping_Client/Launcher.Native.exe");
+        string xboxBannerlordExePathBis = Path.Combine(installationPath, "Content/bin/Gaming.Desktop.x64_Shipping_Client/Launcher.Native.exe");
+        string xboxBannerlordExePathTertiary = Path.Combine(installationPath, "Mount & Blade II- Bannerlord/Content/bin/Gaming.Desktop.x64_Shipping_Client/Launcher.Native.exe");
         string? steamBannerlordExePath = Path.Combine(installationPath, "bin/Win64_Shipping_Client/Bannerlord.exe");
         if (!File.Exists(xboxBannerlordExePath))
         {
             xboxBannerlordExePath = null;
         }
 
-        if (!File.Exists(steamBannerlordExePath))
+        if (File.Exists(xboxBannerlordExePathBis))
         {
-            steamBannerlordExePath = null;
+            xboxBannerlordExePath = xboxBannerlordExePathBis;
+        }
+
+        if (File.Exists(xboxBannerlordExePathTertiary))
+        {
+            xboxBannerlordExePath = xboxBannerlordExePathTertiary;
         }
 
         string? programPath = platform switch

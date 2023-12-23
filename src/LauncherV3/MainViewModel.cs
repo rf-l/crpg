@@ -101,6 +101,7 @@ public partial class MainViewModel : ObservableObject
         OpenFolderCommand.NotifyCanExecuteChanged();
         StartCrpgCommand.NotifyCanExecuteChanged();
         DetectCommand.NotifyCanExecuteChanged();
+        ResetConfigCommand.NotifyCanExecuteChanged();
     }
 
     partial void OnGameLocationChanged(GameInstallationInfo? value)
@@ -183,7 +184,7 @@ public partial class MainViewModel : ObservableObject
         UpdateGameLocation(SelectedPlatform, force: true);
     }
 
-    [RelayCommand]
+    [RelayCommand(CanExecute = nameof(CanDetect))]
     public void ResetConfig()
     {
         Config.ClearLocations();
@@ -205,7 +206,6 @@ public partial class MainViewModel : ObservableObject
 
         await VerifyGameFilesAsync();
 
-        
     }
 
     private async Task VerifyGameFilesAsync(bool download = true)
@@ -217,6 +217,7 @@ public partial class MainViewModel : ObservableObject
             await Task.Delay(500);
             if (download)
             {
+                WriteToConsole("Updating Crpg Now");
                 await UpdateGameFilesAsync();
             }
         }
@@ -224,6 +225,7 @@ public partial class MainViewModel : ObservableObject
         {
             WriteToConsole("Bannerlord was not found at current location");
         }
+
         IsVerifying = false;
     }
 
@@ -385,6 +387,7 @@ public partial class MainViewModel : ObservableObject
 
         List<Task> allTasks = new List<Task>();
         bool updateSuccessful = true;
+        DownloadUtilities.ChunkedRequest request;
         using (var client = new HttpClient())
         {
             client.Timeout = Timeout.InfiniteTimeSpan;
@@ -575,6 +578,7 @@ public partial class MainViewModel : ObservableObject
         {
             Config.LastPlatform = platform;
             WriteConfig();
+
         }
 
     }
@@ -610,6 +614,8 @@ public partial class MainViewModel : ObservableObject
                 }
             }
         }
+
+        NotifyUI();
     }
 
     [ObservableProperty]
@@ -685,6 +691,7 @@ public partial class MainViewModel : ObservableObject
             GameLocation = Config.GameLocations.TryGetValue(SelectedPlatform, out var gameLocation) ? gameLocation : null;
             IsGameUpToDate = Config.IsGameUpToDate;
         }
+        NotifyUI();
     }
 
     public bool ReadConfig()

@@ -63,6 +63,7 @@ internal static class CrpgHashMethods
             {
                 Directory.CreateDirectory(outputFolderPath);
             }
+
             xmlDoc.Save(Path.Combine(outputFolderPath, filename));
             WriteToConsole($"Execution Time: {stopwatch.ElapsedMilliseconds} ms");
         }
