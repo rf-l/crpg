@@ -167,6 +167,12 @@ region:
 
 region-title: Region
 
+game-mode:
+  CRPGBattle: Battle
+  CRPGConquest: Conquest
+  CRPGDTV: DTV
+  CRPGDuel: Duel
+
 clanBalancingExplanation: "
   <h3>You're not in any clan</h3>
   <p>In order to play with friends on the same team, we recommend creating a new clan or joining an existing clan</p>"
