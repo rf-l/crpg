@@ -55,7 +55,6 @@ public class FileItemsSourceTest
             $"Test items detected:{Environment.NewLine}- " + string.Join($"{Environment.NewLine}- ", errors));
     }
 
-    [Ignore("Need to fix Jousting lance")]
     [Test]
     public async Task CheckItemTier()
     {
@@ -125,6 +124,7 @@ public class FileItemsSourceTest
                     .First(el => el.Attribute("id")!.Value == "Item." + itemId).Attribute("id")!.Value = "Item." + closestItemId;
                 }
             }
+
             //uncomment to automatically replace with suggestions
             //charactersDoc.Save(charactersFilePath);
         });
