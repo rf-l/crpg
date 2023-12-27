@@ -22,6 +22,7 @@ import {
   respecializePriceForLevel30,
   respecializePriceHalfLife,
   freeRespecializeIntervalDays,
+  freeRespecializePostWindowHours,
   damageFactorForPowerStrike,
   damageFactorForPowerDraw,
   damageFactorForPowerThrow,
@@ -48,7 +49,6 @@ import { ItemSlot, ItemType, type Item, type ItemArmorComponent } from '@/models
 import { type HumanDuration } from '@/models/datetime';
 
 import { get, put, del } from '@/services/crpg-client';
-import { mapUserItem } from '@/services/users-service';
 import { armorTypes, computeAverageRepairCostPerHour } from '@/services/item-service';
 import { applyPolynomialFunction, clamp, roundFLoat } from '@/utils/math';
 import { computeLeftMs, parseTimestamp } from '@/utils/date';
@@ -91,14 +91,8 @@ export const getCharacterStatistics = (characterId: number) =>
 export const getCharacterRating = (characterId: number) =>
   get<CharacterRating>(`/users/self/characters/${characterId}/rating`);
 
-// TODO: spec
-export const getCharacterLimitations = async (characterId: number) => {
-  const res = await get<CharacterLimitations>(`/users/self/characters/${characterId}/limitations`);
-  return {
-    ...res,
-    lastRespecializeAt: new Date(res.lastRespecializeAt),
-  };
-};
+export const getCharacterLimitations = (characterId: number) =>
+  get<CharacterLimitations>(`/users/self/characters/${characterId}/limitations`);
 
 export const getCharacterCharacteristics = (characterId: number) =>
   get<CharacterCharacteristics>(`/users/self/characters/${characterId}/characteristics`);
@@ -116,7 +110,6 @@ export const updateCharacterCharacteristics = (
   req: CharacterCharacteristics
 ) => put<CharacterCharacteristics>(`/users/self/characters/${characterId}/characteristics`, req);
 
-//
 const computeExperienceDistribution = (level: number): number => {
   const [a, b] = experienceForLevelCoefs;
   return Math.pow(level - 1, a) + Math.pow(b, a / 2.0) * (level - 1);
@@ -250,7 +243,7 @@ export const computeSpeedStats = (
     1 / (1 + applyPolynomialFunction(strength - 3, weightReductionPolynomialFactor));
   const freeWeight = 2.5 * (1 + (strength - 3) / 30);
   const perceivedWeight = Math.max(totalEncumbrance - freeWeight, 0) * weightReductionFactor;
-  const nakedSpeed = 0.6 + (0.034 * (20 * athletics + 2 * agility)) / 26.0;
+  const nakedSpeed = 0.58 + (0.034 * (20 * athletics + 2 * agility)) / 26.0;
   const currentSpeed = clamp(
     nakedSpeed * Math.pow(361 / (361 + Math.pow(perceivedWeight, 5)), 0.055),
     0.1,
@@ -286,13 +279,8 @@ export const computeSpeedStats = (
   };
 };
 
-export const mapEquippedItem = (equippedItem: EquippedItem) => ({
-  ...equippedItem,
-  userItem: mapUserItem(equippedItem.userItem),
-});
-
 export const getCharacterItems = async (characterId: number) =>
-  (await get<EquippedItem[]>(`/users/self/characters/${characterId}/items`)).map(mapEquippedItem);
+  get<EquippedItem[]>(`/users/self/characters/${characterId}/items`);
 
 export const updateCharacterItems = (characterId: number, items: EquippedItemId[]) =>
   put<EquippedItem[]>(`/users/self/characters/${characterId}/items`, { items });
@@ -354,6 +342,7 @@ export const computeLongestWeaponLength = (items: Item[]) => {
 };
 
 // TODO: handle upgrade items.
+// TODO: SPEC
 export const computeOverallAverageRepairCostByHour = (items: Item[]) =>
   Math.floor(items.reduce((total, item) => total + computeAverageRepairCostPerHour(item.price), 0));
 
@@ -385,9 +374,10 @@ export const getExperienceMultiplierBonus = (multiplier: number) => {
 };
 
 export interface RespecCapability {
-  price: number;
-  nextFreeAt: HumanDuration;
   enabled: boolean;
+  price: number;
+  nextFreeAt: number;
+  freeRespecWindowRemain: number;
 }
 
 export const getRespecCapability = (
@@ -397,17 +387,33 @@ export const getRespecCapability = (
   isRecentUser: boolean
 ): RespecCapability => {
   if (isRecentUser) {
-    return { price: 0, nextFreeAt: { days: 0, hours: 0, minutes: 0 }, enabled: true };
+    return {
+      enabled: true,
+      price: 0,
+      freeRespecWindowRemain: 0,
+      nextFreeAt: 0,
+    };
+  }
+
+  const freeRespecWindow = new Date(limitations.lastRespecializeAt);
+  freeRespecWindow.setUTCHours(freeRespecWindow.getUTCHours() + freeRespecializePostWindowHours);
+
+  if (freeRespecWindow > new Date()) {
+    return {
+      enabled: true,
+      price: 0,
+      freeRespecWindowRemain: computeLeftMs(freeRespecWindow, 0),
+      nextFreeAt: 0,
+    };
   }
 
   const lastRespecDate = new Date(limitations.lastRespecializeAt);
-
   const nextFreeAt = new Date(limitations.lastRespecializeAt);
   nextFreeAt.setUTCDate(nextFreeAt.getUTCDate() + freeRespecializeIntervalDays);
   nextFreeAt.setUTCMinutes(nextFreeAt.getUTCMinutes() + 5); // 5 minute margin just in case
 
   if (nextFreeAt < new Date()) {
-    return { price: 0, nextFreeAt: { days: 0, hours: 0, minutes: 0 }, enabled: true };
+    return { enabled: true, price: 0, freeRespecWindowRemain: 0, nextFreeAt: 0 };
   }
 
   const decayDivider =
@@ -421,9 +427,10 @@ export const getRespecCapability = (
       );
 
   return {
-    price,
-    nextFreeAt: parseTimestamp(computeLeftMs(nextFreeAt, 0)),
     enabled: price <= userGold,
+    price,
+    nextFreeAt: computeLeftMs(nextFreeAt, 0),
+    freeRespecWindowRemain: 0,
   };
 };
 

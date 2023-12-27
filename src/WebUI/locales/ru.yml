@@ -61,6 +61,7 @@ dateTimeFormat:
   countdown: '{hours}:{minutes}:{seconds}'
   'mm': '{minutes} @:dateTime.minutes.short'
   'hh': '{hours} @:dateTime.hours.short'
+  'dd': '{days} @:dateTime.days.short'
   'dd:hh:mm': '{days}@:dateTime.days.short {hours}@:dateTime.hours.short {minutes}@:dateTime.minutes.short'
 
 nav:
@@ -72,6 +73,7 @@ nav:
     Builder: Калькулятор
     Leaderboard: Лидеры
     Community: Сообщество
+    Installation: Как установить
   back: Назад
 
 action:
@@ -101,6 +103,8 @@ action:
   enter: Войти
   copied: Скопировано
   start: Начать
+  copy: Копировать
+  ok: Ок
 
 login:
   label: Вход
@@ -122,8 +126,10 @@ validations:
   required: Значение обязательно
   url: Значение не является действительным адресом URL
   sameAs: Значение должно быть равно значению {equalTo}.
+  integer: Число должно быть целым
   minLength: Значение должно быть длиной не менее {min} символов
   maxLength: Максимальная допустимая длина {max}
+  minValue: Значение должно быть не менее {min}
   clanTagPattern: Значение должно содержать только целые числа и латинские символы
   clanBannerKeyPattern: Значение должно содержать только целые числа и точки
   discordLinkPattern: Значение должно быть валидной Дискорд ссылкой
@@ -164,9 +170,16 @@ region:
 
 region-title: Регион
 
+game-mode:
+  CRPGBattle: Битва
+  CRPGConquest: Завоевание
+  CRPGDTV: DTV
+  CRPGDuel: Дуэль
+
 clanBalancingExplanation: '
   <h3>Вы не в клане</h3>
-  <p>Чтобы играть с друзьями в одной команде, мы рекомендуем создать новый клан или вступить в уже существующий.</p>'
+  <p>Чтобы играть с друзьями в одной команде, мы рекомендуем создать новый клан или вступить в уже существующий.</p>
+  <p>Также, будучи в клане, можно делиться и одалжевать предметы (клановая оружейная).</p>'
 
 welcome:
   title: 'Приветствуем воин!'
@@ -314,9 +327,14 @@ character:
       title: Сброс навыков
       tooltip:
         title: Сброс навыков
-        desc: 'Сбросьте характеристики персонажа за {respecializationPrice}'
-        free: Вы можете сбросить навыки бесплатно раз в {days} дней
-        nextFreeAt: 'Следующий бесплатный сброс навыков через: {nextFreeAt}'
+        desc: "
+          <p>Бесплатно сбросить навыки персонажа можно в течении <strong>{freeRespecPostWindow}</strong> после последнего сброса, а также спустя <strong>{freeRespecInterval}</strong>.</p>
+          <p>В остальное время сброс навыков платный, стоимость уменьшается со временем.</p>"
+        freeRespecPostWindowRemaining: "
+          <p>Оставшееся время бесплатного сброса навыков: <strong>{remainingTime}</strong></p>"
+        paidRespec: Сбросьте навыки персонажа за {respecPrice}
+        freeRespecIntervalNext: "
+          <p>Следующий бесплатный сброс навыков через: <strong>{nextFreeAt}</strong></p>"
       dialog:
         title: Сброс навыков
         desc: Вы уверены что хотите сбросить навыки персонажа за {respecializationPrice}? Это действие нельзя отменить
@@ -515,12 +533,6 @@ character:
       count: '... | {count} предмет | {count} предмета | {count} предметов'
       sum: 'на сумму {sum}'
 
-    sort:
-      price_asc: Дешевле
-      price_desc: Дороже
-      type_asc: По типу
-      rank_desc: По рангу
-
     item:
       sell:
         title: Продать {price}
@@ -575,6 +587,14 @@ character:
           description: 'Вы уверены, что хотите рассплавить этот предмет за {gold}? Вы получите {loomPoints}, также предмет {oldItem} будет заменен на {newItem}.'
         notify:
           success: 'Предмет успешно рассплавлен'
+      clanArmory:
+        inArmory:
+          title: Предмет находится в клановой оружейной
+          notify:
+            warning: Предмет находится в клановой оружейной. Сначала верните его.
+    filter:
+      hideInArmory: Не показывать предметы в оружейной
+      showInArmory: Показывать предметы в оружейной
 
   doll:
     slot:
@@ -642,7 +662,7 @@ shop:
         success: Предмет успешно куплен
       tooltip:
         buy: Купить предмет
-        inInventory: Предмет уже куплен
+        inInventory: Предмет уже в инвентаре
         notEnoughGold: Не хватает золота
     weaponUsage:
       title: Не является основным режимом использования
@@ -710,6 +730,13 @@ clan:
         secondaryColor: Второстепенный
         bannerKey: Герб
         discord: Discord сервер
+      group:
+        armory:
+          label: Оружейная
+          field:
+            armoryTimeout:
+              label: Тайм-аут оружейной (дней)
+              hint: Автоматический возврат предмета, если взявший предмет не проявляет активности в течение N дней
     bannerKeyGeneratorTools: Создайте с помощью {link}
     update:
       notify:
@@ -763,6 +790,44 @@ clan:
       decline:
         notify:
           success: Заявка отклонена
+  armory:
+    title: Клановая оружейная
+    empty: Оружейная пуста
+    filter:
+      hideOwned: Скрывать ваши предметы
+      showOnlyAvailable: Показывать только доступные
+    item:
+      lender:
+        tooltip:
+          title: Владелец {user}
+      borrow:
+        title: Одолжить у {user}
+        validation:
+          borrowed: Предмет занят
+          isInInventory: Такой же предмет у вас уже есть
+        notify:
+          success: Предмет, успешно взят из оружейной комнаты
+      borrowed:
+        title: Предмет занят {user}
+      borrower:
+        tooltip:
+          title: Взял {user}
+      add:
+        title: Добавить в оружейную
+        confirm:
+          description: Вы уверены, что хотите добавить предмет в оружейную?
+        notify:
+          success: Предмет успешно добавлен в клановую оружейную
+      remove:
+        title: Удалить из оружейной
+        confirm:
+          description: Вы уверены, что хотите вернуть свой предмет из оружейной?
+        notify:
+          success: Предмет успешно возвращен в клановую оружейную
+      return:
+        title: Вернуть в оружейную
+        notify:
+          success: Предмет успешно возвращен в клановую оружейную
 
 user:
   field:
@@ -1239,6 +1304,15 @@ item:
     upkeep: '{upkeep} / @:dateTime.hours.short'
     rank: 'Ранг предмета {rank}'
 
+  sort:
+    price_asc: Дешевле
+    price_desc: Дороже
+    type_asc: По типу
+    rank_desc: По рангу
+
+  filter:
+    all: Все
+
 leaderboard:
   title: Таблица лидеров
   table:
@@ -1255,3 +1329,4 @@ rankTable:
 
 patchNotes:
   showAllPatches: '+ {count} патчей | + {count} патч | + {count} патча | + {count} патчей'
+  latestPatch: 'Последний патч'

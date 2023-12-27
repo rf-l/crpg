@@ -106,6 +106,7 @@ public record SeedDataCommand : IMediatorRequest
                 Platform = Platform.Steam,
                 Name = "orle",
                 Role = Role.Moderator,
+                ActiveCharacterId = 5,
                 Gold = 1000000,
                 HeirloomPoints = 12,
                 ExperienceMultiplier = 1.09f,
@@ -519,6 +520,68 @@ public record SeedDataCommand : IMediatorRequest
                 }
             }
 
+            UserItem takeoItem1 = new() { User = takeo, ItemId = "crpg_thamaskene_steel_spatha_v1_h3" };
+            UserItem takeoItem2 = new() { User = takeo, ItemId = "crpg_winds_fury_v1_h2" };
+            UserItem orleItem1 = new() { User = orle, ItemId = "crpg_lion_imprinted_saber_v1_h1" };
+            UserItem orleItem2 = new() { User = orle, ItemId = "crpg_decorated_scimitar_with_wide_grip_v1_h0" };
+            UserItem orleItem3 = new() { User = orle, ItemId = "crpg_thamaskene_steel_spatha_v1_h3" };
+            UserItem orleItem4 = new() { User = orle, ItemId = "crpg_decorated_short_spatha_v1_h1" };
+            UserItem orleItem5 = new() { User = orle, ItemId = "crpg_scalpel_v1_h0" };
+            UserItem orleItem6 = new() { User = orle, ItemId = "crpg_wolf_shoulder_v2_h3" };
+            UserItem orleItem7 = new() { User = orle, ItemId = "crpg_battania_fur_boots_v2_h3" };
+            UserItem orleItem8 = new() { User = orle, ItemId = "crpg_nordic_leather_cap_v2_h3" };
+            UserItem orleItem9 = new() { User = orle, ItemId = "crpg_eastern_wrapped_armguards_v2_h3" };
+            UserItem orleItem10 = new() { User = orle, ItemId = "crpg_blacksmith_hammer_v1_h0" };
+            UserItem orleItem11 = new() { User = orle, ItemId = "crpg_scythe_v1_h3" };
+            UserItem orleItem12 = new() { User = orle, ItemId = "crpg_rondel_v2_h3" };
+            UserItem orleItem13 = new() { User = orle, ItemId = "crpg_crossbow_j_v2_h3" };
+            UserItem orleItem14 = new() { User = orle, ItemId = "crpg_helping_hand_v3_h2" };
+            UserItem orleItem15 = new() { User = orle, ItemId = "crpg_bolt_c_v2_h2" };
+            UserItem orleItem16 = new() { User = orle, ItemId = "crpg_wooden_sword_v2_hv3" };
+            UserItem orleItem17 = new() { User = orle, ItemId = "crpg_basic_imperial_leather_armor_v2_h3" };
+            UserItem orleItem18 = new() { User = orle, ItemId = "crpg_wooden_twohander_v2_h3" };
+            UserItem orleItem19 = new() { User = orle, ItemId = "crpg_decorated_scimitar_with_wide_grip_v1_h0" };
+            UserItem elmarykItem1 = new() { User = elmaryk, ItemId = "crpg_longsword_v1_h3" };
+            UserItem elmarykItem2 = new() { User = elmaryk, ItemId = "crpg_avalanche_v1_h2" };
+            UserItem laHireItem1 = new() { User = laHire, ItemId = "crpg_iron_cavalry_sword_v1_h1" };
+            UserItem laHirekItem2 = new() { User = laHire, ItemId = "crpg_simple_saber_v1_h2" };
+            UserItem laHirekItem3 = new() { User = laHire, ItemId = "crpg_steel_round_shield_v2_h0" };
+
+            UserItem[] newUserItems =
+            {
+                takeoItem1,
+                takeoItem2,
+                orleItem1,
+                orleItem2,
+                orleItem3,
+                orleItem4,
+                orleItem5,
+                orleItem6,
+                orleItem7,
+                orleItem8,
+                orleItem9,
+                orleItem1,
+                orleItem1,
+                orleItem1,
+                orleItem1,
+                orleItem1,
+                orleItem1,
+                orleItem1,
+                orleItem1,
+                orleItem1,
+                orleItem1,
+                elmarykItem1,
+                elmarykItem2,
+                laHireItem1,
+                laHirekItem2,
+                laHirekItem3,
+            };
+
+            foreach (var newUserItem in newUserItems)
+            {
+                _db.UserItems.Add(newUserItem);
+            }
+
             ActivityLog activityLogUserCreated1 = new()
             {
                 Type = ActivityLogType.UserCreated,
@@ -702,13 +765,56 @@ public record SeedDataCommand : IMediatorRequest
                     new("instance", "crpg01a"),
                 },
             };
-
+            ActivityLog activityLogClanArmoryAddItem = new()
+            {
+                Type = ActivityLogType.ClanArmoryAddItem,
+                User = takeo,
+                CreatedAt = DateTime.UtcNow.AddMinutes(-1),
+                Metadata =
+                {
+                    new("clanId", "2"),
+                    new("userItemId", "1"),
+                },
+            };
+            ActivityLog activityLogClanArmoryRemoveItem = new()
+            {
+                Type = ActivityLogType.ClanArmoryRemoveItem,
+                User = takeo,
+                CreatedAt = DateTime.UtcNow.AddMinutes(-1),
+                Metadata =
+                {
+                    new("clanId", "2"),
+                    new("userItemId", "1"),
+                },
+            };
+            ActivityLog activityLogClanArmoryReturnItem = new()
+            {
+                Type = ActivityLogType.ClanArmoryReturnItem,
+                User = takeo,
+                CreatedAt = DateTime.UtcNow.AddMinutes(-1),
+                Metadata =
+                {
+                    new("clanId", "2"),
+                    new("userItemId", "1"),
+                },
+            };
+            ActivityLog activityLogClanArmoryBorrowItem = new()
+            {
+                Type = ActivityLogType.ClanArmoryBorrowItem,
+                User = takeo,
+                CreatedAt = DateTime.UtcNow.AddMinutes(-1),
+                Metadata =
+                {
+                    new("clanId", "2"),
+                    new("userItemId", "1"),
+                },
+            };
             ActivityLog[] newActivityLogs =
             {
                 activityLogUserCreated1, activityLogUserDeleted1, activityLogUserRenamed1, activityLogUserReward1, activityLogItemBought1,
                 activityLogItemSold1, activityLogItemBroke1, activityLogItemUpgraded1, activityLogCharacterCreated1, activityLogCharacterDeleted1,
                 activityLogCharacterRespecialized1, activityLogCharacterRetired1, activityLogCharacterRewarded1, activityLogServerJoined1,
-                activityLogChatMessageSent1, activityLogChatMessageSent2, activityLogChatMessageSent3, activityLogTeamHit1, activityLogTeamHit2,
+                activityLogChatMessageSent1, activityLogChatMessageSent2, activityLogChatMessageSent3, activityLogTeamHit1, activityLogTeamHit2, activityLogClanArmoryAddItem, activityLogClanArmoryRemoveItem, activityLogClanArmoryReturnItem, activityLogClanArmoryBorrowItem,
             };
 
             _db.ActivityLogs.RemoveRange(await _db.ActivityLogs.ToArrayAsync());
@@ -977,7 +1083,7 @@ public record SeedDataCommand : IMediatorRequest
             };
             CharacterLimitations[] newCharactersLimitations =
             {
-                takeoCharacter0Limitations, takeoCharacter1Limitations, takeoCharacter2Limitations,
+                takeoCharacter0Limitations, takeoCharacter1Limitations, takeoCharacter2Limitations, orleCharacter0Limitations,
                 orleCharacter2Limitations, kadseCharacter0Limitations,
             };
 
@@ -1005,6 +1111,61 @@ public record SeedDataCommand : IMediatorRequest
                 BannerKey = string.Empty,
                 Region = Region.Eu,
             };
+
+            ClanMember takeoMember = new() { User = takeo, Clan = pecores, Role = ClanMemberRole.Officer, };
+            ClanMember orleMember = new() { User = orle, Clan = pecores, Role = ClanMemberRole.Leader, };
+            ClanMember elmarykMember = new() { User = elmaryk, Clan = pecores, Role = ClanMemberRole.Officer, };
+            ClanMember laHireMember = new() { User = laHire, Clan = pecores, Role = ClanMemberRole.Member };
+
+            ClanArmoryItem takeoClanArmoryItem1 = new() { UserItem = takeoItem1, Lender = takeoMember };
+            ClanArmoryItem takeoClanArmoryItem2 = new() { UserItem = takeoItem2, Lender = takeoMember };
+            ClanArmoryItem orleClanArmoryItem1 = new() { UserItem = orleItem1, Lender = orleMember };
+            ClanArmoryItem orleClanArmoryItem2 = new() { UserItem = orleItem2, Lender = orleMember };
+            ClanArmoryItem orleClanArmoryItem3 = new() { UserItem = orleItem3, Lender = orleMember, };
+            ClanArmoryItem orleClanArmoryItem4 = new() { UserItem = orleItem4, Lender = orleMember, };
+            ClanArmoryItem orleClanArmoryItem5 = new() { UserItem = orleItem5, Lender = orleMember, };
+            ClanArmoryItem orleClanArmoryItem6 = new() { UserItem = orleItem6, Lender = orleMember, };
+            ClanArmoryItem orleClanArmoryItem7 = new() { UserItem = orleItem7, Lender = orleMember, };
+            ClanArmoryItem orleClanArmoryItem8 = new() { UserItem = orleItem8, Lender = orleMember, };
+            ClanArmoryItem orleClanArmoryItem9 = new() { UserItem = orleItem9, Lender = orleMember, };
+            ClanArmoryItem orleClanArmoryItem10 = new() { UserItem = orleItem10, Lender = orleMember, };
+            ClanArmoryItem orleClanArmoryItem11 = new() { UserItem = orleItem11, Lender = orleMember, };
+            ClanArmoryItem orleClanArmoryItem12 = new() { UserItem = orleItem12, Lender = orleMember, };
+            ClanArmoryItem orleClanArmoryItem13 = new() { UserItem = orleItem13, Lender = orleMember, };
+            ClanArmoryItem orleClanArmoryItem14 = new() { UserItem = orleItem14, Lender = orleMember, };
+            ClanArmoryItem orleClanArmoryItem15 = new() { UserItem = orleItem15, Lender = orleMember, };
+            ClanArmoryItem orleClanArmoryItem16 = new() { UserItem = orleItem16, Lender = orleMember, };
+            ClanArmoryItem elmarykClanArmoryItem1 = new() { UserItem = elmarykItem1, Lender = elmarykMember };
+            ClanArmoryItem elmarykClanArmoryItem2 = new() { UserItem = elmarykItem2, Lender = elmarykMember };
+            ClanArmoryItem laHireClanArmoryItem1 = new() { UserItem = laHireItem1, Lender = laHireMember };
+            ClanArmoryItem laHireClanArmoryItem2 = new() { UserItem = laHirekItem2, Lender = laHireMember, };
+            ClanArmoryItem laHireClanArmoryItem3 = new() { UserItem = laHirekItem3, Lender = laHireMember, };
+
+            ClanArmoryItem[] newClanArmoryItems =
+            {
+                takeoClanArmoryItem1, takeoClanArmoryItem2, orleClanArmoryItem1, orleClanArmoryItem2, orleClanArmoryItem3,  orleClanArmoryItem4,  orleClanArmoryItem5,  orleClanArmoryItem6,  orleClanArmoryItem7,  orleClanArmoryItem8,  orleClanArmoryItem9,  orleClanArmoryItem10, orleClanArmoryItem11, orleClanArmoryItem12, orleClanArmoryItem13, orleClanArmoryItem14, orleClanArmoryItem15, orleClanArmoryItem16, elmarykClanArmoryItem1, elmarykClanArmoryItem2, laHireClanArmoryItem1, laHireClanArmoryItem2, laHireClanArmoryItem3,
+            };
+            foreach (var newClanArmoryItem in newClanArmoryItems)
+            {
+                pecores.ArmoryItems.Add(newClanArmoryItem);
+            }
+
+            ClanArmoryBorrowedItem orleBorrowedItem1 = new() { UserItem = laHirekItem2, Borrower = orleMember, };
+            ClanArmoryBorrowedItem orleBorrowedItem2 = new() { UserItem = laHirekItem3, Borrower = orleMember, };
+            ClanArmoryBorrowedItem elmarykBorrowedItem1 = new() { UserItem = orleItem1, Borrower = elmarykMember, };
+            ClanArmoryBorrowedItem elmarykBorrowedItem2 = new() { UserItem = takeoItem1, Borrower = elmarykMember, };
+            ClanArmoryBorrowedItem laHireBorrowedItem1 = new() { UserItem = takeoItem2, Borrower = laHireMember, };
+
+            ClanArmoryBorrowedItem[] newClanArmoryBorrowedItems =
+            {
+                orleBorrowedItem1, orleBorrowedItem2, elmarykBorrowedItem1, elmarykBorrowedItem2, laHireBorrowedItem1,
+            };
+
+            foreach (var newClanArmoryBorrowedItem in newClanArmoryBorrowedItems)
+            {
+                pecores.ArmoryBorrowedItems.Add(newClanArmoryBorrowedItem);
+            }
+
             Clan ats = new()
             {
                 Tag = "ATS",
@@ -1128,11 +1289,7 @@ public record SeedDataCommand : IMediatorRequest
                 }
             }
 
-            ClanMember orleMember = new() { User = orle, Clan = pecores, Role = ClanMemberRole.Leader };
-            ClanMember namidakaMember = new() { User = takeo, Clan = pecores, Role = ClanMemberRole.Officer };
             ClanMember neostralieMember = new() { User = neostralie, Clan = pecores, Role = ClanMemberRole.Officer };
-            ClanMember elmarykMember = new() { User = elmaryk, Clan = pecores, Role = ClanMemberRole.Officer };
-            ClanMember laHireMember = new() { User = laHire, Clan = pecores, Role = ClanMemberRole.Member };
             ClanMember azumaMember = new() { User = azuma, Clan = pecores, Role = ClanMemberRole.Member };
             ClanMember zorguyMember = new() { User = zorguy, Clan = pecores, Role = ClanMemberRole.Member };
             ClanMember eckoMember = new() { User = ecko, Clan = ats, Role = ClanMemberRole.Leader };
@@ -1160,7 +1317,7 @@ public record SeedDataCommand : IMediatorRequest
 
             ClanMember[] newClanMembers =
             {
-                orleMember, namidakaMember, neostralieMember, elmarykMember, laHireMember, azumaMember, zorguyMember,
+                takeoMember, orleMember, elmarykMember, neostralieMember, laHireMember, azumaMember, zorguyMember,
                 eckoMember, firebatMember, sellkaMember, leanirMember, opsetMember,
                 falcomMember, brainfartMember, kiwiMember, ikaroozMember, brygganMember, schumetzqMember,
                 victorhh888Member, distanceMember, bakhratMember, lancelotMember,

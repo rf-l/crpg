@@ -74,6 +74,7 @@ nav:
     Builder: 生成器
     Leaderboard: 排行榜
     Community: 社区
+    Installation: 安装指南
   back: 返回
 
 action:
@@ -104,6 +105,8 @@ action:
   enter: 进入
   copied: 复制的
   start: 启动
+  copy: 复制的
+  ok: 好的
 
 login:
   label: 登录
@@ -125,8 +128,10 @@ validations:
   required: 值不能为空
   url: 该值不是有效的URL地址
   sameAs: 值应该等于{value}的值
+  integer: 数字必须是整数
   minLength: 值长度应至少为{min}个字符
   maxLength: 最大允许长度为{max}
+  minValue: 允许的最小值为{min}
   clanTagPattern: 值应该只包含数字和字母
   clanBannerKeyPattern: 值应该只包含数字和小数点
   discordLinkPattern: 值必须是有效的Discord链接
@@ -167,9 +172,16 @@ region:
 
 region-title: 区域
 
+game-mode:
+  CRPGBattle: 战斗
+  CRPGConquest: 征服
+  CRPGDTV: DTV
+  CRPGDuel: 决斗
+
 clanBalancingExplanation: '
   <h3>你不在任何宗族中</h3>
-  <p>为了与同一团队的朋友一起游戏，我们建议创建一个新的宗族或加入一个现有的宗族</p>'
+  <p>为了与同一团队的朋友一起游戏，我们建议创建一个新的宗族或加入一个现有的宗族</p>
+  <p>此外，加入部族还可以共享和出借物品（部族军械库</p>'
 
 welcome:
   title: '欢迎，勇士！'
@@ -320,9 +332,14 @@ character:
       title: 重新分配
       tooltip:
         title: 重新分配角色
-        desc: '花费{respecializationPrice}重新分配你的属性点'
-        free: 每{days}天你可以免费重新分配属性点一次
-        nextFreeAt: '下次免费重新分配属性点将在：{nextFreeAt}后'
+        desc: "
+          <p>您可以在上次重置后的 <strong>{freeRespecPostWindow}</strong> 和 <strong>{freeRespecInterval}</strong> 之后免费重置角色的技能。</p>
+          <p>其余时间重置技能的费用会随着时间的推移而降低。</p>"
+        freeRespecPostWindowRemaining: "
+          <p>剩余免费技能重置时间: <strong>{remainingTime}</strong></p>"
+        paidRespec: '花费{respecPrice}重新分配你的属性点'
+        freeRespecIntervalNext: "
+          <p>下次免费重新分配属性点将在：: <strong>{nextFreeAt}</strong></p>"
       dialog:
         title: 重新分配角色
         desc: 你确定要花费{respecializationPrice}重新分配你的属性点吗? 此操作无法撤销。
@@ -515,12 +532,6 @@ character:
       count: '... | {count} 件物品 | {count} 件物品'
       sum: '总价值为 {sum}'
 
-    sort:
-      price_asc: 价格（升序）
-      price_desc: 价格（降序）
-      type_asc: 按类型排序
-      rank_desc: 按等级划分
-
     item:
       sell:
         title: 售价{price}
@@ -575,6 +586,14 @@ character:
           description: '你确定要用{gold}的金币来重铸该物品吗？你将会获得{loomPoints}转生点作为回报，同时物品{oldItem}将变成{newItem}'
         notify:
           success: '物品重铸成功'
+      clanArmory:
+        inArmory:
+          title: 物品在部族军械库中
+          notify:
+            warning: 该物品在部族军械库中。请先从那里获取。
+    filter:
+      hideInArmory: 将物品藏入军械库
+      showInArmory: 显示军械库中的物品
 
   doll:
     slot:
@@ -641,7 +660,7 @@ shop:
         success: 物品已成功购买
       tooltip:
         buy: 购买物品
-        inInventory: 物品已购买
+        inInventory: 物品已在您的库存中
         notEnoughGold: 金币不足
     weaponUsage:
       title: 不是主要的使用模式
@@ -710,6 +729,13 @@ clan:
         secondaryColor: 次要颜色
         bannerKey: 横幅关键字
         discord: Discord 服务器
+      group:
+        armory:
+          label: 部族军械库
+          field:
+            armoryTimeout:
+              label: 军械库超时（天数）
+              hint: 如果借阅者在 N 天内没有活动，则自动归还物品
     bannerKeyGeneratorTools: 在{link}上生成一个
     notify:
       success: 氏族设置已更新
@@ -762,6 +788,44 @@ clan:
       decline:
         notify:
           success: 申请已被拒绝
+  armory:
+    title: 部族军械库
+    empty: 军械库是空的
+    filter:
+      hideOwned: 隐藏自有物品
+      showOnlyAvailable: 只显示可用项目
+    item:
+      lender:
+        tooltip:
+          title: 所有者 {user}
+      borrow:
+        title: 借用 {user}
+        validation:
+          borrowed: 物品已被借走
+          isInInventory: 您的库存中已有相同物品
+        notify:
+          success: 从军械库成功借用的物品
+      borrowed:
+        title: 借用 {user}
+      borrower:
+        tooltip:
+          title: 借款人 {user}
+      add:
+        title: 添加到军械库
+        confirm:
+          description: 您确定要将该物品添加到军械库中吗？
+        notify:
+          success: 该物品已成功加入部族军械库
+      remove:
+        title: 从军械库移除
+        confirm:
+          description: 你确定要从军械库拿回你的物品吗？
+        notify:
+          success: 该物品已成功返回部族军械库
+      return:
+        title: 返回军械库
+        notify:
+          success: 该物品已成功返回部族军械库
 
 user:
   field:
@@ -1230,6 +1294,15 @@ item:
     upkeep: '{upkeep} / @:dateTime.hours.short'
     rank: '物品阶级 {rank}'
 
+  sort:
+    price_asc: 价格（升序）
+    price_desc: 价格（降序）
+    type_asc: 按类型排序
+    rank_desc: 按等级划分
+
+  filter:
+    all: 一应俱全
+
 leaderboard:
   title: 排行榜
   table:
@@ -1246,3 +1319,4 @@ rankTable:
 
 patchNotes:
   showAllPatches: '+ {count} 补丁'
+  latestPatch: '最新补丁'

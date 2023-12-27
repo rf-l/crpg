@@ -1,5 +1,6 @@
 import { HumanDuration } from '@/models/datetime';
 
+// TODO: rename to humanizeTs
 export const parseTimestamp = (ts: number): HumanDuration => {
   const days = Math.floor(ts / 86400000);
   const hours = Math.floor((ts % 86400000) / 3600000);
@@ -12,7 +13,7 @@ export const parseTimestamp = (ts: number): HumanDuration => {
   };
 };
 
-const daysToMs = (days: number) => days * 24 * 60 * 60 * 1000;
+export const daysToMs = (days: number) => days * 24 * 60 * 60 * 1000;
 
 const hoursToMs = (hours: number) => hours * 60 * 60 * 1000;
 
@@ -27,9 +28,8 @@ export const convertHumanDurationToMs = (duration: HumanDuration) => {
 /**
  * @param {number} duration - ms
  */
-export const checkIsDateExpired = (createdAt: Date, duration: number) => {
-  return new Date().getTime() > new Date(createdAt).getTime() + duration;
-};
+export const checkIsDateExpired = (createdAt: Date, duration: number) =>
+  new Date().getTime() > new Date(createdAt).getTime() + duration;
 
 /**
  * @param {number} duration - ms

@@ -109,6 +109,7 @@ export default {
         sm: ['18px', '23px'],
         xs: ['15px', '21px'],
         '2xs': ['12px', '18px'],
+        '3xs': ['10px', '14px'],
       },
 
       minWidth: {
@@ -183,7 +184,7 @@ export default {
                 marginBottom: theme('spacing')['2.5'],
               },
               h5: {
-                fontSize: theme('fontSize.sm'),
+                fontSize: theme('fontSize.sm[0]'),
                 fontWeight: theme('fontWeight.semibold'),
                 marginTop: theme('spacing')['2.5'],
                 marginBottom: theme('spacing')['2.5'],

@@ -62,6 +62,7 @@ dateTimeFormat:
   countdown: '{hours}:{minutes}:{seconds}'
   'mm': '{minutes} @:dateTime.minutes.short'
   'hh': '{hours} @:dateTime.hours.short'
+  'dd': '{days} @:dateTime.days.short'
   'dd:hh:mm': '{days}@:dateTime.days.short {hours}@:dateTime.hours.short {minutes}@:dateTime.minutes.short'
 
 nav:
@@ -73,6 +74,7 @@ nav:
     Builder: Builder
     Leaderboard: Leaderboard
     Community: Community
+    Installation: Installation guide
   back: Back
 
 action:
@@ -101,8 +103,10 @@ action:
   upgrade: Upgrade
   reforge: Reforge
   enter: Enter
+  copy: Copy to clipboard
   copied: Copied
   start: Start
+  ok: Ok
 
 login:
   label: Login with
@@ -124,8 +128,10 @@ validations:
   required: Value is required
   url: The value is not a valid URL address
   sameAs: Value should be equal to the {value} value
+  integer: "The number must be an integer"
   minLength: Value should be at least {min} characters long
   maxLength: The maximum length allowed is {max}
+  minValue: "The minimum value allowed is {min}"
   clanTagPattern: Value should contain only integer and alphabetical
   clanBannerKeyPattern: Value should contain only integer and dots
   discordLinkPattern: Value must be a valid Discord link
@@ -166,9 +172,16 @@ region:
 
 region-title: Region
 
+game-mode:
+  CRPGBattle: Battle
+  CRPGConquest: Conquest
+  CRPGDTV: DTV
+  CRPGDuel: Duel
+
 clanBalancingExplanation: "
   <h3>You're not in any clan</h3>
-  <p>In order to play with friends on the same team, we recommend creating a new clan or joining an existing clan</p>"
+  <p>In order to play with friends on the same team, we recommend creating a new clan or joining an existing clan</p>
+  <p>Also, being in a clan allows you to share and lend items (clan armory)</p>"
 
 welcome:
   title: 'Welcome warrior!'
@@ -319,9 +332,14 @@ character:
       title: Respecialize
       tooltip:
         title: Respecialize character
-        desc: 'Reset your characteristics for {respecializationPrice}'
-        free: You can respecialize for free once every {days} days
-        nextFreeAt: 'Next free respecialization in: {nextFreeAt}'
+        desc: "
+          <p>You can reset a character's skills for free within <strong>{freeRespecPostWindow}</strong> of the last reset, and after <strong>{freeRespecInterval}</strong>.</p>
+          <p>The rest of the time resetting skills is paid, the cost decreases over time.</p>"
+        freeRespecPostWindowRemaining: "
+          <p>Remaining free skill reset time: <strong>{remainingTime}</strong></p>"
+        paidRespec: Reset the character's skills for {respecPrice}
+        freeRespecIntervalNext: "
+          <p>The next free skill reset via: <strong>{nextFreeAt}</strong></p>"
       dialog:
         title: Respecialize character
         desc: Are you sure you want to respecialize your character for {respecializationPrice}? This action cannot be undone
@@ -514,17 +532,11 @@ character:
     desc: <p>If you cannot pay upkeep at the end of the round your items will be break</p><p>You can repair your items for a fee in your inventory</p>
 
   inventory:
-    empty: The inventory is empty..
+    empty: The inventory is empty
     total:
       tpl: '{count} {sum}'
       count: '... | {count} item | {count} items'
       sum: 'worth {sum}'
-
-    sort:
-      price_asc: Price (asc)
-      price_desc: Price (desc)
-      type_asc: By type
-      rank_desc: By rank
 
     item:
       sell:
@@ -580,6 +592,14 @@ character:
           description: 'Are you sure you want to reforge this item for {gold}? You will get {loomPoints} back, in exchange {oldItem} will be changed to {newItem}'
         notify:
           success: 'Item successfully reforged'
+      clanArmory:
+        inArmory:
+          title: Item is in the clan armory
+          notify:
+            warning: The item is in the clan armory. Get it from there first.
+    filter:
+      hideInArmory: Hide the items in the armory
+      showInArmory: Show the items in the armory
 
   doll:
     slot:
@@ -646,7 +666,7 @@ shop:
         success: Item was successfully purchased
       tooltip:
         buy: Buy item
-        inInventory: Item already purchased
+        inInventory: The item is already in your inventory
         notEnoughGold: Not enough gold
     weaponUsage:
       title: Not a primary usage mode
@@ -714,6 +734,13 @@ clan:
         secondaryColor: Secondary
         bannerKey: Banner key
         discord: Discord server
+      group:
+        armory:
+          label: Armory
+          field:
+            armoryTimeout:
+              label: Armory timeout (in days)
+              hint: Auto-return an item if a borrower is not active for N days
     bannerKeyGeneratorTools: Generate one on {link}
     notify:
       success: Clan settings updated
@@ -731,11 +758,11 @@ clan:
       transferRights: Transfer the rights to control
       confirmationDialog:
         title: Confirmation
-        desc: Confirm the transfer of the clan to another member.
+        desc: Confirm the transfer of the clan to another member
       notify:
         success: Member updated
     kick:
-      title: You can {memberLink}. This action cannot be undone.
+      title: You can {memberLink}. This action cannot be undone
       memberLink: kick this user
       dialog:
         title: Kick {memberName} ?
@@ -766,6 +793,44 @@ clan:
       decline:
         notify:
           success: Application declined
+  armory:
+    title: Clan armory
+    empty: The armory is empty
+    filter:
+      hideOwned: Hide owned items
+      showOnlyAvailable: Show only available items
+    item:
+      lender:
+        tooltip:
+          title: Lender {user}
+      borrow:
+        title: Borrow from {user}
+        validation:
+          borrowed: The item has already been borrowed
+          isInInventory: The same item is already in your inventory
+        notify:
+          success: The item successfully borrowed from the armory
+      borrowed:
+        title: Borrowed by {user}
+      borrower:
+        tooltip:
+          title: Borrower {user}
+      add:
+        title: Add to armory
+        confirm:
+          description: Are you sure you want to add the item to the armory?
+        notify:
+          success: The item has been successfully added to the clan armory
+      remove:
+        title: Remove from armory
+        confirm:
+          description: Are you sure you want your item back from the armory?
+        notify:
+          success: The item has been successfully returned to the clan armory
+      return:
+        title: Return to armory
+        notify:
+          success: The item has been successfully returned to the clan armory
 
 user:
   field:
@@ -1237,6 +1302,15 @@ item:
     upkeep: '{upkeep} / @:dateTime.hours.short'
     rank: 'Item rank {rank}'
 
+  sort:
+    price_asc: Price (asc)
+    price_desc: Price (desc)
+    type_asc: By type
+    rank_desc: By rank
+
+  filter:
+    all: All
+
 activityLog:
   form:
     from: From
@@ -1264,6 +1338,10 @@ activityLog:
     ServerJoined: 'The user has joined the server'
     ChatMessageSent: 'Wrote a message: {message} {instance}'
     TeamHit: 'Dealt {damage} damage to {targetUserId} {instance}'
+    ClanArmoryAddItem: 'Item {userItemId} added to clan {clanId} armory'
+    ClanArmoryRemoveItem: 'Item {userItemId} removed from clan {clanId} armory'
+    ClanArmoryReturnItem: 'Item {userItemId} was returned from clan {clanId} armory'
+    ClanArmoryBorrowItem: 'Item {userItemId} was borrowed from clan {clanId} armory'
 
 leaderboard:
   title: Leaderboard
@@ -1281,6 +1359,7 @@ rankTable:
 
 patchNotes:
   showAllPatches: '+ {count} patch | + {count} patches'
+  latestPatch: 'Latest patch'
 
 strategus:
   registration:
