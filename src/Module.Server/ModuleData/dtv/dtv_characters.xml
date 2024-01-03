@@ -743,9 +743,9 @@
       </EquipmentRoster>
       <EquipmentRoster>
         <equipment slot="Head" id="Item.crpg_desert_cap_v2_h0" />
-        <equipment slot="Body" id="Item.crpg_fine_town_tunic_v_h0" />
+        <equipment slot="Body" id="Item.crpg_fine_town_tunic_v2_h0" />
         <equipment slot="Leg" id="Item.crpg_folded_town_boots_v2_h0" />
-        <equipment slot="Item0" id="Item.crpg_iron_cavalry_scimitar_v1_h0" />
+        <equipment slot="Item0" id="Item.crpg_cutlass_v1_h0" />
       </EquipmentRoster>
       <EquipmentRoster>
         <equipment slot="Head" id="Item.crpg_desert_cap_v2_h0" />
@@ -788,14 +788,13 @@
         <equipment slot="Item0" id="Item.crpg_cutlass_v1_h0" />
       </EquipmentRoster>
       <EquipmentRoster>
-        <equipment slot="Head" id="Item.crpg_pilgrim_hood_v2_h3" />
+        <equipment slot="Head" id="Item.crpg_wrapped_headcloth_v2_h3" />
         <equipment slot="Cape" id="Item.crpg_eyepatch_1_v1_h2" />
         <equipment slot="Body" id="Item.crpg_sleeveless_studded_fur_armor_v2_h0" />
         <equipment slot="Leg" id="Item.crpg_folded_town_boots_v2_h0" />
         <equipment slot="Item0" id="Item.crpg_ridged_saber_v1_h0" />
       </EquipmentRoster>
       <EquipmentRoster>
-        <equipment slot="Head" id="Item.crpg_tied_head_wrapping_v2_h3" />
         <equipment slot="Cape" id="Item.crpg_eyepatch_1_v1_h2" />
         <equipment slot="Body" id="Item.crpg_leather_coat_over_cloth_v2_h0" />
         <equipment slot="Leg" id="Item.crpg_folded_town_boots_v2_h0" />
@@ -835,14 +834,13 @@
         <equipment slot="Item0" id="Item.crpg_cutlass_v1_h0" />
       </EquipmentRoster>
       <EquipmentRoster>
-        <equipment slot="Head" id="Item.crpg_pilgrim_hood_v2_h3" />
+        <equipment slot="Head" id="Item.crpg_wrapped_headcloth_v2_h3" />
         <equipment slot="Cape" id="Item.crpg_eyepatch_1_v1_h2" />
         <equipment slot="Body" id="Item.crpg_sleeveless_studded_fur_armor_v2_h0" />
         <equipment slot="Leg" id="Item.crpg_folded_town_boots_v2_h0" />
         <equipment slot="Item0" id="Item.crpg_ridged_saber_v1_h0" />
       </EquipmentRoster>
       <EquipmentRoster>
-        <equipment slot="Head" id="Item.crpg_tied_head_wrapping_v2_h3" />
         <equipment slot="Cape" id="Item.crpg_eyepatch_1_v1_h2" />
         <equipment slot="Body" id="Item.crpg_leather_coat_over_cloth_v2_h0" />
         <equipment slot="Leg" id="Item.crpg_folded_town_boots_v2_h0" />
@@ -879,7 +877,7 @@
         <equipment slot="Body" id="Item.crpg_aserai_archer_armor_v3_h0" />
         <equipment slot="Gloves" id="Item.crpg_padded_vambrace_v2_h0" />
         <equipment slot="Leg" id="Item.crpg_folded_town_boots_v2_h0" />
-        <equipment slot="Item0" id="Item.crpg_ridged_saber_v1_h0" />
+        <equipment slot="Item0" id="Item.crpg_cutlass_v1_h0" />
         <equipment slot="Item1" id="Item.crpg_buckler_v3_h0" />
       </EquipmentRoster>
       <EquipmentRoster>
@@ -892,7 +890,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_pirate_lieutenant" name="{=}Quartermaster " race="light_bot">
+  <NPCCharacter id="crpg_dtv_pirate_lieutenant" name="{=}Quartermaster" race="light_bot">
     <face>
       <BodyProperties version="4" age="54.72" weight="0.5" build="0.5"  key="001EF40C40FC01409489464571C37D884339149587B77A5859856696836554A8059776560933756C000000000000000000000000000000000000000001248146" />
     </face>
@@ -923,7 +921,6 @@
         <equipment slot="Item0" id="Item.crpg_scalpel_v1_h0" />
       </EquipmentRoster>
       <EquipmentRoster>
-        <equipment slot="Head" id="Item.crpg_wrapped_headcloth_v2_h3" />
         <equipment slot="Cape" id="Item.crpg_eyepatch_1_v1_h2" />
         <equipment slot="Body" id="Item.crpg_khuzait_leather_stitched_v2_h0" />
         <equipment slot="Leg" id="Item.crpg_fine_town_boots_v2_h0" />

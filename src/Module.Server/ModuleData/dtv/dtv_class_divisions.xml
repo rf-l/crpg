@@ -478,7 +478,7 @@
       </Perk>
     </Perks>
   </MPClassDivision>
-  
+
   <MPClassDivision id="crpg_dtv_pirate_swashbuckler"
                    hero="crpg_dtv_pirate_swashbuckler"
                    troop="crpg_dtv_pirate_swashbuckler"
@@ -512,7 +512,7 @@
                    cost="0"
                    icon="Special_Swordsman"
                    melee_ai="100"
-                   ranged_ai="100"
+                   ranged_ai="0"
                    armor="0"
                    movement_speed="0"
                    combat_movement_speed="0"
