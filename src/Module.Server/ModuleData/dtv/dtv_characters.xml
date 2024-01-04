@@ -370,6 +370,237 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
+  <NPCCharacter id="crpg_dtv_primitive_caveman" name="{=}Caveman" race="light_bot">
+    <face>
+      <BodyProperties version="4" age="22.02" weight="0.409" build="0.841"  key="0002B40A40FC1A53F72EFEEEFE6E6E4588B97592E870861F754CD86863573DAA00AD66030A6A54BC000000000000000000000000000000000000000003449146" />
+    </face>
+    <skills>
+      <skill id="Strength" value="15" />
+      <skill id="Agility" value="12" />
+      <skill id="IronFlesh" value="8" />
+      <skill id="PowerStrike" value="6" />
+      <skill id="PowerDraw" value="0" />
+      <skill id="PowerThrow" value="3" />
+      <skill id="Athletics" value="65" />
+      <skill id="Riding" value="0" />
+      <skill id="WeaponMaster" value="6" />
+      <skill id="MountedArchery" value="0" />
+      <skill id="Shield" value="2" />
+      <skill id="OneHanded" value="60" />
+      <skill id="TwoHanded" value="60" />
+      <skill id="Polearm" value="0" />
+      <skill id="Bow" value="0" />
+      <skill id="Crossbow" value="0" />
+      <skill id="Throwing" value="60" />
+    </skills>
+    <Equipments>
+      <EquipmentRoster>
+        <equipment slot="Head" id="Item.crpg_bearhead_v2_h0" />
+        <equipment slot="Cape" id="Item.crpg_bearskin_v2_h0" />
+        <equipment slot="Body" id="Item.crpg_fur_skirt_v2_h0" />
+        <equipment slot="Item0" id="Item.crpg_boulder_on_a_stick_v1_h0" />
+        <equipment slot="Item1" id="Item.crpg_throwing_club_v3_h0" />
+      </EquipmentRoster>
+      <EquipmentRoster>
+        <equipment slot="Head" id="Item.crpg_wolfhead_v2_h0" />
+        <equipment slot="Cape" id="Item.crpg_wolf_shoulder_v2_h0" />
+        <equipment slot="Body" id="Item.crpg_fur_skirt_v2_h0" />
+        <equipment slot="Item0" id="Item.crpg_tetsubo_v1" />
+      </EquipmentRoster>
+      <EquipmentRoster>
+        <equipment slot="Cape" id="Item.crpg_battania_civil_cape_v2_h0" />
+        <equipment slot="Body" id="Item.crpg_fur_skirt_v2_h0" />
+        <equipment slot="Item0" id="Item.crpg_boulder_on_a_stick_v1_h0" />
+      </EquipmentRoster>
+    </Equipments>
+  </NPCCharacter>
+  <NPCCharacter id="crpg_dtv_primitive_cavewoman" name="{=}Cavewoman" is_female="true" race="light_bot">
+    <face>
+      <BodyProperties version="4" age="22.03" weight="0.6914" build="0.8426"  key="0008D00540FC200868D6E4624C9A7F983A77B44968949898754CD86897789A7A00ADA6030A6A54BC0000000000000000000000000000000000000000034C1104" />
+    </face>
+    <skills>
+      <skill id="Strength" value="15" />
+      <skill id="Agility" value="12" />
+      <skill id="IronFlesh" value="8" />
+      <skill id="PowerStrike" value="6" />
+      <skill id="PowerDraw" value="0" />
+      <skill id="PowerThrow" value="3" />
+      <skill id="Athletics" value="65" />
+      <skill id="Riding" value="0" />
+      <skill id="WeaponMaster" value="6" />
+      <skill id="MountedArchery" value="0" />
+      <skill id="Shield" value="2" />
+      <skill id="OneHanded" value="60" />
+      <skill id="TwoHanded" value="60" />
+      <skill id="Polearm" value="0" />
+      <skill id="Bow" value="0" />
+      <skill id="Crossbow" value="0" />
+      <skill id="Throwing" value="60" />
+    </skills>
+    <Equipments>
+      <EquipmentRoster>
+        <equipment slot="Head" id="Item.crpg_bearhead_v2_h0" />
+        <equipment slot="Cape" id="Item.crpg_bearskin_v2_h0" />
+        <equipment slot="Body" id="Item.crpg_fur_skirt_v2_h0" />
+        <equipment slot="Item0" id="Item.crpg_boulder_on_a_stick_v1_h0" />
+        <equipment slot="Item1" id="Item.crpg_throwing_club_v3_h0" />
+      </EquipmentRoster>
+      <EquipmentRoster>
+        <equipment slot="Head" id="Item.crpg_wolfhead_v2_h0" />
+        <equipment slot="Cape" id="Item.crpg_wolf_shoulder_v2_h0" />
+        <equipment slot="Body" id="Item.crpg_fur_skirt_v2_h0" />
+        <equipment slot="Item0" id="Item.crpg_tetsubo_v1" />
+      </EquipmentRoster>
+      <EquipmentRoster>
+        <equipment slot="Cape" id="Item.crpg_battania_civil_cape_v2_h0" />
+        <equipment slot="Body" id="Item.crpg_fur_skirt_v2_h0" />
+        <equipment slot="Item0" id="Item.crpg_boulder_on_a_stick_v1_h0" />
+      </EquipmentRoster>
+    </Equipments>
+  </NPCCharacter>
+  <NPCCharacter id="crpg_dtv_primitive_tribal" name="{=}Tribal Hunter" race="light_bot">
+    <face>
+      <BodyProperties version="4" age="22.03" weight="0.3086" build="0.4383"  key="002ED00C4DCC101768D6E4624C9A7F983A77B44968949898754CD86897789A7A00875603086A54BC0000000000000000000000000000000000000000330C9144" />
+    </face>
+    <skills>
+      <skill id="Strength" value="8" />
+      <skill id="Agility" value="18" />
+      <skill id="IronFlesh" value="0" />
+      <skill id="PowerStrike" value="2" />
+      <skill id="PowerDraw" value="3" />
+      <skill id="PowerThrow" value="3" />
+      <skill id="Athletics" value="70" />
+      <skill id="Riding" value="0" />
+      <skill id="WeaponMaster" value="6" />
+      <skill id="MountedArchery" value="0" />
+      <skill id="Shield" value="2" />
+      <skill id="OneHanded" value="70" />
+      <skill id="TwoHanded" value="0" />
+      <skill id="Polearm" value="70" />
+      <skill id="Bow" value="70" />
+      <skill id="Crossbow" value="0" />
+      <skill id="Throwing" value="70" />
+    </skills>
+    <Equipments>
+      <EquipmentRoster>
+        <equipment slot="Head" id="Item.crpg_merchants_hat_v2_h0" />
+        <equipment slot="Cape" id="Item.crpg_leopard_pelt_v2_h0" />
+        <equipment slot="Body" id="Item.crpg_bandit_fur_b_v2_h0" />
+        <equipment slot="Item0" id="Item.crpg_spiked_mace_v1_h0" />
+        <equipment slot="Item1" id="Item.crpg_common_hunting_bow_v2_h0" />
+        <equipment slot="Item2" id="Item.crpg_barbed_arrows_v1_h0" />
+      </EquipmentRoster>
+      <EquipmentRoster>
+        <equipment slot="Body" id="Item.crpg_sleeveless_fur_coat_v2_h0" />
+        <equipment slot="Item0" id="Item.crpg_bamboospear_v1_h0" />
+        <equipment slot="Item1" id="Item.crpg_hidecovered_roundshield_v1_h0" />
+      </EquipmentRoster>
+      <EquipmentRoster>
+        <equipment slot="Cape" id="Item.crpg_leopard_pelt_v2_h0" />
+        <equipment slot="Body" id="Item.crpg_bandit_fur_a_v2_h0" />
+        <equipment slot="Item0" id="Item.crpg_bamboospear_v1_h0" />
+        <equipment slot="Item1" id="Item.crpg_jagged_throwing_spear_v4_h0" />
+      </EquipmentRoster>
+    </Equipments>
+  </NPCCharacter>
+  <NPCCharacter id="crpg_dtv_cave_lieutenant" name="{=}Big Unga" race="heavy_bot">
+    <face>
+      <BodyProperties version="4" age="22.03" weight="0.3858" build="0.9753"  key="0010B40A40FC14D53A7A98B57B176E5463697CC6776A9897AE2D73A8A379558800BF66030B6983770000000000000000000000000000000000000000037C4106" />
+    </face>
+    <skills>
+      <skill id="Strength" value="18" />
+      <skill id="Agility" value="18" />
+      <skill id="IronFlesh" value="10" />
+      <skill id="PowerStrike" value="8" />
+      <skill id="PowerDraw" value="0" />
+      <skill id="PowerThrow" value="8" />
+      <skill id="Athletics" value="85" />
+      <skill id="Riding" value="0" />
+      <skill id="WeaponMaster" value="6" />
+      <skill id="MountedArchery" value="0" />
+      <skill id="Shield" value="2" />
+      <skill id="OneHanded" value="110" />
+      <skill id="TwoHanded" value="110" />
+      <skill id="Polearm" value="0" />
+      <skill id="Bow" value="0" />
+      <skill id="Crossbow" value="0" />
+      <skill id="Throwing" value="0" />
+    </skills>
+    <Equipments>
+      <EquipmentRoster>
+        <equipment slot="Head" id="Item.crpg_bearhead_v2_h2" />
+        <equipment slot="Cape" id="Item.crpg_bearskin_v2_h2" />
+        <equipment slot="Body" id="Item.crpg_fur_skirt_v2_h0" />
+        <equipment slot="Item0" id="Item.crpg_boulder_on_a_stick_v1_h0" />
+      </EquipmentRoster>
+    </Equipments>
+  </NPCCharacter>
+  <NPCCharacter id="crpg_dtv_tribal_lieutenant" name="{=}Witch Doctor" race="light_bot">
+    <face>
+      <BodyProperties version="4" age="22.03" weight="0" build="0"  key="0031F80C43CC0016B775489C244AA866C8878C7E6561965AA6665C967A985ACB005006030588878D00000000000000000000000000000000000000001EAC60C5" />
+    </face>
+    <skills>
+      <skill id="Strength" value="18" />
+      <skill id="Agility" value="18" />
+      <skill id="IronFlesh" value="6" />
+      <skill id="PowerStrike" value="4" />
+      <skill id="PowerDraw" value="0" />
+      <skill id="PowerThrow" value="8" />
+      <skill id="Athletics" value="85" />
+      <skill id="Riding" value="0" />
+      <skill id="WeaponMaster" value="6" />
+      <skill id="MountedArchery" value="0" />
+      <skill id="Shield" value="2" />
+      <skill id="OneHanded" value="110" />
+      <skill id="TwoHanded" value="0" />
+      <skill id="Polearm" value="110" />
+      <skill id="Bow" value="0" />
+      <skill id="Crossbow" value="0" />
+      <skill id="Throwing" value="150" />
+    </skills>
+    <Equipments>
+      <EquipmentRoster>
+        <equipment slot="Cape" id="Item.crpg_rough_bearskin_v2_h3" />
+        <equipment slot="Body" id="Item.crpg_fur_coat_over_tunic_v2_h0" />
+        <equipment slot="Leg" id="Item.crpg_battania_fur_boots_v2_h0" />
+        <equipment slot="Item0" id="Item.crpg_desert_ascia_axe_v2_h0" />
+        <equipment slot="Item1" id="Item.crpg_hidecovered_roundshield_v1" />
+        <equipment slot="Item2" id="Item.crpg_throwing_club_v3_h0" />
+      </EquipmentRoster>
+  </NPCCharacter>
+  <NPCCharacter id="crpg_dtv_primitive_boss" name="{=}Snu Snu" race="heavy_bot">
+    <face>
+      <BodyProperties version="4" age="22.03" weight="0.983" build="0.9491"  key="00052C0140CC30119A49BD554B64979655E67ABE373A285B544881439AB576B300BEF6030B6314540000000000000000000000000000000000000000077C4043" />
+    </face>
+    <skills>
+      <skill id="Strength" value="24" />
+      <skill id="Agility" value="24" />
+      <skill id="IronFlesh" value="15" />
+      <skill id="PowerStrike" value="15" />
+      <skill id="PowerDraw" value="0" />
+      <skill id="PowerThrow" value="0" />
+      <skill id="Athletics" value="100" />
+      <skill id="Riding" value="0" />
+      <skill id="WeaponMaster" value="8" />
+      <skill id="MountedArchery" value="0" />
+      <skill id="Shield" value="0" />
+      <skill id="OneHanded" value="0" />
+      <skill id="TwoHanded" value="150" />
+      <skill id="Polearm" value="0" />
+      <skill id="Bow" value="0" />
+      <skill id="Crossbow" value="0" />
+      <skill id="Throwing" value="0" />
+    </skills>
+    <Equipments>
+      <EquipmentRoster>
+        <equipment slot="Head" id="Item.crpg_bearhead_v2_h3" />
+        <equipment slot="Body" id="Item.crpg_fur_skirt_v2_h3" />
+        <equipment slot="Gloves" id="Item.crpg_rough_tied_bracers_v2_h0" />
+        <equipment slot="Leg" id="Item.crpg_battania_fur_boots_v2_h0" />
+        <equipment slot="Item0" id="Item.crpg_boulder_on_a_stick_v1_h1" />
+      </EquipmentRoster>
+    </Equipments>
+  </NPCCharacter>
   <NPCCharacter id="crpg_dtv_looter" name="{=}Merry Man" race="light_bot">
     <face>
       <BodyProperties version="4" age="23" weight="0.3333" build="0" key="0002740340E400866B8A8198A9A566D9198BC9A7B8457AA7A676862696B5767301777613072E24AA00000000000000000000000000000000000000003EEC00C4" />

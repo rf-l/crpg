@@ -36,6 +36,24 @@
     </Wave>
   </Round>
 
+<Round reward="135">
+    <Wave>
+      <Group classDivisionId="crpg_dtv_primitive_caveman" count="1.2" />
+      <Group classDivisionId="crpg_dtv_primitive_cavewoman" count="1.2" />
+      <Group classDivisionId="crpg_dtv_cave_lieutenant" />
+    </Wave>
+    <Wave>
+      <Group classDivisionId="crpg_dtv_primitive_tribal" count="2.0" />
+      <Group classDivisionId="crpg_dtv_tribal_lieutenant" />
+    </Wave>
+    <Wave>
+      <Group classDivisionId="crpg_dtv_primitive_caveman" count="1.2" />
+      <Group classDivisionId="crpg_dtv_primitive_cavewoman" count="0.8" />
+      <Group classDivisionId="crpg_dtv_primitive_tribal" count="1.0" />
+      <Group classDivisionId="crpg_dtv_primitive_boss" />
+    </Wave>
+  </Round>
+
   <Round reward="160">
     <Wave>
       <Group classDivisionId="crpg_dtv_looter" count="2.0" />
