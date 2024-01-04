@@ -684,7 +684,7 @@
       <skill id="Polearm" value="80" />
       <skill id="Bow" value="0" />
       <skill id="Crossbow" value="0" />
-      <skill id="Throwing" value="0" />
+      <skill id="Throwing" value="70" />
     </skills>
     <Equipments>
       <EquipmentRoster>
@@ -731,7 +731,7 @@
       <skill id="Polearm" value="100" />
       <skill id="Bow" value="0" />
       <skill id="Crossbow" value="0" />
-      <skill id="Throwing" value="0" />
+      <skill id="Throwing" value="70" />
     </skills>
     <Equipments>
       <EquipmentRoster>
