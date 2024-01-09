@@ -142,6 +142,7 @@
       <SpriteSheetSize ID="134" Width="1920" Height="1080" />
       <SpriteSheetSize ID="135" Width="1920" Height="1080" />
       <SpriteSheetSize ID="136" Width="1920" Height="1080" />
+      <SpriteSheetSize ID="137" Width="1920" Height="1080" />
       <SpriteSheetSize ID="138" Width="1920" Height="1080" />
       <AlwaysLoad />
     </SpriteCategory>
@@ -1253,6 +1254,15 @@
       <SheetX>0</SheetX>
       <SheetY>0</SheetY>
       <CategoryName>ui_mploading</CategoryName>
+    <SpritePart>
+      <SheetID>137</SheetID>
+      <Name>crpg_conquest_volskulkeep</Name>
+      <Width>1920</Width>
+      <Height>1080</Height>
+      <SheetX>0</SheetX>
+      <SheetY>0</SheetY>
+      <CategoryName>ui_mploading</CategoryName>
+    </SpritePart>
     </SpritePart>
   </SpriteParts>
   <SpritePart>
@@ -1757,6 +1767,10 @@
     <GenericSprite>
       <Name>crpg_battle_frosthaven</Name>
       <SpritePartName>crpg_battle_frosthaven</SpritePartName>
+    </GenericSprite>
+    <GenericSprite>
+      <Name>crpg_conquest_volskulkeep</Name>
+      <SpritePartName>crpg_conquest_volskulkeep</SpritePartName>
     </GenericSprite>
     <GenericSprite>
       <Name>crpg_dtv_musapoint</Name>
