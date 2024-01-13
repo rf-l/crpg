@@ -1254,6 +1254,7 @@
       <SheetX>0</SheetX>
       <SheetY>0</SheetY>
       <CategoryName>ui_mploading</CategoryName>
+    </SpritePart>
     <SpritePart>
       <SheetID>137</SheetID>
       <Name>crpg_conquest_volskulkeep</Name>
@@ -1262,7 +1263,6 @@
       <SheetX>0</SheetX>
       <SheetY>0</SheetY>
       <CategoryName>ui_mploading</CategoryName>
-    </SpritePart>
     </SpritePart>
   </SpriteParts>
   <SpritePart>
