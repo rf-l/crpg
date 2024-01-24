@@ -1074,6 +1074,11 @@ namespace Crpg.Persistence.Migrations
                         .HasColumnType("text")
                         .HasColumnName("name");
 
+                    b.Property<string>("Note")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("note");
+
                     b.Property<Platform>("Platform")
                         .HasColumnType("platform")
                         .HasColumnName("platform");
