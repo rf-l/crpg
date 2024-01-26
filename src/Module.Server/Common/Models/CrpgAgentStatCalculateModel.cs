@@ -246,7 +246,7 @@ internal class CrpgAgentStatCalculateModel : AgentStatCalculateModel
         float ridingImpactOnSpeed = (float)(0.7f
             + ridingSkill * 0.001f
             + 1 / (2.2f + Math.Pow(2, -0.08f * (ridingSkill - 70f))));
-        props.MountSpeed = (mount.GetModifiedMountSpeed(in mountHarness) + 1) * 0.22f * ridingImpactOnSpeed * weightImpactOnSpeed;
+        props.MountSpeed = (mount.GetModifiedMountSpeed(in mountHarness) + 1) * 0.209f * ridingImpactOnSpeed * weightImpactOnSpeed;
         props.TopSpeedReachDuration = Game.Current.BasicModels.RidingModel.CalculateAcceleration(in mount, in mountHarness, ridingSkill);
         props.MountDashAccelerationMultiplier = 1f / (2f + 8f * harnessWeightPercentage); // native between 1 and 0.1 . cRPG between 0.5 and 0.1
     }
