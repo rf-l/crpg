@@ -899,6 +899,11 @@ namespace Crpg.Persistence.Migrations
                         .HasColumnType("interval")
                         .HasColumnName("duration");
 
+                    b.Property<string>("PublicReason")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("public_reason");
+
                     b.Property<string>("Reason")
                         .IsRequired()
                         .HasColumnType("text")
