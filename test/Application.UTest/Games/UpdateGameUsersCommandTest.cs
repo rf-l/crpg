@@ -70,7 +70,7 @@ public class UpdateGameUsersCommandTest : TestBase
             .Setup(cs => cs.GiveExperience(It.IsAny<Character>(), 10, true))
             .Callback((Character c, int xp, bool _) => c.Experience += xp);
         characterServiceMock
-            .Setup(cs => cs.UpdateRating(It.IsAny<Character>(), 4, 5, 6));
+            .Setup(cs => cs.UpdateRating(It.IsAny<Character>(), 4, 5, 6, true));
 
         Mock<IActivityLogService> activityLogServiceMock = new() { DefaultValue = DefaultValue.Mock };
 

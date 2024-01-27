@@ -50,9 +50,9 @@ public record UpdateGameUsersCommand : IMediatorRequest<UpdateGameUsersResult>
                     continue;
                 }
 
+                _characterService.UpdateRating(character, update.Rating.Value, update.Rating.Deviation, update.Rating.Volatility, isGameUserUpdate: true);
                 var reward = GiveReward(character, update.Reward);
                 UpdateStatistics(character, update.Statistics);
-                _characterService.UpdateRating(character, update.Rating.Value, update.Rating.Deviation, update.Rating.Volatility);
                 var brokenItems = await RepairOrBreakItems(character, update.BrokenItems, cancellationToken);
                 results.Add((character.User!, reward, brokenItems));
             }
