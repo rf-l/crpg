@@ -1,4 +1,5 @@
 using System.Net;
+using Crpg.Application.ActivityLogs.Models;
 using Crpg.Application.Characters.Commands;
 using Crpg.Application.Characters.Models;
 using Crpg.Application.Characters.Queries;
@@ -376,6 +377,26 @@ public class UsersController : BaseController
             UserId = CurrentUser.User!.Id,
             CharacterId = id,
         }));
+    }
+
+    /// <summary>
+    /// Get character exp/gold stats for the current user.
+    /// </summary>
+    /// <param name="from">Start of the queried time period.</param>
+    /// <param name="id">Character id.</param>
+    /// <returns>The character earning statistics.</returns>
+    /// <response code="200">Ok.</response>
+    [HttpGet("self/characters/{id}/earning-statistics")]
+    public async Task<ActionResult<Result<IList<ActivityLogViewModel>>>> GetCharacterEarningStatistics(
+        [FromQuery] DateTime from,
+        [FromRoute] int id)
+    {
+        return ResultToAction(await Mediator.Send(new GetUserCharacterEarningStatisticsQuery
+        {
+            UserId = CurrentUser.User!.Id,
+            CharacterId = id,
+            From = from,
+        }, CancellationToken.None));
     }
 
     /// <summary>

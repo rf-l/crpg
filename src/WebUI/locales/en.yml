@@ -60,9 +60,9 @@ timeAgo:
 dateTimeFormat:
   # TODO: https://github.com/tc39/proposal-intl-duration-format
   countdown: '{hours}:{minutes}:{seconds}'
+  'dd': '{days} @:dateTime.days.short'
   'mm': '{minutes} @:dateTime.minutes.short'
   'hh': '{hours} @:dateTime.hours.short'
-  'dd': '{days} @:dateTime.days.short'
   'dd:hh:mm': '{days}@:dateTime.days.short {hours}@:dateTime.hours.short {minutes}@:dateTime.minutes.short'
 
 nav:
@@ -552,6 +552,12 @@ character:
     avgRepairCost:
       title: Avg repair cost
       desc: 'Average cost of upkeep of equipped items per hour'
+
+  earningChart:
+    title: Earning chart
+    type:
+      experience: Exp
+      gold: Gold
 
   highUpkeepWarning:
     title: You cannot afford your current upkeep!

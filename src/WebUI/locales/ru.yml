@@ -59,9 +59,9 @@ timeAgo:
 
 dateTimeFormat:
   countdown: '{hours}:{minutes}:{seconds}'
+  'dd': '{days} @:dateTime.days.short'
   'mm': '{minutes} @:dateTime.minutes.short'
   'hh': '{hours} @:dateTime.hours.short'
-  'dd': '{days} @:dateTime.days.short'
   'dd:hh:mm': '{days}@:dateTime.days.short {hours}@:dateTime.hours.short {minutes}@:dateTime.minutes.short'
 
 nav:
@@ -521,6 +521,12 @@ character:
     avgRepairCost:
       title: Ремонт
       desc: 'Усредненная стоимость содержания экипированных предметов в час'
+
+  earningChart:
+    title: График
+    type:
+      experience: Опыт
+      gold: Золото
 
   highUpkeepWarning:
     title: Вы не можете позволить себе текущиее содержание предметов!

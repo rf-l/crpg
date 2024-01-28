@@ -61,6 +61,7 @@ timeAgo:
 dateTimeFormat:
   # TODO: https://github.com/tc39/proposal-intl-duration-format
   countdown: '{hours}:{minutes}:{seconds}'
+  'dd': '{days} @:dateTime.days.short'
   'mm': '{minutes} @:dateTime.minutes.short'
   'hh': '{hours} @:dateTime.hours.short'
   'dd:hh:mm': '{days}@:dateTime.days.short {hours}@:dateTime.hours.short {minutes}@:dateTime.minutes.short'
@@ -520,6 +521,12 @@ character:
     avgRepairCost:
       title: 平均维修成本
       desc: '已装备物品每小时的平均维护费用'
+
+  earningChart:
+    title: 收入图表
+    type:
+      experience: 经验
+      gold: 金子
 
   highUpkeepWarning:
     title: 你无法承担你目前的维护费用！你必须要有足够的资金！
