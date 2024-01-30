@@ -146,7 +146,6 @@
       <SpriteSheetSize ID="138" Width="1920" Height="1080" />
       <SpriteSheetSize ID="139" Width="1920" Height="1080" />
       <SpriteSheetSize ID="140" Width="1920" Height="1080" />
-
       <AlwaysLoad />
     </SpriteCategory>
   </SpriteCategories>
