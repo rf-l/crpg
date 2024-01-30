@@ -1265,6 +1265,24 @@
       <SheetY>0</SheetY>
       <CategoryName>ui_mploading</CategoryName>
     </SpritePart>
+    <SpritePart>
+      <SheetID>138</SheetID>
+      <Name>crpg_dtv_musapoint</Name>
+      <Width>1920</Width>
+      <Height>1080</Height>
+      <SheetX>0</SheetX>
+      <SheetY>0</SheetY>
+      <CategoryName>ui_mploading</CategoryName>
+    </SpritePart>
+    <SpritePart>
+      <SheetID>139</SheetID>
+      <Name>crpg_dtv_templeofposeidon</Name>
+      <Width>1920</Width>
+      <Height>1080</Height>
+      <SheetX>0</SheetX>
+      <SheetY>0</SheetY>
+      <CategoryName>ui_mploading</CategoryName>
+    </SpritePart>
   </SpriteParts>
   <SpritePart>
       <SheetID>138</SheetID>
