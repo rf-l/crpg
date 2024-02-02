@@ -171,7 +171,6 @@ internal class CrpgBattleGameMode : MissionBasedMultiplayerGameMode
                     new BreakableWeaponsBehaviorServer(),
                     new CrpgCustomTeamBannersAndNamesServer(roundController),
                     new CrpgCommanderBehaviorServer(),
-                    new MapPoolComponent(),
 #else
                     new MultiplayerRoundComponent(),
                     new MultiplayerAchievementComponent(),

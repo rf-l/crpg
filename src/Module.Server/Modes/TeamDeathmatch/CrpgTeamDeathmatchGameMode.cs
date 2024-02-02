@@ -129,7 +129,6 @@ internal class CrpgTeamDeathmatchGameMode : MissionBasedMultiplayerGameMode
                 new NotAllPlayersReadyComponent(),
                 new DrowningBehavior(),
                 new PopulationBasedEntityVisibilityBehavior(lobbyComponent),
-                new MapPoolComponent(),
 #else
                 new MultiplayerAchievementComponent(),
                 MissionMatchHistoryComponent.CreateIfConditionsAreMet(),

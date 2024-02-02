@@ -14,13 +14,11 @@ namespace Crpg.Module.Common;
 /// intermission screen when the game start, will show all maps. It's ok since usually nobody is connected when the
 /// server starts.
 /// </remarks>
-internal class MapPoolComponent : MissionBehavior
+internal class MapPoolComponent : MissionLogic
 {
     private static int nextMapId;
 
     private string? _forcedNextMap;
-
-    public override MissionBehaviorType BehaviorType => MissionBehaviorType.Other;
 
     public void ForceNextMap(string map)
     {
@@ -31,14 +29,8 @@ internal class MapPoolComponent : MissionBehavior
 
         _forcedNextMap = map;
     }
-    public override void OnAfterMissionCreated()
+    protected override void OnEndMission()
     {
-        // For some reason OnAfterMissionCreated() and OnAfterMissionEnding() is called twice. So this is to make the code idempotent.
-        if (MultiplayerOptions.OptionType.Map.GetStrValue(MultiplayerOptions.MultiplayerOptionsAccessMode.NextMapOptions) != MultiplayerOptions.OptionType.Map.GetStrValue(MultiplayerOptions.MultiplayerOptionsAccessMode.CurrentMapOptions))
-        {
-            return;
-        }
-
         nextMapId = (nextMapId + 1) % ListedServerCommandManager.ServerSideIntermissionManager.AutomatedMapPool.Count;
         string nextMap = _forcedNextMap ?? ListedServerCommandManager.ServerSideIntermissionManager.AutomatedMapPool[nextMapId];
         MultiplayerOptions.OptionType.Map.SetValue(nextMap, MultiplayerOptions.MultiplayerOptionsAccessMode.NextMapOptions);
