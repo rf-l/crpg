@@ -141,7 +141,6 @@ internal class CrpgSubModule : MBSubModuleBase
                             Debug.Print($"There's no instance of ServerSideIntermissionManager", color: Debug.DebugColor.Red);
                         }
                     }
-                   
                 }
             }
             catch (Exception e)
@@ -156,7 +155,6 @@ internal class CrpgSubModule : MBSubModuleBase
         }
 
         _mapPoolAdded = true;
-        ServerSideIntermissionManager.Instance!.SetIntermissionMapVoting(false);
         return;
     }
 
