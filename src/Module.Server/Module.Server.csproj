@@ -28,6 +28,7 @@
     <Reference Include="$(MB_SERVER_PATH)\bin\Win64_Shipping_Server\TaleWorlds.*.dll">
       <Private>False</Private>
     </Reference>
+    <ContentWithTargetPath Remove="MapRotation\ds_config_crpg_dtv_maps.txt" />
 
     <Reference Include="$(MB_SERVER_PATH)\bin\Win64_Shipping_Server\Newtonsoft.Json.dll">
       <Private>False</Private>
