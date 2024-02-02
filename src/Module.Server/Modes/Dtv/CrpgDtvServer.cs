@@ -262,8 +262,8 @@ internal class CrpgDtvServer : MissionMultiplayerGameModeBase
         _currentWave = -1;
         SpawningBehavior.RequestSpawnSessionForRoundStart(firstRound: _currentRound == 0);
         SendDataToPeers(new CrpgDtvRoundStartMessage { Round = _currentRound });
-
-        foreach (var mount in Mission.MountsWithoutRiders.Select(m => m.Key).Intersect(_mountsToKillNextRound)) // Select because MountWithoutRiders is an <Agent, Time> keyValuePair
+        var mountToKill = Mission.MountsWithoutRiders.Select(m => m.Key).Intersect(_mountsToKillNextRound).ToList();
+        foreach (var mount in mountToKill) // Select because MountWithoutRiders is an <Agent, Time> keyValuePair
         {
             DamageHelper.DamageAgent(mount, (int)mount.Health + 2);
         }
