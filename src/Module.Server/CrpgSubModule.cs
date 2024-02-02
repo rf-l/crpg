@@ -157,7 +157,6 @@ internal class CrpgSubModule : MBSubModuleBase
 
         _mapPoolAdded = true;
         ServerSideIntermissionManager.Instance!.SetIntermissionMapVoting(false);
-        ServerSideIntermissionManager.Instance!.EnableAutomatedBattleSwitching();
         return;
     }
 
