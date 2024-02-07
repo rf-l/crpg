@@ -1176,7 +1176,6 @@ public record SeedDataCommand : IMediatorRequest
                 Name = "Droob clan",
                 BannerKey = string.Empty,
                 Region = Region.Eu,
-                Languages = { Languages.En, },
             };
 
             ClanMember droobMember = new() { User = droob, Clan = droobClan, Role = ClanMemberRole.Leader, };
