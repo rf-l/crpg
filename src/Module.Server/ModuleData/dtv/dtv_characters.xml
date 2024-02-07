@@ -728,8 +728,8 @@
     <skills>
       <skill id="Strength" value="15" />
       <skill id="Agility" value="15" />
-      <skill id="IronFlesh" value="4" />
-      <skill id="PowerStrike" value="3" />
+      <skill id="IronFlesh" value="2" />
+      <skill id="PowerStrike" value="2" />
       <skill id="PowerDraw" value="0" />
       <skill id="PowerThrow" value="0" />
       <skill id="Athletics" value="90" />
@@ -775,8 +775,8 @@
     <skills>
       <skill id="Strength" value="15" />
       <skill id="Agility" value="15" />
-      <skill id="IronFlesh" value="5" />
-      <skill id="PowerStrike" value="4" />
+      <skill id="IronFlesh" value="2" />
+      <skill id="PowerStrike" value="2" />
       <skill id="PowerDraw" value="0" />
       <skill id="PowerThrow" value="2" />
       <skill id="Athletics" value="90" />
@@ -821,7 +821,7 @@
     <skills>
       <skill id="Strength" value="18" />
       <skill id="Agility" value="15" />
-      <skill id="IronFlesh" value="4" />
+      <skill id="IronFlesh" value="3" />
       <skill id="PowerStrike" value="3" />
       <skill id="PowerDraw" value="0" />
       <skill id="PowerThrow" value="0" />
@@ -867,7 +867,7 @@
     <skills>
       <skill id="Strength" value="18" />
       <skill id="Agility" value="15" />
-      <skill id="IronFlesh" value="4" />
+      <skill id="IronFlesh" value="3" />
       <skill id="PowerStrike" value="3" />
       <skill id="PowerDraw" value="0" />
       <skill id="PowerThrow" value="0" />
@@ -913,8 +913,8 @@
     <skills>
       <skill id="Strength" value="18" />
       <skill id="Agility" value="21" />
-      <skill id="IronFlesh" value="6" />
-      <skill id="PowerStrike" value="5" />
+      <skill id="IronFlesh" value="2" />
+      <skill id="PowerStrike" value="6" />
       <skill id="PowerDraw" value="0" />
       <skill id="PowerThrow" value="0" />
       <skill id="Athletics" value="95" />
