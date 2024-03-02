@@ -3611,7 +3611,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_dwarven_engineer" name="{=}Dwarven Engineer" race="heavy_bot">
+  <NPCCharacter id="crpg_dtv_dwarven_engineer" name="{=}Dwarven Engineer" race="dwarf_bot">
     <face>
       <BodyProperties version="4" age="23" weight="0.5" build="0.5" key="000A000FC0FC3A144EFFEFE0FFEFFFFF0F9C54564930CA46AABBBBAEBBAABCCE0147761304FCCBBA0000000000000000000000000000000000000000027C8004" />
     </face>
@@ -3622,7 +3622,7 @@
       <skill id="PowerStrike" value="7" />
       <skill id="PowerDraw" value="0" />
       <skill id="PowerThrow" value="0" />
-      <skill id="Athletics" value="156" />
+      <skill id="Athletics" value="78" />
       <skill id="Riding" value="0" />
       <skill id="WeaponMaster" value="5" />
       <skill id="MountedArchery" value="0" />
@@ -3657,7 +3657,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_dwarven_axelord" name="{=}Legendary Axedwarf" race="heavy_bot">
+  <NPCCharacter id="crpg_dtv_dwarven_axelord" name="{=}Legendary Axedwarf" race="dwarf_bot">
     <face>
       <BodyProperties version="4" age="23" weight="0.5" build="0.5" key="000A000FC0FC3A144EFFEFE0FFEFFFFF0F9C54564930CA46AABBBBAEBBAABCCE0147761304FCCBBA0000000000000000000000000000000000000000027C8004" />
     </face>
@@ -3668,7 +3668,7 @@
       <skill id="PowerStrike" value="7" />
       <skill id="PowerDraw" value="0" />
       <skill id="PowerThrow" value="0" />
-      <skill id="Athletics" value="156" />
+      <skill id="Athletics" value="78" />
       <skill id="Riding" value="0" />
       <skill id="WeaponMaster" value="5" />
       <skill id="MountedArchery" value="0" />
@@ -3699,7 +3699,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_dwarven_hammerlord" name="{=}Legendary Hammerdwarf" race="heavy_bot">
+  <NPCCharacter id="crpg_dtv_dwarven_hammerlord" name="{=}Legendary Hammerdwarf" race="dwarf_bot">
     <face>
       <BodyProperties version="4" age="23" weight="0.5" build="0.5" key="000A000FC0FC3A144EFFEFE0FFEFFFFF0F9C54564930CA46AABBBBAEBBAABCCE0147761304FCCBBA0000000000000000000000000000000000000000027C8004" />
     </face>
@@ -3710,7 +3710,7 @@
       <skill id="PowerStrike" value="7" />
       <skill id="PowerDraw" value="0" />
       <skill id="PowerThrow" value="0" />
-      <skill id="Athletics" value="156" />
+      <skill id="Athletics" value="78" />
       <skill id="Riding" value="0" />
       <skill id="WeaponMaster" value="5" />
       <skill id="MountedArchery" value="0" />
@@ -3741,7 +3741,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_dwarven_lieutenant" name="{=}Dwarven Brewmaster" race="heavy_bot">
+  <NPCCharacter id="crpg_dtv_dwarven_lieutenant" name="{=}Dwarven Brewmaster" race="dwarf_bot">
     <face>
       <BodyProperties version="4" age="30.03" weight="0.5" build="0.5" key="000A000FC0FC3A144EFFEFE0FFEFFFFF0F9C54564930CA46AABBBBAEBBAABCCE0147761304FCCBBA0000000000000000000000000000000000000000027C8004" />
     </face>
@@ -3783,7 +3783,7 @@
       </EquipmentRoster>
     </Equipments>
   </NPCCharacter>
-  <NPCCharacter id="crpg_dtv_dwarven_boss" name="{=}Urist" race="heavy_bot">
+  <NPCCharacter id="crpg_dtv_dwarven_boss" name="{=}Urist" race="dwarf_bot">
     <face>
       <BodyProperties version="4" age="23" weight="0.5" build="0.5" key="000A000FC0FC3A144EFFEFE0FFEFFFFF0F9C54564930CA46AABBBBAEBBAABCCE0147761304FCCBBA0000000000000000000000000000000000000000027C8004" />
     </face>
