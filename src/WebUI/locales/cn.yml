@@ -4,10 +4,10 @@ locale:
   cn: 中文
 
 platform:
-  Steam: Steam Workshop
+  Steam: Steam
   EpicGames: Epic Games
   Microsoft: Xbox
-
+  
 installation:
   title: 安装
   common:
