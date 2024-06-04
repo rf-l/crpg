@@ -12,6 +12,7 @@ using Crpg.Domain.Entities.Items;
 using Crpg.Domain.Entities.Limitations;
 using Crpg.Domain.Entities.Parties;
 using Crpg.Domain.Entities.Restrictions;
+using Crpg.Domain.Entities.Servers;
 using Crpg.Domain.Entities.Settlements;
 using Crpg.Domain.Entities.Users;
 using Crpg.Sdk.Abstractions;
@@ -530,7 +531,6 @@ public record SeedDataCommand : IMediatorRequest
                 }
             }
 
-            //
             UserItem takeoItem1 = new() { User = takeo, ItemId = "crpg_thamaskene_steel_spatha_v1_h3" };
             UserItem takeoItem2 = new() { User = takeo, ItemId = "crpg_winds_fury_v1_h2" };
             UserItem orleItem1 = new() { User = orle, ItemId = "crpg_lion_imprinted_saber_v1_h1" };
@@ -665,12 +665,18 @@ public record SeedDataCommand : IMediatorRequest
                 Generation = 2,
                 Level = 23,
                 Experience = _experienceTable.GetExperienceForLevel(23),
-                Statistics = new CharacterStatistics
+                Statistics = new List<CharacterStatistics>
                 {
-                    Kills = 2,
-                    Assists = 3,
-                    Deaths = 6,
-                    PlayTime = new TimeSpan(0, 10, 50, 20),
+                    {
+                        new CharacterStatistics
+                        {
+                            Kills = 2,
+                            Deaths = 3,
+                            Assists = 6,
+                            PlayTime = new TimeSpan(0, 10, 50, 20),
+                            GameMode = GameMode.CRPGBattle,
+                        }
+                    },
                 },
             };
             Character takeoCharacter1 = new()
@@ -680,12 +686,18 @@ public record SeedDataCommand : IMediatorRequest
                 Generation = 0,
                 Level = 12,
                 Experience = _experienceTable.GetExperienceForLevel(12),
-                Statistics = new CharacterStatistics
+                Statistics = new List<CharacterStatistics>
                 {
-                    Kills = 2,
-                    Assists = 3,
-                    Deaths = 6,
-                    PlayTime = new TimeSpan(365, 0, 0, 20),
+                    {
+                        new CharacterStatistics
+                        {
+                            Kills = 2,
+                            Deaths = 3,
+                            Assists = 6,
+                            PlayTime = new TimeSpan(365, 0, 0, 2),
+                            GameMode = GameMode.CRPGBattle,
+                        }
+                    },
                 },
             };
             Character takeoCharacter2 = new()
@@ -695,12 +707,18 @@ public record SeedDataCommand : IMediatorRequest
                 Generation = 0,
                 Level = 31,
                 Experience = _experienceTable.GetExperienceForLevel(31) + 100,
-                Statistics = new CharacterStatistics
+                Statistics = new List<CharacterStatistics>
                 {
-                    Kills = 2,
-                    Assists = 3,
-                    Deaths = 6,
-                    PlayTime = new TimeSpan(3, 7, 0, 29),
+                    {
+                        new CharacterStatistics
+                        {
+                            Kills = 2,
+                            Deaths = 3,
+                            Assists = 6,
+                            PlayTime = new TimeSpan(3, 7, 0, 29),
+                            GameMode = GameMode.CRPGBattle,
+                        }
+                    },
                 },
             };
             Character namidakaCharacter0 = new()
@@ -717,12 +735,18 @@ public record SeedDataCommand : IMediatorRequest
                 Level = 33,
                 Generation = 3,
                 Experience = _experienceTable.GetExperienceForLevel(33) + (_experienceTable.GetExperienceForLevel(34) - _experienceTable.GetExperienceForLevel(33)) / 2,
-                Statistics = new CharacterStatistics
+                Statistics = new List<CharacterStatistics>
                 {
-                    Kills = 2,
-                    Assists = 3,
-                    Deaths = 6,
-                    PlayTime = new TimeSpan(365, 0, 0, 20),
+                    {
+                        new CharacterStatistics
+                        {
+                            Kills = 2,
+                            Deaths = 3,
+                            Assists = 6,
+                            PlayTime = new TimeSpan(365, 0, 0, 20),
+                            GameMode = GameMode.CRPGBattle,
+                        }
+                    },
                 },
                 Characteristics = new CharacterCharacteristics
                 {
@@ -759,12 +783,38 @@ public record SeedDataCommand : IMediatorRequest
                 Level = 33,
                 Generation = 3,
                 Experience = _experienceTable.GetExperienceForLevel(33) + (_experienceTable.GetExperienceForLevel(34) - _experienceTable.GetExperienceForLevel(33)) / 2,
-                Statistics = new CharacterStatistics
+                Statistics = new List<CharacterStatistics>
                 {
-                    Kills = 2,
-                    Assists = 3,
-                    Deaths = 6,
-                    PlayTime = new TimeSpan(365, 0, 0, 20),
+                    {
+                        new CharacterStatistics
+                        {
+                            Kills = 1,
+                            Deaths = 30,
+                            Assists = 10,
+                            PlayTime = new TimeSpan(10, 7, 5, 20),
+                            GameMode = GameMode.CRPGBattle,
+                        }
+                    },
+                    {
+                        new CharacterStatistics
+                        {
+                            Kills = 10,
+                            Deaths = 0,
+                            Assists = 10,
+                            PlayTime = new TimeSpan(100, 3, 50, 15),
+                            GameMode = GameMode.CRPGConquest,
+                        }
+                    },
+                    {
+                        new CharacterStatistics
+                        {
+                            Kills = 5,
+                            Deaths = 5,
+                            Assists = 0,
+                            PlayTime = new TimeSpan(0, 8, 1, 15),
+                            GameMode = GameMode.CRPGDuel,
+                        }
+                    },
                 },
                 Characteristics = new CharacterCharacteristics
                 {
@@ -786,12 +836,18 @@ public record SeedDataCommand : IMediatorRequest
                 Level = 33,
                 Generation = 3,
                 Experience = _experienceTable.GetExperienceForLevel(33) + (_experienceTable.GetExperienceForLevel(34) - _experienceTable.GetExperienceForLevel(33)) / 2,
-                Statistics = new CharacterStatistics
+                Statistics = new List<CharacterStatistics>
                 {
-                    Kills = 2,
-                    Assists = 3,
-                    Deaths = 6,
-                    PlayTime = new TimeSpan(365, 0, 0, 20),
+                    {
+                        new CharacterStatistics
+                        {
+                            Kills = 2,
+                            Deaths = 3,
+                            Assists = 6,
+                            PlayTime = new TimeSpan(365, 0, 0, 20),
+                            GameMode = GameMode.CRPGBattle,
+                        }
+                    },
                 },
                 Characteristics = new CharacterCharacteristics
                 {
@@ -884,10 +940,15 @@ public record SeedDataCommand : IMediatorRequest
                 Character = kadseCharacter0,
                 LastRespecializeAt = DateTime.UtcNow.AddDays(-8),
             };
+            CharacterLimitations droobCharacter0Limitations = new()
+            {
+                Character = droobCharacter0,
+                LastRespecializeAt = DateTime.UtcNow.AddDays(-8),
+            };
             CharacterLimitations[] newCharactersLimitations =
             {
                 takeoCharacter0Limitations, takeoCharacter1Limitations, takeoCharacter2Limitations, orleCharacter0Limitations,
-                orleCharacter2Limitations, kadseCharacter0Limitations,
+                orleCharacter2Limitations, kadseCharacter0Limitations, droobCharacter0Limitations,
             };
 
             var existingCharactersLimitations = await _db.CharacterLimitations.ToDictionaryAsync(l => l.CharacterId);

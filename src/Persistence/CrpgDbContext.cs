@@ -11,6 +11,7 @@ using Crpg.Domain.Entities.Items;
 using Crpg.Domain.Entities.Limitations;
 using Crpg.Domain.Entities.Parties;
 using Crpg.Domain.Entities.Restrictions;
+using Crpg.Domain.Entities.Servers;
 using Crpg.Domain.Entities.Settlements;
 using Crpg.Domain.Entities.Users;
 using Crpg.Sdk.Abstractions;
@@ -46,6 +47,7 @@ public class CrpgDbContext : DbContext, ICrpgDbContext
         NpgsqlConnection.GlobalTypeMapper.MapEnum<BattleMercenaryApplicationStatus>();
         NpgsqlConnection.GlobalTypeMapper.MapEnum<Region>();
         NpgsqlConnection.GlobalTypeMapper.MapEnum<Languages>();
+        NpgsqlConnection.GlobalTypeMapper.MapEnum<GameMode>();
         NpgsqlConnection.GlobalTypeMapper.MapEnum<ActivityLogType>();
         NpgsqlConnection.GlobalTypeMapper.MapEnum<UserUpdateStatus>();
 #pragma warning restore CS0618
@@ -149,6 +151,7 @@ public class CrpgDbContext : DbContext, ICrpgDbContext
         modelBuilder.HasPostgresEnum<BattleMercenaryApplicationStatus>();
         modelBuilder.HasPostgresEnum<Region>();
         modelBuilder.HasPostgresEnum<Languages>();
+        modelBuilder.HasPostgresEnum<GameMode>();
         modelBuilder.HasPostgresEnum<ActivityLogType>();
         modelBuilder.HasPostgresEnum<UserUpdateStatus>();
 
