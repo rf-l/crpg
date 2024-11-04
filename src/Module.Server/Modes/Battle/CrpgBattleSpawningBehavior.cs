@@ -15,12 +15,12 @@ internal class CrpgBattleSpawningBehavior : CrpgSpawningBehaviorBase
     private MissionTimer? _spawnTimer;
     private MissionTimer? _cavalrySpawnDelayTimer;
     private bool _botsSpawned;
-    public CrpgBattleSpawningBehavior(CrpgConstants constants, MultiplayerRoundController roundController, MultiplayerGameType gameType)
+    public CrpgBattleSpawningBehavior(CrpgConstants constants, MultiplayerRoundController roundController, MultiplayerGameType currentGameType)
         : base(constants)
     {
         _roundController = roundController;
         _notifiedPlayersAboutSpawnRestriction = new HashSet<PlayerId>();
-        GameMode = gameType;
+        CurrentGameMode = currentGameType;
     }
 
     public override void Initialize(SpawnComponent spawnComponent)

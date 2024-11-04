@@ -31,12 +31,17 @@ internal abstract class CrpgSpawningBehaviorBase : SpawningBehaviorBase
         WeaponClass.ThrowingAxe,
         WeaponClass.ThrowingKnife,
     };
-    private MultiplayerGameType gameMode = MultiplayerGameType.Battle;
+
     private Dictionary<Team, int> _TeamSumOfEquipment = new Dictionary<Team, int>();
     private Dictionary<Team, int> _TeamAverageEquipment = new Dictionary<Team, int>();
     private Dictionary<Team, int> _TeamNumberOfBots = new Dictionary<Team, int>();
-    private int totalNumberOfBots = 800;
-    public virtual MultiplayerGameType GameMode { get => gameMode; protected set => gameMode = value; }
+#if CRPG_SERVER
+    private int totalNumberOfBots = CrpgServerConfiguration.ControlledBotsCount;
+#else
+private int totalNumberOfBots = 800;
+#endif
+    protected MultiplayerGameType CurrentGameMode { get; set; } = MultiplayerGameType.Battle;
+
     public CrpgSpawningBehaviorBase(CrpgConstants constants)
     {
         _constants = constants;
@@ -50,10 +55,6 @@ internal abstract class CrpgSpawningBehaviorBase : SpawningBehaviorBase
     {
         base.Initialize(spawnComponent);
         base.OnAllAgentsFromPeerSpawnedFromVisuals += OnAllAgentsFromPeerSpawnedFromVisuals;
-        if (GameMode == MultiplayerGameType.Battle)
-        {
-            totalNumberOfBots = 20;
-        }
     }
 
     public override void RequestStartSpawnSession()
@@ -200,7 +201,7 @@ internal abstract class CrpgSpawningBehaviorBase : SpawningBehaviorBase
                 agent.WieldInitialWeapons();
             }
 
-            if (IsRoundInProgress() && (gameMode == MultiplayerGameType.Captain || gameMode == MultiplayerGameType.Battle))
+            if (IsRoundInProgress() && (CurrentGameMode == MultiplayerGameType.Captain || CurrentGameMode == MultiplayerGameType.Battle))
             {
                 List<NetworkCommunicator> peers = GameNetwork.NetworkPeers;
                 List<NetworkCommunicator> teamRelevantPeers =
@@ -314,7 +315,7 @@ internal abstract class CrpgSpawningBehaviorBase : SpawningBehaviorBase
         int botsTeam1 = MultiplayerOptions.OptionType.NumberOfBotsTeam1.GetIntValue();
         int botsTeam2 = MultiplayerOptions.OptionType.NumberOfBotsTeam2.GetIntValue();
 
-        if (gameMode == MultiplayerGameType.Battle || gameMode == MultiplayerGameType.Captain)
+        if (CurrentGameMode == MultiplayerGameType.Battle || CurrentGameMode == MultiplayerGameType.Captain)
         {
             int team1Count = GameNetwork.NetworkPeers.Where(p => IsNetworkPeerRelevant(p) && p.GetComponent<MissionPeer>().Team.Side == BattleSideEnum.Attacker).ToList().Count;
             int team2Count = GameNetwork.NetworkPeers.Where(p => IsNetworkPeerRelevant(p) && p.GetComponent<MissionPeer>().Team.Side == BattleSideEnum.Defender).ToList().Count;
@@ -468,7 +469,11 @@ internal abstract class CrpgSpawningBehaviorBase : SpawningBehaviorBase
     private int ComputeEquipmentValue(CrpgPeer peer)
     {
         int value = peer?.User?.Character.EquippedItems.Select(i => MBObjectManager.Instance.GetObject<ItemObject>(i.UserItem.ItemId)).Sum(io => io.Value) ?? 0;
-        return value + 10000; // protection against naked
+#if CRPG_SERVER
+        return value + CrpgServerConfiguration.BaseNakedEquipmentValue; // protection against naked
+#else
+        return value + 10000;
+#endif
     }
 
     private bool IsNetworkPeerRelevant(NetworkCommunicator networkPeer)
