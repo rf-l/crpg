@@ -11,13 +11,11 @@ public partial class IdempotencyKeyStringToGuid : Migration
     /// <inheritdoc />
     protected override void Up(MigrationBuilder migrationBuilder)
     {
-        migrationBuilder.AlterColumn<Guid>(
-            name: "key",
-            table: "idempotency_keys",
-            type: "uuid",
-            nullable: false,
-            oldClrType: typeof(string),
-            oldType: "text");
+        migrationBuilder.Sql(@"
+            ALTER TABLE idempotency_keys 
+            ALTER COLUMN key TYPE uuid 
+            USING key::uuid;
+        ");
 
         migrationBuilder.AddColumn<DateTime>(
             name: "updated_at",
@@ -34,12 +32,10 @@ public partial class IdempotencyKeyStringToGuid : Migration
             name: "updated_at",
             table: "idempotency_keys");
 
-        migrationBuilder.AlterColumn<string>(
-            name: "key",
-            table: "idempotency_keys",
-            type: "text",
-            nullable: false,
-            oldClrType: typeof(Guid),
-            oldType: "uuid");
+        migrationBuilder.Sql(@"
+            ALTER TABLE idempotency_keys 
+            ALTER COLUMN key TYPE text 
+            USING key::text;
+        ");
     }
 }
