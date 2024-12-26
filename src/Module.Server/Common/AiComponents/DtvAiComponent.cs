@@ -51,7 +51,7 @@ public class DtvAiComponent : CommonAIComponent
     private void CheckTargetTimer()
     {
         _targetTimer ??= new(MathHelper.RandomWithVariance(ViscountTargetTimerDuration, 0.2f));
-        if (_targetTimer.Check(false))
+        if (_targetTimer.Check(true))
         {
             FocusVip();
         }
@@ -62,7 +62,7 @@ public class DtvAiComponent : CommonAIComponent
         var agents = Mission.Current.Agents.ToList();
         foreach (Agent agent in agents)
         {
-            if (agent != null && agent.Origin.Troop.StringId.StartsWith("crpg_dtv_vip_"))
+            if (agent?.Origin?.Troop?.StringId != null && agent.Origin.Troop.StringId.StartsWith("crpg_dtv_vip_"))
             {
                 Agent.SetAutomaticTargetSelection(false);
                 Agent.SetTargetAgent(agent);
