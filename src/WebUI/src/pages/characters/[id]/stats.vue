@@ -392,7 +392,7 @@ await fetchPageData(character.value.id)
           <template #default="{ row }: { row: CharacterEarnedDataWithGameMode }">
             {{ $n(row.gold) }}
             <template v-if="row.timeEffort">
-              ({{ $n(row.gold / row.gold) }}/s)
+              ({{ $n(row.gold / row.timeEffort) }}/s)
             </template>
           </template>
         </OTableColumn>
