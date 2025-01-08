@@ -360,7 +360,7 @@ await fetchPageData(character.value.id)
           :label="$t('character.earningStats.summary.timeEffort')"
           sortable
         >
-          {{ $t('dateTimeFormat.ss', { secondes: Number(row.timeEffort) }) }}
+          {{ $t('dateTimeFormat.ss', { secondes: row.timeEffort }) }}
         </OTableColumn>
 
         <OTableColumn
@@ -375,8 +375,10 @@ await fetchPageData(character.value.id)
             />
           </template>
           <template #default="{ row }: { row: CharacterEarnedDataWithGameMode }">
-            {{ $n(Number(row.experience)) }}
-            ({{ $n(Number(row.experience) / Number(row.timeEffort)) }}/s)
+            {{ $n(row.experience) }}
+            <template v-if="row.timeEffort">
+              ({{ $n(row.experience / row.timeEffort) }}/s)
+            </template>
           </template>
         </OTableColumn>
 
@@ -388,8 +390,10 @@ await fetchPageData(character.value.id)
             <Coin />
           </template>
           <template #default="{ row }: { row: CharacterEarnedDataWithGameMode }">
-            {{ $n(Number(row.gold)) }}
-            ({{ $n(Number(row.gold) / Number(row.timeEffort)) }}/s)
+            {{ $n(row.gold) }}
+            <template v-if="row.timeEffort">
+              ({{ $n(row.gold / row.gold) }}/s)
+            </template>
           </template>
         </OTableColumn>
 
