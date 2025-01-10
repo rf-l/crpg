@@ -360,7 +360,7 @@ await fetchPageData(character.value.id)
           :label="$t('character.earningStats.summary.timeEffort')"
           sortable
         >
-          {{ $t('dateTimeFormat.ss', { secondes: row.timeEffort }) }}
+          {{ $t('dateTimeFormat.ss', { secondes: Math.round(row.timeEffort) }) }}
         </OTableColumn>
 
         <OTableColumn
